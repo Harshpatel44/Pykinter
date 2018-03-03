@@ -90,3 +90,17 @@ def bdcolor_enter(event):
     global bd_color
     bd_color=widget.get()
     functions.selected.configure(highlightbackground=widget.get())
+
+def onfocus_bgcolor_enter(event):
+        widget=event.widget
+        global onfocus_bgcolor_1
+        onfocus_bgcolor_1=widget.get()
+        functions.selected.configure(background=widget.get())
+
+def onfocus_bgcolor_leave(event):
+        widget=event.widget
+        global onfocus_bgcolor_2
+        onfocus_bgcolor_2=widget.get()
+        functions.selected.configure(background=widget.get())
+
+

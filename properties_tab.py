@@ -23,6 +23,8 @@ acn=tk.StringVar()
 bdn=tk.StringVar()
 bcn=tk.StringVar()
 bce=tk.StringVar()
+dde=tk.StringVar()
+mme=tk.StringVar()
 
 
 
@@ -59,39 +61,21 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     name_enter.bind("<Return>",backend_properties.name_enter)
     name_enter.place(x=140,y=50)
 
-
-    X_name=tk.Label(props_frame,text="X:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    X_name.place(x=30,y=70)
-    X_enter=tk.Entry(props_frame,width=20,textvariable=he)
-    X_enter.bind("<Return>",backend_properties.height_enter)
-    X_enter.bind("<FocusOut>",backend_properties.height_enter)
-    X_enter.bind("<Return>",backend_properties.height_enter)
-    X_enter.place(x=140,y=70)
-
-    Y_name=tk.Label(props_frame,text="Y:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    Y_name.place(x=30,y=90)
-    Y_enter=tk.Entry(props_frame,width=20,textvariable=he)
-    Y_enter.bind("<Return>",backend_properties.height_enter)
-    Y_enter.bind("<FocusOut>",backend_properties.height_enter)
-    Y_enter.bind("<Return>",backend_properties.height_enter)
-    Y_enter.place(x=140,y=90)
-
-
     height_name=tk.Label(props_frame,text="Height:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    height_name.place(x=30,y=110)
+    height_name.place(x=30,y=70)
     height_enter=tk.Entry(props_frame,width=20,textvariable=he)
     height_enter.bind("<Return>",backend_properties.height_enter)
     height_enter.bind("<FocusOut>",backend_properties.height_enter)
     height_enter.bind("<Return>",backend_properties.height_enter)
-    height_enter.place(x=140,y=110)
+    height_enter.place(x=140,y=70)
 
     width_name=tk.Label(props_frame,text="Width:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    width_name.place(x=30,y=130)
+    width_name.place(x=30,y=90)
     width_enter=tk.Entry(props_frame,width=20,textvariable=we)
     width_enter.bind("<Return>",backend_properties.width_enter)
     width_enter.bind("<FocusOut>",backend_properties.width_enter)
     width_enter.bind("<Return>",backend_properties.width_enter)
-    width_enter.place(x=140,y=130)
+    width_enter.place(x=140,y=90)
 
 
     change_fontcolor=tk.Label(props_frame,text="Font Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
@@ -150,22 +134,28 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     bdcolor_enter.place(x=140,y=230)
 
 
-
-
     #on focus dept
 
+    onfocus_bgcolor_1st=tk.Label(props_frame,text="onfocus color_bg",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    onfocus_bgcolor_1st.place(x=30,y=250)
+    onfocus_bgcolor_1st=tk.Entry(props_frame,width=20,textvariable=dde)
+    onfocus_bgcolor_1st.place(x=140,y=250)
+    onfocus_bgcolor_1st.bind("<Return>",backend_properties.onfocus_bgcolor_enter)
 
-    onfocus_bgcolor=tk.Label(props_frame,text="Name:",width=10,bd=1,background="#333333",fg="#fef1e8")
-    onfocus_bgcolor.place(x=30,y=30)
+    onfocus_bgcolor_2nd=tk.Label(props_frame,text="offfocus color_bg",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    onfocus_bgcolor_2nd.place(x=30,y=270)
+    onfocus_bgcolor_2nd=tk.Entry(props_frame,width=20,textvariable=mme)
+    onfocus_bgcolor_2nd.place(x=140,y=270)
+    onfocus_bgcolor_2nd.bind("<Return>",backend_properties.onfocus_bgcolor_leave)
 
-    bgonfocus_color=tk.Entry(props_frame,width=20)
-    bgonfocus_color.place(x=110,y=30)
-
-    onfocus_textname=tk.Label(props_frame,text="Name:",width=10,bd=1,background="#333333",fg="#fef1e8")
-    onfocus_textname.place(x=30,y=30)
-
-    onfocustext_enter=tk.Entry(props_frame,width=20)
-    onfocustext_enter.place(x=110,y=30)
+    # bgonfocus_color=tk.Entry(props_frame,width=20)
+    # bgonfocus_color.place(x=110,y=30)
+    #
+    # onfocus_textname=tk.Label(props_frame,text="Name:",width=10,bd=1,background="#333333",fg="#fef1e8")
+    # onfocus_textname.place(x=30,y=30)
+    #
+    # onfocustext_enter=tk.Entry(props_frame,width=20)
+    # onfocustext_enter.place(x=110,y=30)
 
 
 
