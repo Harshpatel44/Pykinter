@@ -1,6 +1,7 @@
 __author__ = 'Harsh'
 
 import tkinter as tk
+
 selected=0
 g_root=0
 import time
@@ -57,7 +58,7 @@ def motion_frame(event,taskbar,root):
 
 
 def start_btn(event,root,l1,l2,r1,r2,u,d):
-    widget=event.widget
+    widget_main=event.widget
 
 
     global gl1,gl2,gr1,gr2,gu,gd,selected,g_root
@@ -67,57 +68,84 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     gr2=r2
     gu=u
     gd=d
-    selected=widget
+    selected=widget_main
     g_root=root
 
 
-    l1.configure(height=3,width=3,background="#666666")
-    l1.place(x=widget.winfo_x()-3,y=widget.winfo_y()-4)
+    l1.configure(height=3,width=3,background="#666666",cursor="plus")
+    l1.place(x=widget_main.winfo_x()-3,y=widget_main.winfo_y()-4)
 
-    u.configure(height=3,width=3,background="#666666")
-    u.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()-4)
+    u.configure(height=3,width=3,background="#666666",cursor="plus")
+    u.place(x=widget_main.winfo_x()-0+(widget_main.winfo_width())/2,y=widget_main.winfo_y()-4)
 
-    r1.configure(height=3,width=3,background="#666666")
-    r1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-4)
+    r1.configure(height=3,width=3,background="#666666",cursor="plus")
+    r1.place(x=widget_main.winfo_x()-0 + widget_main.winfo_width(),y=widget_main.winfo_y()-4)
 
-    l2.configure(height=3,width=3,background="#666666")
-    l2.place(x=widget.winfo_x()-2,y=widget.winfo_y()+widget.winfo_height()-0)
+    l2.configure(height=3,width=3,background="#666666",cursor="plus")
+    l2.place(x=widget_main.winfo_x()-2,y=widget_main.winfo_y()+widget_main.winfo_height()-0)
 
-    d.configure(height=3,width=3,background="#666666")
-    d.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+1)
+    d.configure(height=3,width=3,background="#666666",cursor="plus")
+    d.place(x=widget_main.winfo_x()-0+(widget_main.winfo_width())/2,y=widget_main.winfo_y()+widget_main.winfo_height()+1)
 
-    r2.configure(height=3,width=3,background="#666666")
-    r2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
-
-
+    r2.configure(height=3,width=3,background="#666666",cursor="plus")
+    r2.place(x=widget_main.winfo_x()-0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height())
 
 
 
 
-    # def l1_bindE(event,arg):
-    #    widget=event.widget
-    #    widget.configure(background="black")
-    #    #widget.bind("<Button-1>",lambda event,arg=widget:start_point(event,widget))
-    # def l1_bindL(event,arg):
-    #    widget=event.widget
-    #    widget.configure(background="#666666")
-    #
-    l1.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    l1.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    r1.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    r1.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    l2.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    l2.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    r2.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    r2.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    u.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    u.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    d.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    d.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
+
+
+    def l1_bindE(event,arg):
+       widget=event.widget
+
+       widget.drag_start_x=event.x
+       widget.drag_start_y=event.y
+       #widget.bind("<Button-1>",lambda event,arg=widget:start_point(event,widget))
+    def l1_bindL(event,arg):
+       widget=event.widget
+       h_init=arg.cget('height')
+       w_init=arg.cget('width')
+
+       # if(event.x<0 or event.y<0):
+       #     print('-')
+       #     w=arg.cget('width')-(event.x)
+       #     h=arg.cget('height')-(event.y)
+       #
+       #     print('current',arg.cget('width'))
+       #     print('width',w)
+       # if(event.x>=0 or event.y>0):
+       #     print('+')
+       #       w=arg.cget('width')+(event.x)
+       #       h=arg.cget('height')+(event.y)
+       if(event.x<100 and event.x>0):
+           event.x=0
+       else:
+           event.x=1
+       if(event.y<100 and event.y>0):event.y=0
+       else:
+           event.y=1
+       w=round(w_init+(event.x))
+       h=round(h_init+(event.y))
+
+       #print(w,h)
+       arg.configure(width=w,height=h)
+
+    l1.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
+    l1.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
+    r1.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
+    r1.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
+    l2.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
+    l2.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
+    r2.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
+    r2.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
+    u.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
+    u.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
+    d.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
+    d.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
 
     #print(widget)
-    widget.drag_start_x=event.x
-    widget.drag_start_y=event.y
+    widget_main.drag_start_x=event.x
+    widget_main.drag_start_y=event.y
 
 
 
