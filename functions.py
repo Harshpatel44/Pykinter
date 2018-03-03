@@ -4,7 +4,7 @@ import tkinter as tk
 selected=0
 g_root=0
 import time
-from PIL import ImageTk,Image
+#from PIL import ImageTk,Image
 import properties_tab
 
 
@@ -102,18 +102,18 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     #    widget=event.widget
     #    widget.configure(background="#666666")
     #
-    # l1.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    # l1.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    # r1.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    # r1.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    # l2.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    # l2.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    # r2.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    # r2.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    # u.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    # u.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
-    # d.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
-    # d.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
+    l1.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
+    l1.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
+    r1.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
+    r1.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
+    l2.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
+    l2.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
+    r2.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
+    r2.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
+    u.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
+    u.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
+    d.bind("<Enter>",lambda event,arg=widget:l1_bindE(event,arg))
+    d.bind("<Leave>",lambda event,arg=widget:l1_bindL(event,arg))
 
     #print(widget)
     widget.drag_start_x=event.x

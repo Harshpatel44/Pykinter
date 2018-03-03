@@ -99,25 +99,30 @@ def label_click(root):          #bindings for label click
 
 
 def scroll_click(root):         #bindings for scroll click
-    scrollbar=tk.Scrollbar(root)
+    scrollbar=ttk.Scrollbar(root)
     scrollbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     scrollbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     scrollbar.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
-    scrollbar.place(x=10,y=10)
+    update.get_data(scrollbar)
+    scrollbar.place(x=10,y=10,height=100)
 
 
 def dropmenu_click(root):         #bindings for option menu
-    scrollbar=tk.OptionMenu(root)
-    scrollbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
-    scrollbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
-    scrollbar.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
-    scrollbar.place(x=10,y=10)
+    variable=ttk.StringVar(root)
+    variable.set('Item1')
+    dropmenu=tk.OptionMenu(root,variable,"Item1","Item2","Item3")
+    dropmenu.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
+    dropmenu.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
+    dropmenu.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
+    update.get_data(dropmenu)
+    dropmenu.place(x=10,y=10)
 
 def combobox_click(root):
-    combobox=ttk.Combobox(root)
+    combobox=ttk.Combobox(root,background=bg_color)
     combobox.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     combobox.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     combobox.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
+    update.get_data(combobox)
     combobox.place(x=10,y=10)
 
 
@@ -126,35 +131,39 @@ def progressbar_click(root):
     progressbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     progressbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     progressbar.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
+    update.get_data(progressbar)
     progressbar.place(x=10,y=10)
 
 
 
 def listbox_click(root):
-    listbox=tk.Listbox(root)
+    listbox=tk.Listbox(root,background=bg_color)
     listbox.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     listbox.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     listbox.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
+    update.get_data(listbox)
     listbox.place(x=10,y=10)
 
 
 def image_click(root):
-    imagecanvas=tk.Button(root)
-    imagecanvas.configure(height="10",width="40",relief="flat",bd=0,text="CLICK HERE",fg="black")
+    imagecanvas=tk.Button(root,background=bg_color)
+    imagecanvas.configure(height="10",width="10",relief="flat",bd=0,text="Image Here",fg="black")
 
     imagecanvas.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     imagecanvas.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     imagecanvas.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
+    update.get_data(imagecanvas)
     imagecanvas.place(x=10,y=10)
 
 
 
 
 def spinbox_click(root):
-    spinbox=tk.Spinbox(root)
+    spinbox=tk.Spinbox(root,background=bg_color)
     spinbox.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     spinbox.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     spinbox.bind("<B1-Motion>", lambda event , arg2=root: functions.motion(event,arg2))
+    update.get_data(spinbox)
     spinbox.place(x=10,y=10)
 
 
