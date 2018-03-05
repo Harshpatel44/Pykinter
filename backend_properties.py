@@ -95,4 +95,4 @@ def onfocus_bgcolor__enter(event):
     widget=event.widget
     global onfocus_bgcolor
     onfocus_bdcolor=widget.get()
-    functions.onfocus_color()    #a special function for on focus color change.
+    functions.onfocus_color(onfocus_bdcolor)    #a special function for on focus color change.

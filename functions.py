@@ -201,11 +201,14 @@ def update_w(event,w):    #changing width dyanmically
     gr2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
 
 
-def onfocus_color():    #changing on focus color
-    def focus_change(event):
-        event.widget.configure(background="#777777")
-    def focus_reset(event):
-        event.widget.configure(background="#333333")
-    selected.bind('<Enter>',focus_change)     #selected is the current widget
-    selected.bind('<Leave>',focus_reset)
+def onfocus_color(color):    #changing on focus color
+    current_color=selected.cget('background')
+    def focus_change(event,new):
+        print('new',new)
+        event.widget.configure(background=str(new))
+    def focus_reset(event,old):
+        print(old)
+        event.widget.configure(background=str(old))
+    selected.bind('<Enter>',lambda event,arg=color:focus_change(event,arg))     #selected is the current widget
+    selected.bind('<Leave>',lambda event,arg=current_color:focus_reset(event,arg))
 
