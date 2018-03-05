@@ -24,7 +24,7 @@ def start_frame(event,taskbar,root,l1,l2,r1,r2,u,d):
     gr2=r2
     gu=u
     gd=d
-    selected=root
+    selected=root      #selected becomes the clicked element (globally)
     g_root=root
     widget.configure(highlightbackground="#222222")
     widget.drag_start_x=event.x
@@ -150,7 +150,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
 
 
 
-def stop_btn(event,root):
+def stop_btn(event,root):    #invokes when drag is stopped.
     widget=event.widget
 
     gl1.place(x=widget.winfo_x()-3,y=widget.winfo_y()-4)
@@ -163,7 +163,7 @@ def stop_btn(event,root):
 
 
 
-def motion(event,root):
+def motion(event,root):    #motion of widget
 
     widget=event.widget
     x=widget.winfo_x()-widget.drag_start_x+event.x
@@ -174,7 +174,7 @@ def motion(event,root):
 
 
 
-def update_h(event,h):
+def update_h(event,h):   #changing height dynamically
 
     widget=selected
     widget.configure(height=h)
@@ -187,7 +187,7 @@ def update_h(event,h):
     gd.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+1)
     gr2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
 
-def update_w(event,w):
+def update_w(event,w):    #changing width dyanmically
 
     widget=selected
     widget.configure(width=w)
@@ -199,4 +199,13 @@ def update_w(event,w):
     gl2.place(x=widget.winfo_x()-2,y=widget.winfo_y() +widget.winfo_height())
     gd.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+1)
     gr2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
+
+
+def onfocus_color():    #changing on focus color
+    def focus_change(event):
+        event.widget.configure(background="#777777")
+    def focus_reset(event):
+        event.widget.configure(background="#333333")
+    selected.bind('<Enter>',focus_change)     #selected is the current widget
+    selected.bind('<Leave>',focus_reset)
 

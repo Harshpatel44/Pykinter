@@ -155,17 +155,24 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     #on focus dept
 
 
-    onfocus_bgcolor=tk.Label(props_frame,text="Name:",width=10,bd=1,background="#333333",fg="#fef1e8")
-    onfocus_bgcolor.place(x=30,y=30)
+    onfocus_bgcolor=tk.Label(props_frame,text="Onfocus:",width=10,bd=1,background="#333333",fg="#fef1e8")
+    onfocus_bgcolor.place(x=30,y=250)
+    onfocus_bgcolor_enter=tk.Entry(props_frame,width=20)
+    onfocus_bgcolor_enter.bind("<Return>",backend_properties.onfocus_bgcolor__enter)
+    onfocus_bgcolor_enter.bind("<FocusOut>",backend_properties.onfocus_bgcolor__enter)
+    onfocus_bgcolor_enter.bind("<Return>",backend_properties.onfocus_bgcolor__enter)
+    onfocus_bgcolor_enter.place(x=140,y=250)
 
-    bgonfocus_color=tk.Entry(props_frame,width=20)
-    bgonfocus_color.place(x=110,y=30)
 
-    onfocus_textname=tk.Label(props_frame,text="Name:",width=10,bd=1,background="#333333",fg="#fef1e8")
-    onfocus_textname.place(x=30,y=30)
 
-    onfocustext_enter=tk.Entry(props_frame,width=20)
-    onfocustext_enter.place(x=110,y=30)
+    # bgonfocus_color=tk.Entry(props_frame,width=20)
+    # bgonfocus_color.place(x=110,y=30)
+    #
+    # onfocus_textname=tk.Label(props_frame,text="Name:",width=10,bd=1,background="#333333",fg="#fef1e8")
+    # onfocus_textname.place(x=30,y=30)
+    #
+    # onfocustext_enter=tk.Entry(props_frame,width=20)
+    # onfocustext_enter.place(x=110,y=30)
 
 
 

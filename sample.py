@@ -22,8 +22,15 @@ __author__ = 'harsh'
 #making arrows
 import tkinter as tk
 root=tk.Tk()
-
-canvas=tk.Canvas(height="100",width="200",background="#dddddd")
-canvas.create_line(,8,15,15)
-canvas.pack()
+def focus_change(event):
+        event.widget.configure(background="#777777")
+def focus_reset(event):
+        event.widget.configure(background="#333333")
+btn=tk.Button(root,text="button",background="#555555")
+btn.bind('<Enter>',focus_change)
+btn.bind('<Leave>',focus_reset)
+btn.pack()
+# canvas=tk.Canvas(height="100",width="200",background="#dddddd")
+# canvas.create_line(,8,15,15)
+# canvas.pack()
 root.mainloop()

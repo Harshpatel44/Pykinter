@@ -90,3 +90,9 @@ def bdcolor_enter(event):
     global bd_color
     bd_color=widget.get()
     functions.selected.configure(highlightbackground=widget.get())
+
+def onfocus_bgcolor__enter(event):
+    widget=event.widget
+    global onfocus_bgcolor
+    onfocus_bdcolor=widget.get()
+    functions.onfocus_color()    #a special function for on focus color change.

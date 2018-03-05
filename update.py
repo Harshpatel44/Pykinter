@@ -23,6 +23,7 @@ def sync_data():
 
         if(f.winfo_class()=="Button"):
             print("for button")
+            a+="        "+str(f.winfo_class())+str(f.cget('text'))+"=tk."+str(f.winfo_class())+"(self,text=\""+str(f.cget('text'))+"\",height="+str(f.cget('height'))+",width="+str(f.cget('width'))+",background=\""+str(f.cget('background'))+"\",foreground=\""+f.cget('fg')+"\",relief=tk."+str(f.cget('relief')).upper()+",bd="+str(f.cget('bd'))+")\n        "+str(f.winfo_class())+str(f.cget('text'))+".place(x="+str(f.winfo_x()+20)+",y="+str(f.winfo_y()+20)+")\n"
         elif(f.winfo_class()=="Radiobutton"):
             print("for radiobutton")
         elif(f.winfo_class()=="Checkbutton"):
