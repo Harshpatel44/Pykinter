@@ -35,7 +35,7 @@ def height_enter(event):
     height=widget.get()
 
     #functions.selected.configure(height=widget.get())
-    functions.update_h(functions.selected,widget.get())
+    functions.update_h(widget.get())
     #functions.selected.bind("<Return>",lambda a1=functions.selected,a2=functions.g_root,a3=functions.gl1,a4=functions.gl2,a5=functions.gr1,a6=functions.gr2,a7=functions.gu,a8=functions.gd:functions.stop(event,a1,a2,a3,a4,a5,a6,a7,a8))
 
 def width_enter(event):
@@ -43,7 +43,7 @@ def width_enter(event):
     global width
     width=widget.get()
     functions.selected.configure(width=widget.get())
-    functions.update_w(functions.selected,widget.get())
+    functions.update_w(widget.get())
 
 def fontcolor_enter(event):
     widget=event.widget
