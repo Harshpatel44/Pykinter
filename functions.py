@@ -122,7 +122,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
 
 
        if(arg.winfo_class()=='TProgressbar'):
-           #w_init=int(arg.cget('length'))+1
+
 
            #print(w_init)
            if(widget.drag_start_x!=event.x):
@@ -139,8 +139,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
                         arg.configure(length=w)
                         current_x=event.x
        elif(arg.winfo_class()=="Entry"):
-
-           w_init=arg.cget('width')
+           #w_init=arg.cget('width')
            if(widget.drag_start_x!=event.x):
 
                if(event.x>current_x):
