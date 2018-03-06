@@ -4,7 +4,7 @@ import tkinter as tk
 import functions
 import properties_tab
 import update
-
+from PIL import ImageTk
 bg_color="#fef1e8"
 
 def allTime(root):
@@ -100,6 +100,18 @@ def label_click(root):          #bindings for label click
 
 def scroll_click(root):         #bindings for scroll click
     scrollbar=ttk.Scrollbar(root)
+    # ttk.Scale(root,length=10)
+    # scale=ttk.Scale(root,length=200,orient=tk.VERTICAL)
+    # scale.place(x=10,y=10,height=100)
+    # scrollbar=''
+    # def button():
+    #     global scrollbar,image
+    #     scrollbar = tk.Label(root,bd=0)
+    #
+    #     scrollbar.config(image=middle_frame2.image)
+    #     scrollbar.image = middle_frame2.image
+    #     scrollbar.place(x=10,y=10)
+    # button()
     scrollbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     scrollbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     scrollbar.bind("<B1-Motion>", lambda event , arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6))
@@ -127,7 +139,7 @@ def combobox_click(root):
 
 
 def progressbar_click(root):
-    progressbar=ttk.Progressbar(root)
+    progressbar=ttk.Progressbar(root,length=200)
     progressbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     progressbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     progressbar.bind("<B1-Motion>", lambda event , arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6))

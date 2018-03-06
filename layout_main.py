@@ -4,6 +4,7 @@ import editor_tab
 import properties_tab
 import widgets_tab
 import update
+from PIL import ImageTk
 
 def start(event):
         widget=event.widget
@@ -137,7 +138,7 @@ class main_frame(tk.Frame,main):
         middle_frame2.pack(side="left")
         middle_frame3.pack(side='left')
 
-
+        #middle_frame2.image=ImageTk.PhotoImage(file="scrollbar.PNG")
         widgets_tab.wid_tab(self,main,middle_frame1,middle_frame2)   # function for widgets placement
         properties_tab.prop_tab(self,main,middle_frame3,middle_frame2)    #function for properties placement
 

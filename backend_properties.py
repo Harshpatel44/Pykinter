@@ -25,6 +25,11 @@ def check_configure(name_enter,height_enter,width_enter):
         name_enter.configure(state=tk.DISABLED)
         height_enter.configure(state=tk.DISABLED)
 
+    if(functions.selected.winfo_class()=="TProgressbar"):
+
+        name_enter.configure(state=tk.DISABLED)
+        height_enter.configure(state=tk.DISABLED)
+
     else:
          name_enter.configure(state=tk.NORMAL)
          height_enter.configure(state=tk.NORMAL)
