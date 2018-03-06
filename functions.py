@@ -25,6 +25,7 @@ def start_frame(event,taskbar,root,l1,l2,r1,r2,u,d):
     gu=u
     gd=d
     selected=root      #selected becomes the clicked element (globally)
+
     g_root=root
     widget.configure(highlightbackground="#222222")
     widget.drag_start_x=event.x
@@ -69,6 +70,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     gu=u
     gd=d
     selected=widget_main
+    properties_tab.sync_widget()
     g_root=root
 
 
@@ -112,17 +114,13 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
        w_init=arg.cget('width')
 
        if(widget.drag_start_x!=event.x or widget.drag_start_y!=event.y):
-           #if(event.x>widget.drag_start_x or event.y>=0):
+
            if(event.x>current_x):
                if(event.x%1==0):
                     w=arg.cget('width')+1
                     arg.configure(width=w)
                     current_x=event.x
-                    #widget.drag_start_x=event.x
-               # if(event.x%10==0):
-               #     h=arg.cget('height')+1
-               #     arg.configure(height=h)
-               #     widget.drag_start_y=1
+
            if(event.y>current_y):
                if(event.y%5==0):
                     h=arg.cget('height')+1
@@ -172,8 +170,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
        #       w=arg.cget('width')+(event.x)
        #       h=arg.cget('height')+(event.y)
 
-       print(widget.winfo_x(),event.x)
-       print(widget.winfo_y(),event.y)
+
        #arg.configure(width=w,height=h)
     def r2_bindR(event,arg):
         #arg.configure(width=10,height=1)

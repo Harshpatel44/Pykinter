@@ -30,6 +30,10 @@ btn=tk.Button(root,text="button",background="#555555")
 btn.bind('<Enter>',focus_change)
 btn.bind('<Leave>',focus_reset)
 btn.pack()
+
+
+entry=tk.Entry(width=10)
+entry.pack()
 # canvas=tk.Canvas(height="100",width="200",background="#dddddd")
 # canvas.create_line(,8,15,15)
 # canvas.pack()

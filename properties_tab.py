@@ -23,7 +23,13 @@ acn=tk.StringVar()
 bdn=tk.StringVar()
 bcn=tk.StringVar()
 bce=tk.StringVar()
+name_enter=''
+height_enter=''
+width_enter=''
 
+def sync_widget():
+
+    backend_properties.check_configure(name_enter,height_enter,width_enter)
 
 
 
@@ -31,6 +37,12 @@ bce=tk.StringVar()
 
 
 def prop_tab(self,main,middle_frame3,middle_frame2):
+
+
+
+    global name_enter,width_enter,height_enter
+
+
 
     design = tk.Canvas(middle_frame3, width=300, height=25,bg='#99AAAA',highlightthickness=0,background="#333333")    #title canvas
     design.place(x=0,y=0)
@@ -54,6 +66,8 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     change_name=tk.Label(props_frame,text="Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     change_name.place(x=30,y=50)
     name_enter=tk.Entry(props_frame,width=20,textvariable=ne)
+    # name_enter.bind("<FocusIn>",backend_properties.check_configure)
+    # name_enter.bind("<Enter>",backend_properties.check_configure)
     name_enter.bind("<Tab>",backend_properties.name_enter)
     name_enter.bind("<FocusOut>",backend_properties.name_enter)
     name_enter.bind("<Return>",backend_properties.name_enter)
@@ -80,6 +94,8 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     height_name=tk.Label(props_frame,text="Height:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     height_name.place(x=30,y=70)
     height_enter=tk.Entry(props_frame,width=20,textvariable=he)
+    # height_enter.bind("<FocusIn>",backend_properties.check_configure)
+    # height_enter.bind("<Enter>",backend_properties.check_configure)
     height_enter.bind("<Return>",backend_properties.height_enter)
     height_enter.bind("<FocusOut>",backend_properties.height_enter)
     height_enter.bind("<Return>",backend_properties.height_enter)
@@ -188,6 +204,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
     #finish onclick dept
+
 
 
 
