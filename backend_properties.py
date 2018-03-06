@@ -34,7 +34,6 @@ def name_enter(event):
     widget=event.widget
     global name
     name=widget.get()
-
     functions.selected.configure(text=widget.get())
 
 
@@ -79,6 +78,12 @@ def fontstyle_enter(event):
 #     widget=event.widget
 #     widget_change=functions.selected
 #     widget_change.configure(font=(widget.get()))
+
+
+
+
+
+
 def fontsize_enter(event):
     widget=event.widget
     global fontsize

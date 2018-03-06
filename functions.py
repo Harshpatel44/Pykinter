@@ -107,30 +107,48 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     global current_x,current_y
     current_x=0
     current_y=0
-    def r2_bindL(event,arg):
+    def r2_bindM(event,arg):
        global current_x,current_y
        widget=event.widget
-       h_init=arg.cget('height')
+
+       l1.place_forget()   #hiding the selection dots
+       l2.place_forget()
+       r1.place_forget()
+       r2.place_forget()
+       u.place_forget()
+       d.place_forget()
+
+
+
+       flag=0
+       if(arg.winfo_class()=="Entry"):
+           flag=1
+       if(flag==0):
+            h_init=arg.cget('height')
+
        w_init=arg.cget('width')
 
-       if(widget.drag_start_x!=event.x or widget.drag_start_y!=event.y):
+       if(widget.drag_start_x!=event.x):
 
            if(event.x>current_x):
                if(event.x%1==0):
                     w=arg.cget('width')+1
                     arg.configure(width=w)
                     current_x=event.x
+           if(event.x<current_x):
+               if(event.x%1==0):
+                    w=arg.cget('width')-1
+                    arg.configure(width=w)
+                    current_x=event.x
+
+       if(widget.drag_start_y!=event.y and flag==0):
 
            if(event.y>current_y):
                if(event.y%5==0):
                     h=arg.cget('height')+1
                     arg.configure(height=h)
                     current_y=event.y
-           if(event.x<current_x):
-               if(event.x%1==0):
-                    w=arg.cget('width')-1
-                    arg.configure(width=w)
-                    current_x=event.x
+
            if(event.y<current_y):
                if(event.y%5==0):
                    h=arg.cget('height')-1
@@ -172,9 +190,12 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
 
 
        #arg.configure(width=w,height=h)
-    def r2_bindR(event,arg):
+    def r2_bindL(event,arg):
         #arg.configure(width=10,height=1)
-        print()
+        if(arg.winfo_class()!='Entry'):
+            update_h(arg.cget('height'))
+        update_w(arg.cget('width'))
+
     l1.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
     l1.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
     l1.bind("<ButtonRelease-1>",lambda event,arg=widget_main:l1_bindR(event,arg))
@@ -185,8 +206,8 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     l2.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
     l2.bind("<ButtonRelease-1>",lambda event,arg=widget_main:l1_bindR(event,arg))
     r2.bind("<Button-1>",lambda event,arg=widget_main:r2_bindE(event,arg))
-    r2.bind("<B1-Motion>",lambda event,arg=widget_main:r2_bindL(event,arg))
-    r2.bind("<ButtonRelease-1>",lambda event,arg=widget_main:r2_bindR(event,arg))
+    r2.bind("<B1-Motion>",lambda event,arg=widget_main:r2_bindM(event,arg))
+    r2.bind("<ButtonRelease-1>",lambda event,arg=widget_main:r2_bindL(event,arg))
     u.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
     u.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
     u.bind("<ButtonRelease-1>",lambda event,arg=widget_main:l1_bindR(event,arg))
@@ -213,12 +234,19 @@ def stop_btn(event,root):    #invokes when drag is stopped.
 
 
 
-def motion(event,root):    #motion of widget
+def motion(event,root,l1,l2,r1,r2,u,d):    #motion of widget
 
     widget=event.widget
     x=widget.winfo_x()-widget.drag_start_x+event.x
     y=widget.winfo_y()-widget.drag_start_y+event.y
+    l1.place_forget()
+    l2.place_forget()
+    r1.place_forget()
+    r2.place_forget()
+    u.place_forget()
+    d.place_forget()
     widget.place(x=x,y=y)
+
 
 
 

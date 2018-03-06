@@ -29,7 +29,7 @@ width_enter=''
 
 def sync_widget():
 
-    backend_properties.check_configure(name_enter,height_enter,width_enter)
+    backend_properties.check_configure(name_enter,height_enter,width_enter)    #configures which attrivutes should be disabled acc to widgets
 
 
 
@@ -106,7 +106,6 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     width_enter=tk.Entry(props_frame,width=20,textvariable=we)
     width_enter.bind("<Return>",backend_properties.width_enter)
     width_enter.bind("<FocusOut>",backend_properties.width_enter)
-    width_enter.bind("<Return>",backend_properties.width_enter)
     width_enter.place(x=140,y=90)
 
 
