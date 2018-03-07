@@ -74,27 +74,33 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     g_root=root
 
     print(widget_main.winfo_class())
-    l1.configure(height=3,width=3,background="#666666",cursor="plus")
-    l1.place(x=widget_main.winfo_x()-3,y=widget_main.winfo_y()-4)
 
-    u.configure(height=3,width=3,background="#666666",cursor="plus")
-    u.place(x=widget_main.winfo_x()-0+(widget_main.winfo_width())/2,y=widget_main.winfo_y()-4)
+    l1.configure(height=5,width=5,background="#666666",cursor="plus")
+    l1.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()-6)
 
-    r1.configure(height=3,width=3,background="#666666",cursor="plus")
-    r1.place(x=widget_main.winfo_x()-0 + widget_main.winfo_width(),y=widget_main.winfo_y()-4)
+    u.configure(height=5,width=5,background="#666666",cursor="plus")
+    u.place(x=widget_main.winfo_x()-1+(widget_main.winfo_width())/2,y=widget_main.winfo_y()-6)
 
-    l2.configure(height=3,width=3,background="#666666",cursor="plus")
-    l2.place(x=widget_main.winfo_x()-2,y=widget_main.winfo_y()+widget_main.winfo_height()-0)
+    r1.configure(height=5,width=5,background="#666666",cursor="plus")
+    r1.place(x=widget_main.winfo_x()-0 + widget_main.winfo_width(),y=widget_main.winfo_y()-6)
 
-    d.configure(height=3,width=3,background="#666666",cursor="plus")
-    d.place(x=widget_main.winfo_x()-0+(widget_main.winfo_width())/2,y=widget_main.winfo_y()+widget_main.winfo_height()+1)
+    l2.configure(height=5,width=5,background="#666666",cursor="plus")
+    l2.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+widget_main.winfo_height()+2)
 
-    r2.configure(height=3,width=3,background="#666666",cursor="plus")
-    r2.place(x=widget_main.winfo_x()-0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height())
+    d.configure(height=5,width=5,background="#666666",cursor="plus")
+    d.place(x=widget_main.winfo_x()-1+(widget_main.winfo_width())/2,y=widget_main.winfo_y()+widget_main.winfo_height()+2)
+
+    r2.configure(height=5,width=5,background="#666666",cursor="plus")
+    r2.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height()+2)
 
 
 
-
+    def r1_bindE(event,arg):
+        print()
+    def r1_bindM(event,arg):
+        print()
+    def t1_bindL(event_arg):
+        print()
 
 
     def r2_bindE(event,arg):
@@ -118,15 +124,11 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
        u.place_forget()
        d.place_forget()
 
-
-
-
        if(arg.winfo_class()=='TProgressbar'):
-           #w_init=int(arg.cget('length'))+1
+
 
            #print(w_init)
            if(widget.drag_start_x!=event.x):
-
                if(event.x>current_x):
                    if(event.x%1==0):
                         w=(arg.configure()['length'][4])+3              #arg.configure() contains dictionary of attributes hance length is taken from there
@@ -134,13 +136,12 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
                         current_x=event.x
                if(event.x<current_x):
                    if(event.x%1==0):
-
                         w=(arg.configure()['length'][4])-3
                         arg.configure(length=w)
                         current_x=event.x
-       elif(arg.winfo_class()=="Entry"):
 
-           w_init=arg.cget('width')
+       elif(arg.winfo_class()=="Entry"):
+           #w_init=arg.cget('width')
            if(widget.drag_start_x!=event.x):
 
                if(event.x>current_x):
@@ -153,21 +154,19 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
                         w=arg.cget('width')-1
                         arg.configure(width=w)
                         current_x=event.x
-
-
        else:
-           print('went here')
+
            h_init=arg.cget('height')
            w_init=arg.cget('width')
            if(widget.drag_start_x!=event.x):
 
                if(event.x>current_x):
-                   if(event.x%1==0):
+                   if(event.x%2==0):
                         w=arg.cget('width')+1
                         arg.configure(width=w)
                         current_x=event.x
                if(event.x<current_x):
-                   if(event.x%1==0):
+                   if(event.x%2==0):
                         w=arg.cget('width')-1
                         arg.configure(width=w)
                         current_x=event.x
@@ -186,69 +185,6 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
                        arg.configure(height=h)
                        current_y=event.y
 
-
-       # if(widget.drag_start_x!=event.x):
-       #
-       #     if(event.x>current_x):
-       #         if(event.x%1==0):
-       #              w=arg.cget('width')+1
-       #              arg.configure(width=w)
-       #              current_x=event.x
-       #     if(event.x<current_x):
-       #         if(event.x%1==0):
-       #              w=arg.cget('width')-1
-       #              arg.configure(width=w)
-       #              current_x=event.x
-       #
-       # if(widget.drag_start_y!=event.y and flag==0):
-       #
-       #     if(event.y>current_y):
-       #         if(event.y%5==0):
-       #              h=arg.cget('height')+1
-       #              arg.configure(height=h)
-       #              current_y=event.y
-       #
-       #     if(event.y<current_y):
-       #         if(event.y%5==0):
-       #             h=arg.cget('height')-1
-       #             arg.configure(height=h)
-       #             current_y=event.y
-                    #widget.drag_start_x=event.x
-               # if(event.y%10==0):
-               #     h=arg.cget('height')-1
-               #     arg.configure(height=h)
-               #     widget.drag_start_y=1
-           # if(event.x<0):
-           #     print('this')
-           #
-           #     w=arg.cget('width')-event.x
-           #     arg.configure(width=w-10)
-           #     widget.drag_start_x=event.x
-       # if(widget.drag_start_y!=event.y):
-       #     if(event.y>=0):
-       #         if(event.x%7==0):
-       #             h=arg.cget('height')+1
-       #             arg.configure(height=h)
-       #             widget.drag_start_y=1
-       #     if(event.y<0):
-       #         h=arg.cget('height')-event.y
-       #
-       #         arg.configure(height=h)
-       #         widget.drag_start_y=event.y
-       # if(event.x<0 or event.y<0):
-       #     print('-')
-       #     w=arg.cget('width')-(event.x)
-       #     h=arg.cget('height')-(event.y)
-       #
-       #     print('current',arg.cget('width'))
-       #     print('width',w)
-       # if(event.x>=0 or event.y>0):
-       #     print('+')
-       #       w=arg.cget('width')+(event.x)
-       #       h=arg.cget('height')+(event.y)
-
-
-       #arg.configure(width=w,height=h)
     def r2_bindL(event,arg):
         #arg.configure(width=10,height=1)
         if(arg.winfo_class()=='Entry'):
@@ -258,12 +194,14 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
         else:
             update_h(arg.cget('height'))
             update_w(arg.cget('width'))
+
+
     l1.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
     l1.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
     l1.bind("<ButtonRelease-1>",lambda event,arg=widget_main:l1_bindR(event,arg))
-    r1.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
-    r1.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
-    r1.bind("<ButtonRelease-1>",lambda event,arg=widget_main:l1_bindR(event,arg))
+    r1.bind("<Button-1>",lambda event,arg=widget_main:r1_bindE(event,arg))
+    r1.bind("<B1-Motion>",lambda event,arg=widget_main:r1_bindM(event,arg))
+    r1.bind("<ButtonRelease-1>",lambda event,arg=widget_main:r1_bindL(event,arg))
     l2.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
     l2.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindL(event,arg))
     l2.bind("<ButtonRelease-1>",lambda event,arg=widget_main:l1_bindR(event,arg))
@@ -286,12 +224,12 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
 def stop_btn(event,root):    #invokes when drag is stopped.
     widget=event.widget
 
-    gl1.place(x=widget.winfo_x()-3,y=widget.winfo_y()-4)
-    gu.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()-4)
-    gr1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-4)
-    gl2.place(x=widget.winfo_x()-2,y=widget.winfo_y() +widget.winfo_height())
-    gd.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+1)
-    gr2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
+    gl1.place(x=widget.winfo_x()-4,y=widget.winfo_y()-6)
+    gu.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()-6)
+    gr1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-6)
+    gl2.place(x=widget.winfo_x()-4,y=widget.winfo_y()+widget.winfo_height()+2)
+    gd.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+2)
+    gr2.place(x=widget.winfo_x()+0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height()+2)
 
 
 
@@ -317,41 +255,44 @@ def motion(event,root,l1,l2,r1,r2,u,d):    #motion of widget
 def update_h(h):   #changing height dynamically
 
     widget=selected
+    widget.invoke()
     widget.configure(height=h)
     widget.update()
 
-    gl1.place(x=widget.winfo_x()-3,y=widget.winfo_y()-4)
-    gu.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()-4)
-    gr1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-4)
-    gl2.place(x=widget.winfo_x()-2,y=widget.winfo_y() +widget.winfo_height())
-    gd.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+1)
-    gr2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
+    gl1.place(x=widget.winfo_x()-4,y=widget.winfo_y()-6)
+    gu.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()-6)
+    gr1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-6)
+    gl2.place(x=widget.winfo_x()-4,y=widget.winfo_y()+widget.winfo_height()+2)
+    gd.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+2)
+    gr2.place(x=widget.winfo_x()+0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height()+2)
 
 def update_w(w):    #changing width dyanmically
 
     widget=selected
+
     widget.configure(width=w)
     widget.update()
     time.sleep(0.1)
-    gl1.place(x=widget.winfo_x()-3,y=widget.winfo_y()-4)
-    gu.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()-4)
-    gr1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-4)
-    gl2.place(x=widget.winfo_x()-2,y=widget.winfo_y() +widget.winfo_height())
-    gd.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+1)
-    gr2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
+    gl1.place(x=widget.winfo_x()-4,y=widget.winfo_y()-6)
+    gu.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()-6)
+    gr1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-6)
+    gl2.place(x=widget.winfo_x()-4,y=widget.winfo_y()+widget.winfo_height()+2)
+    gd.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+2)
+    gr2.place(x=widget.winfo_x()+0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height()+2)
 
 def update_w_progressbar(w):    #changing width dyanmically
 
     widget=selected
+    widget.invoke()
     widget.configure(length=w)
     widget.update()
     time.sleep(0.1)
     gl1.place(x=widget.winfo_x()-3,y=widget.winfo_y()-4)
-    gu.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()-4)
+    gu.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()-4)
     gr1.place(x=widget.winfo_x()-0 + widget.winfo_width(),y=widget.winfo_y()-4)
-    gl2.place(x=widget.winfo_x()-2,y=widget.winfo_y() +widget.winfo_height())
-    gd.place(x=widget.winfo_x()-0+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+1)
-    gr2.place(x=widget.winfo_x()-0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height())
+    gl2.place(x=widget.winfo_x()-4,y=widget.winfo_y()+widget.winfo_height()+2)
+    gd.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+2)
+    gr2.place(x=widget.winfo_x()+0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height()+2)
 
 def onfocus_color(color):    #changing on focus color
     current_color=selected.cget('background')

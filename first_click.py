@@ -139,7 +139,7 @@ def combobox_click(root):
 
 
 def progressbar_click(root):
-    progressbar=ttk.Progressbar(root,length=200)
+    progressbar=ttk.Progressbar(root,length=100)
     progressbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6))
     progressbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     progressbar.bind("<B1-Motion>", lambda event , arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6))
