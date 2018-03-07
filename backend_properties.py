@@ -39,7 +39,10 @@ def name_enter(event):
     widget=event.widget
     global name
     name=widget.get()
+    functions.update_w(functions.selected.cget('width'))
     functions.selected.configure(text=widget.get())
+
+    functions.update_w(functions.selected.cget('width'))
 
 
 def height_enter(event):
@@ -57,9 +60,11 @@ def width_enter(event):
 
     if(functions.selected.winfo_class()=="TProgressbar"):
         functions.selected.configure(length=widget.get())      #condition to change length(width in tk)
+        functions.update_w_progressbar(widget.get())     #diffrent function for Progressbar
     else:
         functions.selected.configure(width=widget.get())
-    functions.update_w_progressbar(widget.get())     #diffrent function for Progressbar
+        functions.update_w(widget.get())
+
 
 def fontcolor_enter(event):
     widget=event.widget
