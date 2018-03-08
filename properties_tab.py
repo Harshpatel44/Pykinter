@@ -178,7 +178,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     onfocus_bgcolor_enter.bind("<Return>",backend_properties.onfocus_bgcolor__enter)
     onfocus_bgcolor_enter.place(x=140,y=250)
 
-
+    
 
 
 
