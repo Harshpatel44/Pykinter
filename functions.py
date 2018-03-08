@@ -94,7 +94,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     r2.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height()+2)
 
 
-
+    global current_x,current_y
     current_x=0
     current_y=0
 
@@ -119,7 +119,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
 
 
            #print(w_init)
-           if(widget.drag_start_x!=event.x):
+            if(widget.drag_start_x!=event.x):
                if(event.x>current_x):
                    if(event.x%1==0):
                         w=(arg.configure()['length'][4])+3              #arg.configure() contains dictionary of attributes hance length is taken from there
@@ -184,9 +184,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
     def r1_bindL(event,arg):
         print()
 
-    global current_x,current_y
-    current_x=0
-    current_y=0
+
 
     def r2_bindE(event,arg):
        widget=event.widget
