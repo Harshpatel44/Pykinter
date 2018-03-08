@@ -7,7 +7,7 @@ g_root=0
 import time
 #from PIL import ImageTk,Image
 import properties_tab
-
+import backend_properties
 
 global gl1,gl2,gr1,gr2,gu,gd
 
@@ -301,7 +301,7 @@ def onfocus_color(color):    #changing on focus color
         event.widget.configure(background=str(new))
     def focus_reset(event,old):
         print(old)
-        event.widget.configure(background=str(old))
+        event.widget.configure(background=backend_properties.bg_color)
     selected.bind('<Enter>',lambda event,arg=color:focus_change(event,arg))     #selected is the current widget
     selected.bind('<Leave>',lambda event,arg=current_color:focus_reset(event,arg))
 
