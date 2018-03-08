@@ -13,6 +13,8 @@ global fontstyle
 global bg_color
 global bd_size
 global bd_color
+global onfocus_bdcolor
+global onfocus_textclor
 
 
 fontsize=10
@@ -122,10 +124,11 @@ def onfocus_bgcolor__enter(event):
     widget=event.widget
     global onfocus_bdcolor
     onfocus_bdcolor=widget.get()
-    functions.onfocus_color(onfocus_bdcolor)    #a special function for on focus color change.
+    functions.color_onfocus(onfocus_bdcolor)    #a special function for on focus color change.
 
 def onfocus_textcolor_enter(event):
     widget=event.widget
     global onfocus_textcolor
     onfocus_textcolor=widget.get()
-    functions.onfocus_text(onfocus_textcolor)
+    functions.color_onfocus(onfocus_textcolor)
+    functions.color_onfocus(onfocus_bdcolor)
