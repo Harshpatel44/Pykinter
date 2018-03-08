@@ -170,13 +170,15 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     #on focus dept
 
 
-    onfocus_bgcolor=tk.Label(props_frame,text="Onfocus:",width=10,bd=1,background="#333333",fg="#fef1e8")
+    onfocus_bgcolor=tk.Label(props_frame,text="Onfocus background:",width=10,bd=1,background="#6D7993",fg="#fef1e8")
     onfocus_bgcolor.place(x=30,y=250)
     onfocus_bgcolor_enter=tk.Entry(props_frame,width=20)
     onfocus_bgcolor_enter.bind("<Return>",backend_properties.onfocus_bgcolor__enter)
     onfocus_bgcolor_enter.bind("<FocusOut>",backend_properties.onfocus_bgcolor__enter)
     onfocus_bgcolor_enter.bind("<Return>",backend_properties.onfocus_bgcolor__enter)
     onfocus_bgcolor_enter.place(x=140,y=250)
+
+
 
 
 
