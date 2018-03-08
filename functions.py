@@ -375,25 +375,50 @@ def update_w_progressbar(w):    #changing width dyanmically
     gd.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+2)
     gr2.place(x=widget.winfo_x()+0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height()+2)
 
-def color_onfocus(color):
+def widget_focus(color_bg,color_text,flag):
 
-        current_color=selected.cget('background')
-        current_color_text=selected.cget('fg')
+    #only one of the 2 things will work at the same time hence , if we fill one ..other entry should be disabled showing this error
 
-        def focus_change(event,new):
-            print('new',new)
-            event.widget.configure(background=str(new))
-        def focus_reset(event,old):
-            print(old)
-            event.widget.configure(background=str(old))
-        selected.bind('<Enter>',lambda event,arg=color:focus_change(event,arg))     #selected is the current widget
-        selected.bind('<Leave>',lambda event,arg=current_color:focus_reset(event,arg))
+        current_color_bg=''
+        current_color_text=''
+        if(flag==0):
+
+            print(flag)
+            current_color_bg=selected.cget('background')
+        if(flag==1):
+            print(flag)
+            current_color_text=selected.cget('fg')
+            print('current text:',current_color_text)
+
+        def focus_change(event,new_bg,new_text,number):
+
+            if(number==0):
+                event.widget.configure(background=str(new_bg),fg=event.widget.cget('fg'),highlightcolor="#555555",highlightthickness=5)
+                event.widget.update()
 
 
 
-        def focus_change_text(event,new):
-            event.widget.configure(fg=str(new))
-        def focus_reset_text(event,old):
-            event.widget.configure(fg=str(old))
-        selected.bind("<Enter>",lambda event, arg=color:focus_change_text(event,arg))
-        selected.bind("<Leave>",lambda event,arg=current_color_text:focus_reset_text(event,arg))
+            if(number==1):
+                event.widget.configure(fg=str(new_text),background=event.widget.cget('background'))
+                event.widget.update()
+
+
+        def focus_reset(event,old_bg,old_text,number):
+
+            if(number==0):
+                event.widget.configure(background=old_bg,fg=event.widget.cget('fg'))
+                event.widget.update()
+
+            if(number==1):
+                print(old_text)
+                event.widget.configure(fg=str(old_text),background=event.widget.cget('background'))
+                event.widget.update()
+
+
+
+        selected.bind('<Enter>',lambda event,arg=color_bg,arg2=color_text,arg3=flag:focus_change(event,arg,arg2,arg3))     #selected is the current widget
+        selected.bind('<Leave>',lambda event,arg=current_color_bg,arg2=current_color_text,arg3=flag:focus_reset(event,arg,arg2,arg3))
+
+
+
+

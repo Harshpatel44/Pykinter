@@ -173,17 +173,17 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     onfocus_bgcolor=tk.Label(props_frame,text="Onfocus bg:",width=10,bd=1,background="#6D7993",fg="#fef1e8")
     onfocus_bgcolor.place(x=30,y=250)
     onfocus_bgcolor_enter=tk.Entry(props_frame,width=20)
-    onfocus_bgcolor_enter.bind("<Return>",backend_properties.onfocus_bgcolor__enter)
-    onfocus_bgcolor_enter.bind("<FocusOut>",backend_properties.onfocus_bgcolor__enter)
-    onfocus_bgcolor_enter.bind("<Return>",backend_properties.onfocus_bgcolor__enter)
+    onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_bgcolor_enter.bind("<FocusOut>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_bgcolor_enter.place(x=140,y=250)
 
     onfocus_textcolor=tk.Label(props_frame,text="Onfocus text:",width=10,bd=1,background="#6D7993",fg="#fef1e8")
     onfocus_textcolor.place(x=30,y=270)
     onfocus_textcolor_enter=tk.Entry(props_frame,width=20)
-    onfocus_textcolor_enter.bind("<Return>",backend_properties.onfocus_textcolor_enter)
-    onfocus_textcolor_enter.bind("<FocusOut>",backend_properties.onfocus_textcolor_enter)
-    onfocus_textcolor_enter.bind("<Return>",backend_properties.onfocus_textcolor_enter)
+    onfocus_textcolor_enter.bind("<Return>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_textcolor_enter.bind("<FocusOut>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_textcolor_enter.bind("<Return>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_textcolor_enter.place(x=140,y=270)
 
 
