@@ -189,6 +189,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
 
+
     # bgonfocus_color=tk.Entry(props_frame,width=20)
     # bgonfocus_color.place(x=110,y=30)
     #
