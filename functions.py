@@ -7,7 +7,7 @@ g_root=0
 import time
 #from PIL import ImageTk,Image
 import properties_tab
-
+import backend_properties
 
 global gl1,gl2,gr1,gr2,gu,gd
 
@@ -375,14 +375,25 @@ def update_w_progressbar(w):    #changing width dyanmically
     gd.place(x=widget.winfo_x()-1+(widget.winfo_width())/2,y=widget.winfo_y()+widget.winfo_height()+2)
     gr2.place(x=widget.winfo_x()+0+widget.winfo_width(),y=widget.winfo_y()+widget.winfo_height()+2)
 
-def onfocus_color(color):    #changing on focus color
-    current_color=selected.cget('background')
-    def focus_change(event,new):
-        print('new',new)
-        event.widget.configure(background=str(new))
-    def focus_reset(event,old):
-        print(old)
-        event.widget.configure(background=str(old))
-    selected.bind('<Enter>',lambda event,arg=color:focus_change(event,arg))     #selected is the current widget
-    selected.bind('<Leave>',lambda event,arg=current_color:focus_reset(event,arg))
+def color_onfocus(color):
 
+        current_color=selected.cget('background')
+        current_color_text=selected.cget('fg')
+
+        def focus_change(event,new):
+            print('new',new)
+            event.widget.configure(background=str(new))
+        def focus_reset(event,old):
+            print(old)
+            event.widget.configure(background=str(old))
+        selected.bind('<Enter>',lambda event,arg=color:focus_change(event,arg))     #selected is the current widget
+        selected.bind('<Leave>',lambda event,arg=current_color:focus_reset(event,arg))
+
+
+
+        def focus_change_text(event,new):
+            event.widget.configure(fg=str(new))
+        def focus_reset_text(event,old):
+            event.widget.configure(fg=str(old))
+        selected.bind("<Enter>",lambda event, arg=color:focus_change_text(event,arg))
+        selected.bind("<Leave>",lambda event,arg=current_color_text:focus_reset_text(event,arg))
