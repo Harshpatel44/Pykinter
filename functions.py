@@ -305,3 +305,11 @@ def onfocus_color(color):    #changing on focus color
     selected.bind('<Enter>',lambda event,arg=color:focus_change(event,arg))     #selected is the current widget
     selected.bind('<Leave>',lambda event,arg=current_color:focus_reset(event,arg))
 
+def onfocus_text(color):
+    current_color_text=selected.cget("fg")
+    def focus_change_text(event,new):
+        event.widget.configure(fg=str(new))
+    def focus_reset_text(event,old):
+        event.widget.configure(fg=backend_properties.fontcolor_enter)
+    selected.bind("<Enter>",lambda event, arg=color:focus_change_text(event,arg))
+    selected.bind("<Leave>",lambda event,arg=current_color_text:focus_reset_text(event,arg))

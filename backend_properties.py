@@ -120,6 +120,12 @@ def bdcolor_enter(event):
 
 def onfocus_bgcolor__enter(event):
     widget=event.widget
-    global onfocus_bgcolor
+    global onfocus_bdcolor
     onfocus_bdcolor=widget.get()
     functions.onfocus_color(onfocus_bdcolor)    #a special function for on focus color change.
+
+def onfocus_textcolor_enter(event):
+    widget=event.widget
+    global onfocus_textcolor
+    onfocus_textcolor=widget.get()
+    functions.onfocus_text(onfocus_textcolor)
