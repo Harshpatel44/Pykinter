@@ -301,7 +301,7 @@ def onfocus_color(color):    #changing on focus color
         event.widget.configure(background=str(new))
     def focus_reset(event,old):
         print(old)
-        event.widget.configure(background=backend_properties.bg_color)
+        event.widget.configure(background=backend_properties.bg_enter)
     selected.bind('<Enter>',lambda event,arg=color:focus_change(event,arg))     #selected is the current widget
     selected.bind('<Leave>',lambda event,arg=current_color:focus_reset(event,arg))
 
