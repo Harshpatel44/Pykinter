@@ -95,13 +95,98 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
 
 
 
+    current_x=0
+    current_y=0
+
     def r1_bindE(event,arg):
-        print()
+        widget=event.widget
+
+        widget.drag_start_x=event.x
+        widget.drag_start_y=event.y
+
     def r1_bindM(event,arg):
-        print()
-    def t1_bindL(event_arg):
+       global current_x,current_y
+       widget=event.widget
+
+       l1.place_forget()   #hiding the selection dots
+       l2.place_forget()
+       r1.place_forget()
+       r2.place_forget()
+       u.place_forget()
+       d.place_forget()
+
+       if(arg.winfo_class()=='TProgressbar'):
+
+
+           #print(w_init)
+           if(widget.drag_start_x!=event.x):
+               if(event.x>current_x):
+                   if(event.x%1==0):
+                        w=(arg.configure()['length'][4])+3              #arg.configure() contains dictionary of attributes hance length is taken from there
+                        arg.configure(length=w)
+                        current_x=event.x
+               if(event.x<current_x):
+                   if(event.x%1==0):
+                        w=(arg.configure()['length'][4])-3
+                        arg.configure(length=w)
+                        current_x=event.x
+
+       elif(arg.winfo_class()=="Entry"):
+           #w_init=arg.cget('width')
+           if(widget.drag_start_x!=event.x):
+
+               if(event.x>current_x):
+                   if(event.x%1==0):
+                        w=arg.cget('width')+1
+                        arg.configure(width=w)
+                        current_x=event.x
+               if(event.x<current_x):
+                   if(event.x%1==0):
+                        w=arg.cget('width')-1
+                        arg.configure(width=w)
+                        current_x=event.x
+       else:
+
+           h_init=arg.cget('height')
+           w_init=arg.cget('width')
+           if(widget.drag_start_x!=event.x):
+
+               if(event.x>current_x):
+                   if(event.x%2==0):
+                        w=arg.cget('width')+1
+                        arg.configure(width=w)
+                        current_x=event.x
+               if(event.x<current_x):
+                   if(event.x%2==0):
+                        w=arg.cget('width')-1
+                        arg.configure(width=w)
+                        current_x=event.x
+
+           if(widget.drag_start_y!=event.y):
+
+               if(event.y<current_y):
+                   if(event.y%5==0):
+                        h=arg.cget('height')+1
+                        arg.configure(height=h)
+                        current_y=event.y
+
+                        arg.place(x=arg.winfo_x(),y=(arg.winfo_y())-15)
+                        arg.update()
+
+               if(event.y>current_y):
+                   if(event.y%5==0):
+                       h=arg.cget('height')-1
+                       arg.configure(height=h)
+                       current_y=event.y
+                       arg.place(x=arg.winfo_x(),y=(arg.winfo_y())+15)
+
+
+    def r1_bindL(event,arg):
         print()
 
+    global current_x,current_y
+    current_x=0
+    current_y=0
 
     def r2_bindE(event,arg):
        widget=event.widget
@@ -110,9 +195,7 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
        widget.drag_start_y=event.y
 
        #widget.bind("<Button-1>",lambda event,arg=widget:start_point(event,widget))
-    global current_x,current_y
-    current_x=0
-    current_y=0
+
     def r2_bindM(event,arg):
        global current_x,current_y
        widget=event.widget
