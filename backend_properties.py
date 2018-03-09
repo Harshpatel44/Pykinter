@@ -20,12 +20,15 @@ global onfocus_textclor
 fontsize=10
 
 
-def check_configure(name_enter,height_enter,width_enter):
+def check_configure(name_enter,height_enter,fontstyle_enter):
 
     if(functions.selected.winfo_class()=="Entry"):
 
         name_enter.configure(state=tk.DISABLED)
         height_enter.configure(state=tk.DISABLED)
+        fontstyle_enter.configure(state=tk.DISABLED)
+
+
 
         functions.selected.update()
 
@@ -34,6 +37,7 @@ def check_configure(name_enter,height_enter,width_enter):
         name_enter.configure(state=tk.DISABLED)
         height_enter.configure(state=tk.DISABLED)
 
+   # elif(functions.selected.winfo_class()=="")
     else:
          name_enter.configure(state=tk.NORMAL)
          height_enter.configure(state=tk.NORMAL)
@@ -45,8 +49,6 @@ def name_enter(event):
     name=widget.get()
     functions.update_w(functions.selected.cget('width'))
     functions.selected.configure(text=widget.get())
-
-
 
 
 def height_enter(event):
