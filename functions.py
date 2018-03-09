@@ -255,16 +255,19 @@ def start_btn(event,root,l1,l2,r1,r2,u,d):
            if(widget.drag_start_y!=event.y):
 
                if(event.y>current_y):
-                   if(event.y%5==0):
+                   if(event.y%3==0):
                         h=arg.cget('height')+1
                         arg.configure(height=h)
                         current_y=event.y
 
                if(event.y<current_y):
-                   if(event.y%5==0):
-                       h=arg.cget('height')-1
-                       arg.configure(height=h)
-                       current_y=event.y
+                   if(event.y%3==0):
+                       if(arg.cget('height')==1):
+                           pass
+                       else:
+                           h=arg.cget('height')-1
+                           arg.configure(height=h)
+                           current_y=event.y
 
     def r2_bindL(event,arg):
         #arg.configure(width=10,height=1)

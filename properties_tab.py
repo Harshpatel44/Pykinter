@@ -23,6 +23,7 @@ acn=tk.StringVar()
 bdn=tk.StringVar()
 bcn=tk.StringVar()
 bce=tk.StringVar()
+
 name_enter=''
 height_enter=''
 width_enter=''
@@ -41,7 +42,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
 
-    global name_enter,width_enter,height_enter
+    global name_enter,width_enter,height_enter,fontstyle_enter
 
 
 
