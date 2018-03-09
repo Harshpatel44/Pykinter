@@ -26,10 +26,11 @@ bce=tk.StringVar()
 name_enter=''
 height_enter=''
 width_enter=''
+fontstyle_enter=''
 
 def sync_widget():
 
-    backend_properties.check_configure(name_enter,height_enter,width_enter)    #configures which attrivutes should be disabled acc to widgets
+    backend_properties.check_configure(name_enter,height_enter,fontstyle_enter)    #configures which attrivutes should be disabled acc to widgets
 
 
 
