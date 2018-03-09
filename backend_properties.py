@@ -27,7 +27,9 @@ def check_configure(name_enter,height_enter,width_enter):
         name_enter.configure(state=tk.DISABLED)
         height_enter.configure(state=tk.DISABLED)
 
-    if(functions.selected.winfo_class()=="TProgressbar"):
+        functions.selected.update()
+
+    elif(functions.selected.winfo_class()=="TProgressbar"):
 
         name_enter.configure(state=tk.DISABLED)
         height_enter.configure(state=tk.DISABLED)
@@ -44,12 +46,12 @@ def name_enter(event):
     functions.update_w(functions.selected.cget('width'))
     functions.selected.configure(text=widget.get())
 
-    functions.update_w(functions.selected.cget('width'))
+
 
 
 def height_enter(event):
     widget=event.widget
-    print(widget)
+
     global height
     height=widget.get()
     functions.update_h(widget.get())
@@ -63,6 +65,7 @@ def width_enter(event):
     if(functions.selected.winfo_class()=="TProgressbar"):
         functions.selected.configure(length=widget.get())      #condition to change length(width in tk)
         functions.update_w_progressbar(widget.get())     #diffrent function for Progressbar
+
     else:
         functions.selected.configure(width=widget.get())
         functions.update_w(widget.get())
@@ -129,7 +132,7 @@ def onfocus_bgcolor__enter(event,number):   #number 1 for bgcolor and number 2 f
         onfocus_bdcolor=widget.get()
     if(number==1):
         onfocus_textcolor=widget.get()
-        print('text color_bp',onfocus_textcolor)
+
     functions.widget_focus(onfocus_bdcolor,onfocus_textcolor,number)    #a special function for on focus color change.
 
 

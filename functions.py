@@ -364,7 +364,7 @@ def update_w(w):    #changing width dyanmically
 def update_w_progressbar(w):    #changing width dyanmically
 
     widget=selected
-    widget.invoke()
+
     widget.configure(length=w)
     widget.update()
     time.sleep(0.1)
@@ -393,7 +393,7 @@ def widget_focus(color_bg,color_text,flag):
         def focus_change(event,new_bg,new_text,number):
 
             if(number==0):
-                event.widget.configure(background=str(new_bg),fg=event.widget.cget('fg'),highlightcolor="#555555",highlightthickness=5)
+                event.widget.configure(background=str(new_bg),fg=event.widget.cget('fg'))
                 event.widget.update()
 
 
