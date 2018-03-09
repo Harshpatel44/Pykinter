@@ -126,7 +126,7 @@ def bdcolor_enter(event):
 def onfocus_bgcolor__enter(event,number):   #number 1 for bgcolor and number 2 for textcolor
     widget=event.widget
     onfocus_bdcolor=''
-    onfocus_textcolor=''
+    onfocus_textcolor=''     #onfocus textcolor
 
     if(number==0):
         onfocus_bdcolor=widget.get()
