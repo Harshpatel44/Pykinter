@@ -92,6 +92,7 @@ class main_frame(tk.Frame,main):
             titleName=tk.Label(self,text="PyKinter",background="White",fg="black")
             titleName.place(x=10,y=1)
 
+
             closeButton=tk.Canvas(self,height=10,width=10,background="#333333",relief='flat')
             closeButton.place(x=1260,y=2)
             closeButton.bind('<Enter>',entering)
