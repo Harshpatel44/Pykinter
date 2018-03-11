@@ -191,10 +191,14 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     onfocus_textcolor_enter.place(x=140,y=270)
 
 
+    def function(value):
+           print(value)
 
     #cursors department
     var.set(cursorlist[0])
-    listbox=tk.OptionMenu(props_frame,var,*cursorlist)
+    listbox=tk.OptionMenu(props_frame,var,*cursorlist,command=function)
+    listbox.place(x=30,y=290)
+
 
 
     #on click dept
