@@ -23,12 +23,14 @@ acn=tk.StringVar()
 bdn=tk.StringVar()
 bcn=tk.StringVar()
 bce=tk.StringVar()
+var=tk.StringVar()
 
 name_enter=''
 height_enter=''
 width_enter=''
 fontstyle_enter=''
 
+cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart"]
 def sync_widget():
 
     backend_properties.check_configure(name_enter,height_enter,fontstyle_enter)    #configures which attrivutes should be disabled acc to widgets
@@ -190,20 +192,9 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
 
-
-
-    # bgonfocus_color=tk.Entry(props_frame,width=20)
-    # bgonfocus_color.place(x=110,y=30)
-    #
-    # onfocus_textname=tk.Label(props_frame,text="Name:",width=10,bd=1,background="#333333",fg="#fef1e8")
-    # onfocus_textname.place(x=30,y=30)
-    #
-    # onfocustext_enter=tk.Entry(props_frame,width=20)
-    # onfocustext_enter.place(x=110,y=30)
-
-
-
-    #finish on focus dept
+    #cursors department
+    var.set(cursorlist[0])
+    listbox=tk.OptionMenu(props_frame,var,*cursorlist)
 
 
     #on click dept
