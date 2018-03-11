@@ -4,6 +4,7 @@ __author__ = 'Harsh'
 import tkinter  as tk
 import backend_properties
 import tkinter.ttk as ttk
+from tkcolorpicker import askcolor
 
 root=tk.Tk()
 root.withdraw()
@@ -30,6 +31,12 @@ name_enter=''
 height_enter=''
 width_enter=''
 fontstyle_enter=''
+
+
+def get_color():
+    color=askcolor()
+    print(color)
+
 
 cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart"]
 def sync_widget():
@@ -116,11 +123,13 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     change_fontcolor=tk.Label(props_frame,text="Font Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     change_fontcolor.place(x=30,y=110)
-    fontcolor_enter=tk.Entry(props_frame,width=20,textvariable=fce)
+    fontcolor_enter=tk.Entry(props_frame,width=10,textvariable=fce)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<FocusOut>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
     fontcolor_enter.place(x=140,y=110)
+    Button1=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button1.place(x=185,y=110)
 
     fontstyle_name=tk.Label(props_frame,text="Font Style:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     fontstyle_name.place(x=30,y=130)
@@ -192,7 +201,6 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     onfocus_textcolor_enter.place(x=140,y=270)
 
     #cursors department
-
 
 
     listbox_enter=tk.Label(props_frame,text="Cursor style",width=15,bd=1,background="#6D7993",fg="#fef1e8")
