@@ -38,7 +38,7 @@ def get_color():
     print(color)
 
 
-cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart"]
+cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart","clock","man","mouse","pirate","plus","shuttle","sizing","spider","spraycan","star","target","tcross","trek","watch"]
 def sync_widget():
 
     backend_properties.check_configure(name_enter,height_enter,fontstyle_enter)    #configures which attrivutes should be disabled acc to widgets
@@ -128,7 +128,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     fontcolor_enter.bind("<FocusOut>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
     fontcolor_enter.place(x=140,y=110)
-    Button1=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button1=tk.Button(props_frame,text="Choose",width=10,background="#6D7993",fg="#fef1e8",command=lambda:get_color)
     Button1.place(x=185,y=110)
 
     fontstyle_name=tk.Label(props_frame,text="Font Style:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
