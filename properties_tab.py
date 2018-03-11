@@ -198,7 +198,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     listbox_enter=tk.Label(props_frame,text="Cursor style",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     listbox_enter.place(x=30,y=290)
     var.set(cursorlist[1])
-    listbox=ttk.OptionMenu(props_frame,var,cursorlist[1],*cursorlist,command=lambda event:backend_properties.cursor_change)
+    listbox=ttk.OptionMenu(props_frame,var,cursorlist[1],*cursorlist,command=backend_properties.cursor_change)
     listbox.place(x=140,y=290)
 
 
