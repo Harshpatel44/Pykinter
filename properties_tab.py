@@ -4,7 +4,7 @@ __author__ = 'Harsh'
 import tkinter  as tk
 import backend_properties
 import tkinter.ttk as ttk
-from tkcolorpicker import askcolor
+from tkinter.colorchooser import askcolor
 
 root=tk.Tk()
 root.withdraw()
