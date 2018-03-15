@@ -88,15 +88,6 @@ def fontstyle_enter(event):
 
 
 
-# def font_enter(event):
-#     widget=event.widget
-#     widget_change=functions.selected
-#     widget_change.configure(font=(widget.get()))
-
-
-
-
-
 
 def fontsize_enter(event):
     widget=event.widget
@@ -136,6 +127,9 @@ def onfocus_bgcolor__enter(event,number):   #number 1 for bgcolor and number 2 f
         onfocus_textcolor=widget.get()
 
     functions.widget_focus(onfocus_bdcolor,onfocus_textcolor,number)    #a special function for on focus color change.
+
+def cursor_change(value):
+    print(value)
 
 
 
