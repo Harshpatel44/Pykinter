@@ -6,6 +6,7 @@ selected=0
 g_root=0
 import time
 import properties_tab
+import right_click
 
 
 global gl1,gl2,gr1,gr2,gu,gd,gl,gr
@@ -100,9 +101,17 @@ def start_btn(event,root,l1,l2,r1,r2,u,d,l,r):
     l.configure(height=4,width=4,background="#666666",cursor="left_tee")
     l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
 
+    def right_click_fn(event):
+        right_click.menu(event,root)
+    selected.bind('<Button-3>',right_click_fn)
+
+
+
     global current_x,current_y
     current_x=0
     current_y=0
+
+
 
     def r_bindE(event,arg):
         widget=event.widget
@@ -317,11 +326,13 @@ def start_btn(event,root,l1,l2,r1,r2,u,d,l,r):
        d.place_forget()
        l.place_forget()
        r.place_forget()
-
+       factor=3
        if(arg.winfo_class()=='TProgressbar'):
             pass
        if(arg.winfo_class()=='Entry'):
             pass
+       if(arg.winfo_class()=='Listbox'):
+            factor=3
 
        #
        #     #print(w_init)
@@ -367,16 +378,17 @@ def start_btn(event,root,l1,l2,r1,r2,u,d,l,r):
            #              arg.configure(width=w)
            #              current_x=event.x
 
+
        if(widget.drag_start_y!=event.y):
 
            if(event.y>current_y):
-               if(event.y%3==0):
+               if(event.y%factor==0):
                     h=arg.cget('height')+1
                     arg.configure(height=h)
                     current_y=event.y
 
            if(event.y<current_y):
-               if(event.y%3==0):
+               if(event.y%factor==0):
                    if(arg.cget('height')==1):
                        current_y=event.y
                        pass

@@ -7,12 +7,22 @@ from PIL import ImageTk
 root = tk.Tk()
 
 
-b = tk.Label(root,bd=0,height=200,width=200)
-image = ImageTk.PhotoImage(file="scrollbar.PNG")
-b.config(image=image)
-b.image = image
-b.place(x=10,y=10)
+# b = tk.Label(root,bd=0,height=200,width=200)
+# image = ImageTk.PhotoImage(file="scrollbar.PNG")
+# b.config(image=image)
+# b.image = image
+# b.place(x=10,y=10)
+winfo_x
+canvas=tk.Canvas(height=400,width=100,background="#555555")
+canvas.place(x=10,y=10)
 
+
+
+# bg_color="#fef1e8"
+# B1=tk.Button(root,text="Button",height=1,bd=0,highlightthickness=5,highlightbackground="black",width=10,background=bg_color,relief=tk.RAISED)
+# B1.pack()
+# ButtonButton=tk.Button(root,text="Button",height=1,width=10,highlightthickness=5,background="#fef1e8",foreground="SystemButtonText",relief=tk.RAISED,bd=0)
+# ButtonButton.pack()
 # frame=tk.Frame(root,width="200",height="200")
 # canvas=tk.Canvas(frame,height="123",width="25",background="#dddddd")
 # canvas.create_rectangle(2,2,25,25,fill="#dddddd")

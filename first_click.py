@@ -65,7 +65,7 @@ def moveIn_Frame(event_main,centre_frame,taskbar,working_window):              #
 
 def button(root):           #bindings for buttons
 
-    B1=tk.Button(root,text="Button",height=1,bd=0,highlightthickness=5,highlightbackground="black",width=10,background=bg_color,relief=tk.RAISED)
+    B1=tk.Button(root,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
     B1.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     B1.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
