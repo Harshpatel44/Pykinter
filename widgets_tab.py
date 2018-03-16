@@ -105,7 +105,7 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
 
 
     #b=tk.Button()
-    button=tk.Button(widgets_frame,text="Button",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief=tk.SUNKEN,command=lambda: first_click.button(working_window))
+    button=tk.Button(widgets_frame,text="Button",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief=tk.SUNKEN,command=lambda: first_click.button(working_window,middle_frame2))
     button.config(font=('Copperplate Gothic Light',12))
     button.place(x=10,y=30)
 

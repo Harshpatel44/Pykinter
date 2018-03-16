@@ -5,6 +5,7 @@ __author__ = 'Harsh'
 selected=0
 g_root=0
 import time
+import tkinter as tk
 import properties_tab
 import right_click
 
@@ -16,7 +17,6 @@ global gl1,gl2,gr1,gr2,gu,gd,gl,gr
 
 def start_frame(event,taskbar,root,l1,l2,r1,r2,u,d):
     widget=root
-
     global gl1,gl2,gr1,gr2,gu,gd,selected,g_root
     gl1=l1
     gl2=l2
@@ -58,7 +58,7 @@ def motion_frame(event,taskbar,root):
 
 
 
-def start_btn(event,root,l1,l2,r1,r2,u,d,l,r):
+def start_btn(event,root,root_parent,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
     widget_main=event.widget
 
 
@@ -101,9 +101,20 @@ def start_btn(event,root,l1,l2,r1,r2,u,d,l,r):
     l.configure(height=4,width=4,background="#666666",cursor="left_tee")
     l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
 
+
+     #these functions are for right click context menu
     def right_click_fn(event):
-        right_click.menu(event,root)
+
+        right_click.menu_start(event,root)
+    def right_click_close(event):
+         right_click.menu_close(event,root)
+
+    # #giving all the bindings for right click context menu
     selected.bind('<Button-3>',right_click_fn)
+    selected.bind('<Button-1>',right_click_close)
+    root.bind('<Button-1>',right_click_close)
+    root_parent.bind("<Button-1>",right_click_close)
+
 
 
 

@@ -12,9 +12,14 @@ root = tk.Tk()
 # b.config(image=image)
 # b.image = image
 # b.place(x=10,y=10)
-winfo_x
-canvas=tk.Canvas(height=400,width=100,background="#555555")
+canvas=tk.Canvas(root,height=400,width=100,background="#555555")
 canvas.place(x=10,y=10)
+button=tk.Button(canvas,text="button")
+button.pack()
+f=button.master
+f.configure(width=500)
+print(button._nametowidget(root))
+
 
 
 

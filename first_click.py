@@ -25,6 +25,7 @@ def allTime(root):
     l.place_forget()
     r=tk.Canvas(root,bd=0,highlightthickness=0)
     r.place_forget()
+
     #rect=root.create_rectangle(0,0,200,200,fill="red")
 
 
@@ -42,6 +43,7 @@ def forget_all(root):          # to hide the selection dots
      d.place_forget()
      l.place_forget()
      r.place_forget()
+
      root.configure(highlightbackground="#555555")
 
 
@@ -55,6 +57,7 @@ def startMultiSelect(event):
     l.place_forget()
     r.place_forget()
 
+
 def moveIn_Frame(event_main,centre_frame,taskbar,working_window):              #bindings when we enter in centre frame
 
     working_window.bind("<Button-1>",lambda event,arg=working_window:startMultiSelect(centre_frame))    #to hide the selection_lines when clicked on the frame
@@ -63,10 +66,10 @@ def moveIn_Frame(event_main,centre_frame,taskbar,working_window):              #
     taskbar.bind("<B1-Motion>",lambda event,arg=taskbar,arg2=centre_frame: functions.motion_frame(event,arg,arg2))
     taskbar.bind("<ButtonRelease-1>",lambda event,arg2=centre_frame: functions.stop_frame(event,arg2))
 
-def button(root):           #bindings for buttons
+def button(root,root_parent):           #bindings for buttons
 
     B1=tk.Button(root,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
-    B1.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+    B1.bind("<Button-1>",lambda event,arg2=root,arg3=root_parent,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
     B1.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     update.get_data(B1)

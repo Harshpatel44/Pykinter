@@ -79,7 +79,7 @@ class frame1(tk.Frame,main):
         closeButton.bind("<Button-1>",lambda event,arg=self,arg2=main:close(event,arg,arg2))
         closeButton.bind('<Leave>',leaving)
         ButtonButton=tk.Button(self,text="Button",height=1,width=10,background="#fef1e8",foreground="SystemButtonText",relief=tk.RAISED,bd=0)
-        ButtonButton.place(x=10,y=30)
+        ButtonButton.place(x=178,y=100)
 
 class frame2(tk.Frame):
     def __init__(self,parent,controller):
