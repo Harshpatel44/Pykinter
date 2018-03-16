@@ -9,6 +9,7 @@ bg_color="#fef1e8"
 
 def allTime(root,middle_frame2):
     global l1,l2,r1,r2,u,d,rect,l,r,rc
+
     l1=tk.Canvas(root,bd=0,highlightthickness=0)   #creation of 6 dots which makes the selected part of the widget
     l1.place_forget()
     l2=tk.Canvas(root,bd=0,highlightthickness=0)
@@ -25,7 +26,7 @@ def allTime(root,middle_frame2):
     l.place_forget()
     r=tk.Canvas(root,bd=0,highlightthickness=0)
     r.place_forget()
-    rc=tk.Canvas(middle_frame2,height=180,width=120,background="#f7f7f7",bd=0)
+    rc=tk.Canvas(middle_frame2,height=177,width=150,background="#f7f7f7",bd=0)
     rc.place_forget()
     #rect=root.create_rectangle(0,0,200,200,fill="red")
 
