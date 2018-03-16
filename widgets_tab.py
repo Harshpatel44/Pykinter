@@ -79,7 +79,7 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
         centre_frame.configure(height=h)
         working_window.configure(height=h-26)
 
-    first_click.allTime(working_window)    #by default initializing selections lines using this function
+    first_click.allTime(working_window,middle_frame2)    #by default initializing selections lines using this function
 
 
     screenx_name=tk.Label(middle_frame2,text="X:",width=2,bd=1,background="#333333",fg="#fef1e8")

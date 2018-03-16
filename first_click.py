@@ -7,8 +7,8 @@ import update
 from PIL import ImageTk
 bg_color="#fef1e8"
 
-def allTime(root):
-    global l1,l2,r1,r2,u,d,rect,l,r
+def allTime(root,middle_frame2):
+    global l1,l2,r1,r2,u,d,rect,l,r,rc
     l1=tk.Canvas(root,bd=0,highlightthickness=0)   #creation of 6 dots which makes the selected part of the widget
     l1.place_forget()
     l2=tk.Canvas(root,bd=0,highlightthickness=0)
@@ -25,7 +25,8 @@ def allTime(root):
     l.place_forget()
     r=tk.Canvas(root,bd=0,highlightthickness=0)
     r.place_forget()
-
+    rc=tk.Canvas(middle_frame2,height=180,width=120,background="#f7f7f7",bd=0)
+    rc.place_forget()
     #rect=root.create_rectangle(0,0,200,200,fill="red")
 
 
@@ -43,6 +44,7 @@ def forget_all(root):          # to hide the selection dots
      d.place_forget()
      l.place_forget()
      r.place_forget()
+     rc.place_forget()
 
      root.configure(highlightbackground="#555555")
 
@@ -56,6 +58,7 @@ def startMultiSelect(event):
     d.place_forget()
     l.place_forget()
     r.place_forget()
+    rc.place_forget()
 
 
 def moveIn_Frame(event_main,centre_frame,taskbar,working_window):              #bindings when we enter in centre frame
@@ -69,7 +72,7 @@ def moveIn_Frame(event_main,centre_frame,taskbar,working_window):              #
 def button(root,root_parent):           #bindings for buttons
 
     B1=tk.Button(root,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
-    B1.bind("<Button-1>",lambda event,arg2=root,arg3=root_parent,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+    B1.bind("<Button-1>",lambda event,arg2=root,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
     B1.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     update.get_data(B1)

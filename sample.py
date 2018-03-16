@@ -12,14 +12,24 @@ root = tk.Tk()
 # b.config(image=image)
 # b.image = image
 # b.place(x=10,y=10)
-canvas=tk.Canvas(root,height=400,width=100,background="#555555")
-canvas.place(x=10,y=10)
-button=tk.Button(canvas,text="button")
-button.pack()
-f=button.master
-f.configure(width=500)
-print(button._nametowidget(root))
+# canvas=tk.Canvas(root,height=400,width=100,background="#555555")
+# canvas.place(x=10,y=10)
+# button=tk.Button(canvas,text="button")
+# button.pack()
+# f=button.master
+# f.configure(width=500)
+# print(button._nametowidget(root))
 
+def main():
+    import tkinter
+    t = tkinter.Canvas()
+    t.pack()
+    while 1:
+        for i in range(1000):
+            t.create_line((0, i, i, 100))
+        t.update()
+        t.delete("all")
+main()
 
 
 

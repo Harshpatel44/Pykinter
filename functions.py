@@ -58,7 +58,7 @@ def motion_frame(event,taskbar,root):
 
 
 
-def start_btn(event,root,root_parent,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
+def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
     widget_main=event.widget
 
 
@@ -104,16 +104,15 @@ def start_btn(event,root,root_parent,l1,l2,r1,r2,u,d,l,r):    #rc is right click
 
      #these functions are for right click context menu
     def right_click_fn(event):
-
-        right_click.menu_start(event,root)
+         right_click.menu_start(event,root,rc)
     def right_click_close(event):
-         right_click.menu_close(event,root)
+         right_click.menu_close(event,root,rc)
 
     # #giving all the bindings for right click context menu
     selected.bind('<Button-3>',right_click_fn)
     selected.bind('<Button-1>',right_click_close)
     root.bind('<Button-1>',right_click_close)
-    root_parent.bind("<Button-1>",right_click_close)
+    #root_parent.bind("<Button-1>",right_click_close)
 
 
 
