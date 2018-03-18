@@ -274,6 +274,16 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_height_enter.bind("<Return>")
     taskbar_height_enter.place(x=140,y=480)
 
+    taskbar_width=tk.Label(props_frame,text="Taskbar width",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    taskbar_width.place(x=30,y=460)
+    taskbar_width_enter=tk.Entry(props_frame)
+    taskbar_width_enter.bind("<Return>")
+    taskbar_width_enter.bind("<FocusOut>")
+    taskbar_width_enter.bind("<Return>")
+    taskbar_width_enter.place(x=140,y=460)
+
+
+
 
 
 
