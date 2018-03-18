@@ -155,48 +155,48 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     #font
     Font=tk.Label(props_frame,text='Font properties',width=15,background="#6D7993",fg="#fef1e8")
-    Font.place(x=100,y=190)
+    Font.place(x=100,y=200)
 
     change_fontcolor=tk.Label(props_frame,text="Font Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    change_fontcolor.place(x=30,y=210)
+    change_fontcolor.place(x=30,y=220)
     fontcolor_enter=tk.Entry(props_frame,width=10,textvariable=fce)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<FocusOut>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
-    fontcolor_enter.place(x=140,y=210)
+    fontcolor_enter.place(x=140,y=220)
     Button1=tk.Button(props_frame,text="Choose",width=10,background="#6D7993",fg="#fef1e8",command=get_color)
-    Button1.place(x=185,y=210)
+    Button1.place(x=185,y=220)
 
     fontstyle_name=tk.Label(props_frame,text="Font Style:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    fontstyle_name.place(x=30,y=230)
+    fontstyle_name.place(x=30,y=240)
     fontstyle_enter=tk.Entry(props_frame,width=20,textvariable=fse)
     fontstyle_enter.bind("<Return>",backend_properties.fontstyle_enter)
     fontstyle_enter.bind("<FocusOut>",backend_properties.fontstyle_enter)
     fontstyle_enter.bind("<Return>",backend_properties.fontstyle_enter)
-    fontstyle_enter.place(x=140,y=230)
+    fontstyle_enter.place(x=140,y=240)
 
 
     font_size=tk.Label(props_frame,text="Font size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    font_size.place(x=30,y=250)
+    font_size.place(x=30,y=260)
     fontsize_enter=tk.Entry(props_frame,width=20,textvariable=fsie)
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
     fontsize_enter.bind("<FocusOut>",backend_properties.fontsize_enter)
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
-    fontsize_enter.place(x=140,y=250)
+    fontsize_enter.place(x=140,y=260)
 
 
     Onfocus=tk.Label(props_frame,text="OnFocus Properties",width=15,background='#6D7993',fg="#fef1e8")
-    Onfocus.place(x=100,y=270)
+    Onfocus.place(x=100,y=290)
 
     onfocus_bgcolor=tk.Label(props_frame,text="Onfocus bg:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    onfocus_bgcolor.place(x=30,y=290)
+    onfocus_bgcolor.place(x=30,y=310)
     onfocus_bgcolor_enter=tk.Entry(props_frame,width=10)
     onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_bgcolor_enter.bind("<FocusOut>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
-    onfocus_bgcolor_enter.place(x=140,y=290)
+    onfocus_bgcolor_enter.place(x=140,y=310)
     Button3=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
-    Button3.place(x=185,y=290)
+    Button3.place(x=185,y=310)
 
 
     onfocus_textcolor=tk.Label(props_frame,text="Onfocus text:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
@@ -213,10 +213,10 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
     listbox_enter=tk.Label(props_frame,text="Cursor style",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    listbox_enter.place(x=30,y=290)
+    listbox_enter.place(x=30,y=330)
     var.set(cursorlist[1])
     listbox=ttk.OptionMenu(props_frame,var,cursorlist[1],*cursorlist,command=backend_properties.cursor_change)
-    listbox.place(x=140,y=290)
+    listbox.place(x=140,y=330)
 
 
 
@@ -234,7 +234,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 #Window area
     win=tk.Label(props_frame,text="Window properties",bd=1,background="#6D7993",fg="#fef1e8")
-    win.place(x=100,y=330)
+    win.place(x=100,y=340)
 
     win_name=tk.Label(props_frame,text="Window name",width=15,bd=1, background="#6D7993",fg="#fef1e8")
     win_name.place(x=30,y=360)
