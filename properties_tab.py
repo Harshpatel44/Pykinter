@@ -232,7 +232,12 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     #finish onclick dept
 
 
+#Window area
+    win=tk.Label(props_frame,text="Window properties",bd=1,background="#6D7993",fg="#fef1e8")
+    win.place(x=100,y=330)
 
+    win_name=tk.Label(props_frame,text="Window name",width=15,bd=1, background="#6D7993",fg="#fef1e8")
+    win_name.place(x=30,y=350)
 
 
 
