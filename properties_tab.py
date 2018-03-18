@@ -252,6 +252,20 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     win_icon_enter.place(x=140,y=380)
 
 
+#Taskbar properties
+
+    taskbar=tk.Label(props_frame,text="TaskBar Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    taskbar.place(x=100,y=410)
+
+    taskbar_color=tk.Label(props_frame,text="Taskbar color",width=15,bd=1,background='#6D7993',fg="#fef1e8")
+    taskbar_color.place(x=30,y=440)
+    taskbar_color_enter=tk.Entry(props_frame)
+    taskbar_color_enter.bind("<Return>")
+    taskbar_color_enter.bind("<FocusOut>")
+    taskbar_color_enter.bind("<Return>")
+    taskbar_color_enter.place(x=140,y=440)
+
+
 
 
 
