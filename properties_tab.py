@@ -26,6 +26,7 @@ bdn=tk.StringVar()
 bcn=tk.StringVar()
 bce=tk.StringVar()
 var=tk.StringVar()
+var2=tk.StringVar()
 
 name_enter=''
 height_enter=''
@@ -37,7 +38,7 @@ def get_color():
     color=askcolor()
     print(color)
 
-
+Iconlist=["abc","def"]
 cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart","clock","man","mouse","pirate","plus","shuttle","sizing","spider","spraycan","star","target","tcross","trek","watch"]
 def sync_widget():
 
@@ -245,6 +246,10 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     win_name_enter.place(x=140,y=360)
 
 
+    win_icon=tk.Label(props_frame,text="Window Icon",bd=1,width="15",background="#6D7993",fg="#fef1e8")
+    win_icon.place(x=30,y=380)
+    win_icon_enter=ttk.OptionMenu(props_frame,var2,*Iconlist,command=backend_properties.window_icon)
+    win_icon_enter.place(x=140,y=380)
 
 
 
