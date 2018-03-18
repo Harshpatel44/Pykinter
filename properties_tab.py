@@ -185,27 +185,29 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     fontsize_enter.place(x=140,y=250)
 
 
-    Onfocus=tk.Label(props_frame)
+    Onfocus=tk.Label(props_frame,text="OnFocus Properties",width=15,background='#6D7993',fg="#fef1e8")
+    Onfocus.place(x=100,y=270)
+
     onfocus_bgcolor=tk.Label(props_frame,text="Onfocus bg:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    onfocus_bgcolor.place(x=30,y=250)
+    onfocus_bgcolor.place(x=30,y=290)
     onfocus_bgcolor_enter=tk.Entry(props_frame,width=10)
     onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_bgcolor_enter.bind("<FocusOut>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
-    onfocus_bgcolor_enter.place(x=140,y=250)
+    onfocus_bgcolor_enter.place(x=140,y=290)
     Button3=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
-    Button3.place(x=185,y=250)
+    Button3.place(x=185,y=290)
 
 
     onfocus_textcolor=tk.Label(props_frame,text="Onfocus text:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    onfocus_textcolor.place(x=30,y=270)
+    onfocus_textcolor.place(x=30,y=310)
     onfocus_textcolor_enter=tk.Entry(props_frame,width=10)
     onfocus_textcolor_enter.bind("<Return>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_textcolor_enter.bind("<FocusOut>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
     onfocus_textcolor_enter.bind("<Return>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
-    onfocus_textcolor_enter.place(x=140,y=270)
+    onfocus_textcolor_enter.place(x=140,y=310)
     Button4=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
-    Button4.place(x=185,y=270)
+    Button4.place(x=185,y=310)
 
     #cursors department
 
