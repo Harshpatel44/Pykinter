@@ -241,6 +241,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     win_name_enter=tk.Entry(props_frame,width=20)
     win_name_enter.bind("<Return>",backend_properties.window_naming)
     win_name_enter.bind("<FocusOut>",backend_properties.window_naming)
+    win_name_enter.bind("<Return>",backend_properties.window_naming)
     win_name_enter.place(x=140,y=360)
 
 
