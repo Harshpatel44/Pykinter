@@ -136,3 +136,5 @@ def window_naming(event,name):
     functions.window_name(event,name)
 
 
+def window_icon(value):
+    print(value)
