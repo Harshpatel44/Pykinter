@@ -265,6 +265,11 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_color_enter.bind("<Return>")
     taskbar_color_enter.place(x=140,y=440)
 
+    taskbar_border=tk.Label(props_frame,text="Taskbar border",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    taskbar_border.place(x=30,y=460)
+    taskbar_border_enter=tk.Entry(props_frame)
+    taskbar_border_enter
+
 
 
 
