@@ -1,6 +1,3 @@
-__author__ = 'Harsh'
-
-
 import tkinter  as tk
 import backend_properties
 import tkinter.ttk as ttk
@@ -67,10 +64,6 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     design2.place(x=0,y=26)
     props_frame=tk.Frame(design2,height=502,width=300)                                #mainframe inside canvas
     design2.create_window((0,0),window=props_frame,anchor='nw')
-
-
-
-
 
 
 
@@ -272,6 +265,15 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_border_enter.bind("<FocusOut>")
     taskbar_border_enter.bind("<Return>")
     taskbar_border_enter.place(x=140,y=460)
+
+    taskbar_height=tk.Label(props_frame,text="Taskbar height",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    taskbar_height.place(x=30,y=480)
+    taskbar_height_enter=tk.Entry(props_frame)
+    taskbar_height_enter.bind("<Return>")
+    taskbar_height_enter.bind("<FocusOut>")
+    taskbar_height_enter.bind("<Return>")
+    taskbar_height_enter.place(x=140,y=480)
+
 
 
 
