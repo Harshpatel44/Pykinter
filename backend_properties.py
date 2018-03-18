@@ -132,5 +132,7 @@ def cursor_change(value):
     print(value)
 
 
+def window_naming(event,name):
+    functions.window_name(event,name)
 
 
