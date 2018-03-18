@@ -1122,5 +1122,6 @@ def widget_focus(color_bg,color_text,flag):
         selected.bind('<Leave>',lambda event,arg=current_color_bg,arg2=current_color_text,arg3=flag:focus_reset(event,arg,arg2,arg3))
 
 
-
+def window_name(self,name):
+     self.winfo_toplevel().title(name)
 
