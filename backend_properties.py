@@ -142,6 +142,9 @@ def window_icon(value):
 def taskbar_icon(value):
     print(value)
 
+def taskbar_colorchange(event):
+    print(event)
+
 def enter_X(event):
     print(event)
 
