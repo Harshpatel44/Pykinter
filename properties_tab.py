@@ -259,13 +259,24 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar=tk.Label(props_frame,text="TaskBar Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     taskbar.place(x=100,y=480)
 
-    X_taskbar=tk.Label(props_frame,text="X",width=5,bd=1,background="#6D7993",fg="#fef1e8")
+    X_taskbar=tk.Label(props_frame,text="X co-ordinates",width=5,bd=1,background="#6D7993",fg="#fef1e8")
     X_taskbar.place(x=30,y=510)
     X_taskbar_enter=tk.Entry(props_frame)
     X_taskbar_enter.bind("<Return>")
     X_taskbar_enter.bind('<FocusOut>')
     X_taskbar_enter.bind("<Return>")
     X_taskbar_enter.place(x=80,y=510)
+
+
+    Y_taskbar=tk.Label(props_frame,text="Y co-ordinates",width=5,bd=1,background="#6D7993",fg="#fef1e8")
+    Y_taskbar.place(x=30,y=530)
+    Y_taskbar_enter=tk.Entry(props_frame)
+    Y_taskbar_enter.bind("<Return>")
+    Y_taskbar_enter.bind('<FocusOut>')
+    Y_taskbar_enter.bind("<Return>")
+    Y_taskbar_enter.place(x=80,y=530)
+
+
 
 
     taskbar_color=tk.Label(props_frame,text="Taskbar color",width=15,bd=1,background='#6D7993',fg="#fef1e8")
