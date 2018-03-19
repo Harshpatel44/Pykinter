@@ -292,7 +292,10 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     taskbar_icon=tk.Label(props_frame,text="Taskbar icons",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     taskbar_icon.place(x=30,y=590)
-    taskbar_icon_enter=ttk.OptionMenu(props_frame,var3,*Iconlist_taskbar,)
+    taskbar_icon_enter=ttk.OptionMenu(props_frame,var3,*Iconlist_taskbar,command=backend_properties.taskbar_icon)
+    taskbar_icon_enter.place(x=140,y=590)
+
+    
 
 
 
