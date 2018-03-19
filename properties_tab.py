@@ -227,7 +227,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     cursor_size_enter.bind("<FocusOut>")
     cursor_size_enter.bind("<Return>")
     cursor_size_enter.place(x=140,y=380)
-    
+
 
 
     #on click dept
