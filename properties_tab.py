@@ -249,14 +249,24 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     win_icon=tk.Label(props_frame,text="Window Icon",bd=1,width="15",background="#6D7993",fg="#fef1e8")
     win_icon.place(x=30,y=450)
-    win_icon_enter=ttk.OptionMenu(props_frame,var2,*Iconlist,command=backend_properties.window_icon)
+    win_icon_enter=ttk.OptionMenu(props_frame,var2,*Iconlist_win,command=backend_properties.window_icon)
     win_icon_enter.place(x=140,y=450)
 
 
 #Taskbar properties
 
+
     taskbar=tk.Label(props_frame,text="TaskBar Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     taskbar.place(x=100,y=480)
+
+    X_taskbar=tk.Label(props_frame,text="X",width=5,bd=1,background="#6D7993",fg="#fef1e8")
+    X_taskbar.place(x=30,y=510)
+    X_taskbar_enter=tk.Entry(props_frame)
+    X_taskbar_enter.bind("<Return>")
+    X_taskbar_enter.bind('<FocusOut>')
+    X_taskbar_enter.bind("<Return>")
+    X_taskbar_enter.place(x=80,y=510)
+
 
     taskbar_color=tk.Label(props_frame,text="Taskbar color",width=15,bd=1,background='#6D7993',fg="#fef1e8")
     taskbar_color.place(x=30,y=510)
@@ -295,7 +305,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_icon_enter=ttk.OptionMenu(props_frame,var3,*Iconlist_taskbar,command=backend_properties.taskbar_icon)
     taskbar_icon_enter.place(x=140,y=590)
 
-    
+
 
 
 
