@@ -51,14 +51,19 @@ def menu_start(event,root,rc):
         rc.tag_bind(rt3,"<Leave>",hover_out)
 
 
-        r4=rc.create_rectangle(30,60,155,80,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-        rt4=rc.create_text(32,70,text="Delete",anchor='w')
+        r4=rc.create_rectangle(30,60,155,80,tag='delete',fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
+        rt4=rc.create_text(32,70,tag='delete',text="Delete",anchor='w')
         def hover_in(event):
             rc.itemconfig(r4,fill="#d9d9d9")
+            rc.tag_bind(rt4,"<Button-1>",click_copy)
+            rc.tag_bind(r4,"<Button-1>",click_copy)
         def hover_out(event):
             rc.itemconfig(r4,fill="#f7f7f7")
+        def click_copy(event):
+            print()
         rc.tag_bind(rt4,"<Enter>",hover_in)
         rc.tag_bind(rt4,"<Leave>",hover_out)
+
 
 
         r5=rc.create_rectangle(30,80,155,100,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
