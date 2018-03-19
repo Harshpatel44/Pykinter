@@ -138,3 +138,9 @@ def window_naming(event,name):
 
 def window_icon(value):
     print(value)
+
+def taskbar_icon(value):
+    print(value)
+
+def enter_X(event):
+    print(event)
