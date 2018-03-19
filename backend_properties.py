@@ -148,6 +148,9 @@ def taskbar_colorchange(event):
 def taskbar_borderchange(event):
     print(event)
 
+def taskbar_heightchange(event):
+    print(event)
+    
 def enter_X(event):
     print(event)
 
