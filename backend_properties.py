@@ -144,3 +144,6 @@ def taskbar_icon(value):
 
 def enter_X(event):
     print(event)
+
+def enter_Y(event):
+    print(event)
