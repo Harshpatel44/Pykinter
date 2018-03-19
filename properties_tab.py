@@ -24,6 +24,7 @@ bcn=tk.StringVar()
 bce=tk.StringVar()
 var=tk.StringVar()
 var2=tk.StringVar()
+var3=tk.StringVar()
 
 name_enter=''
 height_enter=''
@@ -35,7 +36,8 @@ def get_color():
     color=askcolor()
     print(color)
 
-Iconlist=["abc","def"]
+Iconlist_win=["abc","def"]
+Iconlist_taskbar=["abc","bdg"]
 cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart","clock","man","mouse","pirate","plus","shuttle","sizing","spider","spraycan","star","target","tcross","trek","watch"]
 def sync_widget():
 
@@ -287,6 +289,10 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_width_enter.bind("<FocusOut>")
     taskbar_width_enter.bind("<Return>")
     taskbar_width_enter.place(x=140,y=570)
+
+    taskbar_icon=tk.Label(props_frame,text="Taskbar icons",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    taskbar_icon.place(x=30,y=590)
+    taskbar_icon_enter=ttk.OptionMenu(props_frame,var3,*Iconlist_taskbar,)
 
 
 
