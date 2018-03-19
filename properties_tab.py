@@ -274,7 +274,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     Y_taskbar_enter.bind("<Return>")
     Y_taskbar_enter.bind('<FocusOut>')
     Y_taskbar_enter.bind("<Return>")
-    Y_taskbar_enter.place(x=80,y=530)
+    Y_taskbar_enter.place(x=160,y=530)
 
 
 
@@ -315,6 +315,9 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_icon.place(x=30,y=590)
     taskbar_icon_enter=ttk.OptionMenu(props_frame,var3,*Iconlist_taskbar,command=backend_properties.taskbar_icon)
     taskbar_icon_enter.place(x=140,y=590)
+
+    
+
 
 
 
