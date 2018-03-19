@@ -282,9 +282,9 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_color=tk.Label(props_frame,text="Taskbar color",width=15,bd=1,background='#6D7993',fg="#fef1e8")
     taskbar_color.place(x=30,y=510)
     taskbar_color_enter=tk.Entry(props_frame)
-    taskbar_color_enter.bind("<Return>")
-    taskbar_color_enter.bind("<FocusOut>")
-    taskbar_color_enter.bind("<Return>")
+    taskbar_color_enter.bind("<Return>",backend_properties.taskbar_colorchange)
+    taskbar_color_enter.bind("<FocusOut>",backend_properties.taskbar_colorchange)
+    taskbar_color_enter.bind("<Return>",backend_properties.taskbar_colorchange)
     taskbar_color_enter.place(x=140,y=510)
 
     taskbar_border=tk.Label(props_frame,text="Taskbar border",width=15,bd=1,background="#6D7993",fg="#fef1e8")
