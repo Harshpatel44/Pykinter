@@ -186,7 +186,6 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
     fontsize_enter.place(x=140,y=270)
 
-
     Onfocus=tk.Label(props_frame,text="OnFocus Properties",width=15,background='#6D7993',fg="#fef1e8")
     Onfocus.place(x=100,y=300)
 
@@ -199,6 +198,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     onfocus_bgcolor_enter.place(x=140,y=330)
     Button3=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
     Button3.place(x=185,y=330)
+
 
 
     onfocus_textcolor=tk.Label(props_frame,text="Onfocus text:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
@@ -228,16 +228,6 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     cursor_size_enter.bind("<Return>")
     cursor_size_enter.place(x=140,y=380)
 
-
-
-    #on click dept
-
-
-
-
-
-
-
     #finish onclick dept
 
 
@@ -259,9 +249,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     win_icon_enter=ttk.OptionMenu(props_frame,var2,*Iconlist_win,command=backend_properties.window_icon)
     win_icon_enter.place(x=140,y=450)
 
-
 #Taskbar properties
-
 
     taskbar=tk.Label(props_frame,text="TaskBar Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     taskbar.place(x=100,y=480)
@@ -322,6 +310,8 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_icon.place(x=30,y=590)
     taskbar_icon_enter=ttk.OptionMenu(props_frame,var3,*Iconlist_taskbar,command=backend_properties.taskbar_icon)
     taskbar_icon_enter.place(x=140,y=590)
+
+
 
 
 
