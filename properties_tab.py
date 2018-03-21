@@ -59,7 +59,8 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     design = tk.Canvas(middle_frame3, width=300, height=25,bg='#99AAAA',highlightthickness=0,background="#333333")    #title canvas
     design.place(x=0,y=0)
 
-    design2=tk.Canvas(middle_frame3,height=495,width=300,scrollregion=(0,0,300,1600))   #main canvas
+    vscrollbar=tk.Scrollbar(middle_frame3)
+    design2=tk.Canvas(middle_frame3,height=495,width=300,yscrollcommand=vscrollbar.set,scrollregion=(0,0,300,1600))   #main canvas
     scrollbar=tk.Scrollbar(middle_frame3,command=design2.yview)
     scrollbar.place(x=280,y=26,height=500)
     design2.configure(yscrollcommand=scrollbar.set)
