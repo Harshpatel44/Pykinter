@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import right_clicks
 count=0
 def menu_start(event,root,rc):
     widget=event.widget
@@ -21,15 +21,25 @@ def menu_start(event,root,rc):
             #r.bind('<Button-1>',sample)
 
 
+            # btn_id_text=tk.Label(rc,text="Id",bd=0,background="#f7f7f7")
+            # btn_id_text.place(x=32,y=5)
+            btn_id_entry=tk.Entry(rc,bd=0.5,background="#f7f7f7",width=20)
+            btn_id_entry.place(x=15,y=1)
+            # r1=rc.create_rectangle(30,0,155,20,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
+            # rt1=rc.create_text(32,10,text="Button Id",anchor='w',tag='id')
+            # def hover_in(event):
+            #     rc.itemconfig(r1,fill="#d9d9d9")
+            # def hover_out(event):
+            #     rc.itemconfig(r1,fill="#f7f7f7")
+            # def onclick(event,arg):
+            #     right_clicks.button_id(event,arg)
+            #
+            # rc.tag_bind(rt1,"<Enter>",hover_in)
+            # rc.tag_bind(rt1,"<Leave>",hover_out)
+            # rc.tag_bind(r1,"<Button-1>",lambda event,arg=rc:onclick(event,arg))
+            # rc.tag_bind(rt1,"<Button-1>",lambda event,arg=rc:onclick(event,arg))
 
-            r1=rc.create_rectangle(30,0,155,20,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt1=rc.create_text(32,10,text="Button Id",anchor='w',tag='id')
-            def hover_in(event):
-                rc.itemconfig(r1,fill="#d9d9d9")
-            def hover_out(event):
-                rc.itemconfig(r1,fill="#f7f7f7")
-            rc.tag_bind(rt1,"<Enter>",hover_in)
-            rc.tag_bind(rt1,"<Leave>",hover_out)
+
 
             r2=rc.create_rectangle(30,20,155,40,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
             rt2=rc.create_text(32,30,text="Copy",anchor='w')
@@ -213,7 +223,7 @@ def menu_start(event,root,rc):
             count=0
             # rc.addtag_all('new')
 
-    #first_time()
+    first_time()
 def menu_close(event,root,rc):
     widget=event.widget
 
