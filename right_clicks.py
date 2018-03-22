@@ -1,10 +1,12 @@
 __author__ = 'harsh'
 import tkinter as tk
-
+import widget_data
 def button_id(event,rc):
     rc.place_forget()
     popup=tk.Tk()
-    popup.geometry("200x80+%d+%d"%(300,300))
+
+    popup.geometry("200x80+%d+%d"%(400,300))
+
     popup.overrideredirect(True)
 
 
@@ -31,7 +33,9 @@ def button_id(event,rc):
     title_lbl=tk.Label(title_bar,text="Change Button id",background="#6D7993",fg="white")
     title_lbl.place(x=0,y=0)
     title_bar.bind("<Button-1>",StartMove)
+    title_lbl.bind("<Button-1>",StartMove)
     title_bar.bind("<B1-Motion>",OnMotion)
+    title_lbl.bind("<B1-Motion>",OnMotion)
     #title_bar.bind("<B1-Release>",StopMove)
 
     def entering(event):
@@ -53,6 +57,12 @@ def button_id(event,rc):
     popup.title('Change Button id')
     lbl=tk.Label(popup,text="Button id",width=200)
     lbl.pack()
+    def close_save(event):
+        widget_data.get_data(event.widget,'id',event.widget.get())
+        popup.destroy()
     Entry=tk.Entry(popup)
     Entry.pack()
+    Entry.bind("<Return>",close_save)
+    Entry.focus()
+    popup.focus_force()
     popup.mainloop()

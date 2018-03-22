@@ -1,4 +1,8 @@
 __author__ = 'Harsh'
+
+
+#in this file , the widget gets placed after getting clicked in widgets tab. creation of all the widgets and layouts of deafult widgets is
+# done in this file.
 from tkinter import  ttk
 import tkinter as tk
 import functions

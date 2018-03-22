@@ -1,5 +1,6 @@
 __author__ = 'harsh'
 import tkinter as tk
+# this file is just for practise and implementation of concepts
 popup=tk.Tk()
 popup.geometry("200x80+%d+%d"%(300,300))
 popup.overrideredirect(True)
@@ -52,4 +53,5 @@ lbl=tk.Label(popup,text="Button id",width=200)
 lbl.pack()
 Entry=tk.Entry(popup)
 Entry.pack()
+Entry.focus()
 popup.mainloop()

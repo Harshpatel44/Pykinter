@@ -3,6 +3,8 @@ import backend_properties
 import tkinter.ttk as ttk
 from tkinter.colorchooser import askcolor
 
+
+#this file deals with the layout of the right section of the application , that is properties tab .
 root=tk.Tk()
 root.withdraw()
 
