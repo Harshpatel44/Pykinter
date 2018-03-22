@@ -6,11 +6,6 @@ from tkinter.colorchooser import askcolor
 root=tk.Tk()
 root.withdraw()
 
-
-
-
-
-
 ne=tk.StringVar()
 he=tk.StringVar()
 we=tk.StringVar()
@@ -61,6 +56,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     vscrollbar=tk.Scrollbar(middle_frame3)
 
     design2=tk.Canvas(middle_frame3,height=495,width=300,yscrollcommand=vscrollbar.set,scrollregion=(0,0,300,1600))   #main canvas
+
     vscrollbar.config(command=design2.yview)
     vscrollbar.pack(side=tk.LEFT, fill=tk.Y)
 
@@ -329,4 +325,4 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
 
-    props_frame.pack()
+
