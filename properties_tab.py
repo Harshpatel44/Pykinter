@@ -283,55 +283,59 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     win_icon_enter=ttk.OptionMenu(props_frame,var2,*Iconlist_win,command=backend_properties.window_icon)
     win_icon_enter.place(x=140,y=690)
 
+    window_op=tk.Label(props_frame,text="Window Opacity",bd=1,width=15,background="#6D7993",fg="#fef1e8")
+    window_op.place(x=30,y=710)
+    window_op_enter=tk.Entry(props_frame,width=10)
+    window_op_enter.place(x=140,y=710)
 
 #Taskbar properties
 
     taskbar=tk.Label(props_frame,text="TaskBar Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    taskbar.place(x=100,y=730)
+    taskbar.place(x=100,y=750)
 
     X_taskbar=tk.Label(props_frame,text="X",width=5,bd=1,background="#6D7993",fg="#fef1e8")
-    X_taskbar.place(x=30,y=750)
+    X_taskbar.place(x=30,y=770)
     X_taskbar_enter=tk.Entry(props_frame,width=10)
     X_taskbar_enter.bind("<Return>",backend_properties.enter_X)
     X_taskbar_enter.bind('<FocusOut>',backend_properties.enter_X)
     X_taskbar_enter.bind("<Return>",backend_properties.enter_X)
-    X_taskbar_enter.place(x=80,y=750)
+    X_taskbar_enter.place(x=80,y=770)
 
 
     Y_taskbar=tk.Label(props_frame,text="Y",width=5,bd=1,background="#6D7993",fg="#fef1e8")
-    Y_taskbar.place(x=150,y=750)
+    Y_taskbar.place(x=150,y=770)
     Y_taskbar_enter=tk.Entry(props_frame,width=10)
     Y_taskbar_enter.bind("<Return>",backend_properties.enter_Y)
     Y_taskbar_enter.bind('<FocusOut>',backend_properties.enter_Y)
     Y_taskbar_enter.bind("<Return>",backend_properties.enter_Y)
-    Y_taskbar_enter.place(x=200,y=750)
+    Y_taskbar_enter.place(x=200,y=770)
 
 
 
 
     taskbar_color=tk.Label(props_frame,text="Taskbar color",width=15,bd=1,background='#6D7993',fg="#fef1e8")
-    taskbar_color.place(x=30,y=770)
+    taskbar_color.place(x=30,y=790)
     taskbar_color_enter=tk.Entry(props_frame)
     taskbar_color_enter.bind("<Return>",backend_properties.taskbar_colorchange)
     taskbar_color_enter.bind("<FocusOut>",backend_properties.taskbar_colorchange)
     taskbar_color_enter.bind("<Return>",backend_properties.taskbar_colorchange)
-    taskbar_color_enter.place(x=140,y=770)
+    taskbar_color_enter.place(x=140,y=790)
 
     taskbar_border=tk.Label(props_frame,text="Taskbar border",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    taskbar_border.place(x=30,y=790)
+    taskbar_border.place(x=30,y=810)
     taskbar_border_enter=tk.Entry(props_frame)
     taskbar_border_enter.bind("<Return>",backend_properties.taskbar_borderchange)
     taskbar_border_enter.bind("<FocusOut>",backend_properties.taskbar_borderchange)
     taskbar_border_enter.bind("<Return>",backend_properties.taskbar_borderchange)
-    taskbar_border_enter.place(x=140,y=790)
+    taskbar_border_enter.place(x=140,y=810)
 
     taskbar_height=tk.Label(props_frame,text="Taskbar height",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    taskbar_height.place(x=30,y=810)
+    taskbar_height.place(x=30,y=830)
     taskbar_height_enter=tk.Entry(props_frame)
     taskbar_height_enter.bind("<Return>")
     taskbar_height_enter.bind("<FocusOut>")
     taskbar_height_enter.bind("<Return>")
-    taskbar_height_enter.place(x=140,y=810)
+    taskbar_height_enter.place(x=140,y=830)
 
     taskbar_width=tk.Label(props_frame,text="Taskbar width",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     taskbar_width.place(x=30,y=830)
