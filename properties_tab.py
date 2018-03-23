@@ -3,13 +3,10 @@ import backend_properties
 import tkinter.ttk as ttk
 from tkinter.colorchooser import askcolor
 
+
+#this file deals with the layout of the right section of the application , that is properties tab .
 root=tk.Tk()
 root.withdraw()
-
-
-
-
-
 
 ne=tk.StringVar()
 he=tk.StringVar()
@@ -61,14 +58,18 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     vscrollbar=tk.Scrollbar(middle_frame3)
 
     design2=tk.Canvas(middle_frame3,height=495,width=300,yscrollcommand=vscrollbar.set,scrollregion=(0,0,300,1600))   #main canvas
-    vscrollbar.config(command=design2.yview)              #scrolling set to deisgn2 canvas
-    vscrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+
+    vscrollbar.config(command=design2.yview)
+    vscrollbar.pack(side=tk.LEFT, fill=tk.Y)
 
 
     props_frame=tk.Frame(design2,height=502,width=300)                                #mainframe inside canvas
     design2.pack(side="left", fill="both", expand=True)
 
-    design2.create_window((0,0),window=props_frame,anchor='nw')       #window created
+    design2.create_window((0,0),window=props_frame,anchor='nw')
+
+
+
 
 
     change_name=tk.Label(props_frame,text="Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
@@ -326,4 +327,4 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
 
-    props_frame.pack()
+

@@ -1,6 +1,7 @@
 __author__ = 'Harsh'
 
-
+#this file is for functioning of the widgets after they are placed on the middle frame , from creation of selection dots to dragging
+# the widgets and also right click menu.
 
 selected=0
 g_root=0
