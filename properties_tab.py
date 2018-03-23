@@ -224,24 +224,24 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     win.place(x=100,y=430)
 
     win_name=tk.Label(props_frame,text="Window name",width=15,bd=1, background="#6D7993",fg="#fef1e8")
-    win_name.place(x=30,y=450)
+    win_name.place(x=30,y=460)
     win_name_enter=tk.Entry(props_frame,width=20)
     win_name_enter.bind("<Return>",backend_properties.window_naming)
     win_name_enter.bind("<FocusOut>",backend_properties.window_naming)
     win_name_enter.bind("<Return>",backend_properties.window_naming)
-    win_name_enter.place(x=140,y=450)
+    win_name_enter.place(x=140,y=460)
 
 
     win_icon=tk.Label(props_frame,text="Window Icon",bd=1,width="15",background="#6D7993",fg="#fef1e8")
-    win_icon.place(x=30,y=450)
+    win_icon.place(x=30,y=470)
     win_icon_enter=ttk.OptionMenu(props_frame,var2,*Iconlist_win,command=backend_properties.window_icon)
-    win_icon_enter.place(x=140,y=450)
+    win_icon_enter.place(x=140,y=470)
 
 
 #Taskbar properties
 
     taskbar=tk.Label(props_frame,text="TaskBar Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    taskbar.place(x=100,y=480)
+    taskbar.place(x=100,y=490)
 
     X_taskbar=tk.Label(props_frame,text="X co-ordinates",width=5,bd=1,background="#6D7993",fg="#fef1e8")
     X_taskbar.place(x=30,y=510)
