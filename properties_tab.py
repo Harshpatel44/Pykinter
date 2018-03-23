@@ -29,6 +29,12 @@ width_enter=''
 fontstyle_enter=''
 
 
+def enter(event):
+    widget=event.widget
+    widget.configure(bg='#96858F')
+def leave(event):
+    widget=event.widget
+    widget.configure(bg="#6D7993")
 def get_color():
     color=askcolor()
     print(color)
@@ -116,7 +122,9 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     bg_enter.bind("<FocusOut>",backend_properties.bg_enter)
     bg_enter.bind("<Return>",backend_properties.bg_enter)
     bg_enter.place(x=140,y=130)
-    Button2=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button2=tk.Button(props_frame,text="Choose",relief="flat",bd=0,width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button2.bind("<Enter>",enter)
+    Button2.bind("<Leave>",leave)
     Button2.place(x=185,y=130)
 
  #Border properties
@@ -125,80 +133,86 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     bd_name=tk.Label(props_frame,text="Border Size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     bd_name.place(x=30,y=190)
-    bd_enter=tk.Entry(props_frame,width=20,textvariable=bdn)
-    bd_enter.bind("<Return>",backend_properties.bd_enter)
-    bd_enter.bind("<FocusOut>",backend_properties.bd_enter)
-    bd_enter.bind("<Return>",backend_properties.bd_enter)
-    bd_enter.place(x=140,y=190)
+    bdname_enter=tk.Entry(props_frame,width=20,textvariable=bdn)
+    bdname_enter.bind("<Return>",backend_properties.bd_enter)
+    bdname_enter.bind("<FocusOut>",backend_properties.bd_enter)
+    bdname_enter.bind("<Return>",backend_properties.bd_enter)
+    bdname_enter.place(x=140,y=190)
 
     bdcolor_name=tk.Label(props_frame,text="Border Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    bdcolor_name.place(x=30,y=170)
+    bdcolor_name.place(x=30,y=210)
     bdcolor_enter=tk.Entry(props_frame,width=10,textvariable=bce)
     bdcolor_enter.bind("<Return>",backend_properties.bdcolor_enter)
     bdcolor_enter.bind("<FocusOut>",backend_properties.bdcolor_enter)
     bdcolor_enter.bind("<Return>",backend_properties.bdcolor_enter)
-    bdcolor_enter.place(x=140,y=170)
-    Button5=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
-    Button5.place(x=185,y=170)
+    bdcolor_enter.place(x=140,y=210)
+    Button5=tk.Button(props_frame,text="Choose",relief="flat",bd=0,width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button5.bind("<Enter>",enter)
+    Button5.bind("<Leave>",leave)
+    Button5.place(x=185,y=210)
+
+    bdsize=tk.Label(props_frame,text="Border Size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    bdsize.place(x=30,y=230)
+    bdsize_enter=tk.Entry(props_frame,width=10)
+    bdsize_enter.bind("<Return>",backend_properties.bordersize_enter)
+    bdsize_enter.bind("<FocusOut>",backend_properties.bordersize_enter)
+    bdsize_enter.bind('<Return>',backend_properties.bordersize_enter)
+    bdsize_enter.place(x=130,y=230)
 
 
 
 
     #font
     Font=tk.Label(props_frame,text='Font properties',width=15,background="#6D7993",fg="#fef1e8")
-    Font.place(x=100,y=200)
+    Font.place(x=100,y=260)
 
     change_fontcolor=tk.Label(props_frame,text="Font Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    change_fontcolor.place(x=30,y=230)
+    change_fontcolor.place(x=30,y=300)
     fontcolor_enter=tk.Entry(props_frame,width=10,textvariable=fce)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<FocusOut>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
-    fontcolor_enter.place(x=140,y=230)
-    Button1=tk.Button(props_frame,text="Choose",width=10,background="#6D7993",fg="#fef1e8",command=get_color)
-    Button1.place(x=185,y=230)
+    fontcolor_enter.place(x=140,y=300)
+    Button1=tk.Button(props_frame,text="Choose",relief="flat",bd=0,width=10,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button1.bind("<Enter>",enter)
+    Button1.bind("<Leave>",leave)
+    Button1.place(x=185,y=300)
 
     fontstyle_name=tk.Label(props_frame,text="Font Style:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    fontstyle_name.place(x=30,y=250)
+    fontstyle_name.place(x=30,y=320)
     fontstyle_enter=tk.Entry(props_frame,width=20,textvariable=fse)
     fontstyle_enter.bind("<Return>",backend_properties.fontstyle_enter)
     fontstyle_enter.bind("<FocusOut>",backend_properties.fontstyle_enter)
     fontstyle_enter.bind("<Return>",backend_properties.fontstyle_enter)
-    fontstyle_enter.place(x=140,y=250)
+    fontstyle_enter.place(x=140,y=320)
 
 
     font_size=tk.Label(props_frame,text="Font size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    font_size.place(x=30,y=270)
+    font_size.place(x=30,y=340)
     fontsize_enter=tk.Entry(props_frame,width=20,textvariable=fsie)
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
     fontsize_enter.bind("<FocusOut>",backend_properties.fontsize_enter)
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
-    fontsize_enter.place(x=140,y=270)
+    fontsize_enter.place(x=140,y=340)
 
-    def enter(event):
-        widget=event.widget
-        widget.configure(bg='#96858F')
-    def leave(event):
-        widget=event.widget
-        widget.configure(bg="#6D7993")
 
     Button_bold=tk.Button(props_frame,text="BOLD",width=15,bd=0,background="#6D7993",fg="#fef1e8",command=lambda event,arg=0:backend_properties.Font_styling)
     Button_bold.config(relief="raised")
     Button_bold.bind("<Enter>",enter)
     Button_bold.bind("<Leave>",leave)
-    Button_bold.place(x=100,y=300)
+    Button_bold.place(x=100,y=370)
 
     Button_italic=tk.Button(props_frame,text="ITALIC",width=15,bd=0,background="#6D7993",fg="#fef1e8",command=lambda event,arg=2:backend_properties.Font_styling)
     Button_italic.config(relief="raised")
     Button_italic.bind("<Enter>",enter)
     Button_italic.bind("<Leave>",leave)
-    Button_italic.place(x=100,y=325)
+    Button_italic.place(x=100,y=395)
 
     Button_underline=tk.Button(props_frame,text="UNDERLINE",width=15,bd=0,background="#6D7993",fg="#fef1e8",command=lambda event,arg=2:backend_properties.Font_styling)
     Button_italic.config(relief="sunken",bd=0)
     Button_underline.bind("<Enter>",enter)
     Button_underline.bind("<Leave>",leave)
-    Button_underline.place(x=100,y=350)
+    Button_underline.place(x=100,y=420)
 
 
 #Onfocus Properties
