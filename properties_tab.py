@@ -171,20 +171,23 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
     fontsize_enter.place(x=140,y=270)
 
-    Button_bold=tk.Button(props_frame,text="BOLD",width=10,bd=1,background="#6D7993",fg="#fef1e8")
-    Button_bold.place(x=30,y=290)
+    Button_bold=tk.Button(props_frame,text="BOLD",width=8,bd=1,background="#6D7993",fg="#fef1e8")
+    Button_bold.config(relief="raised",bd=0)
+    Button_bold.place(x=30,y=300)
 
-    Button_italic=tk.Button(props_frame,text="ITALIC",width=10,bd=1,background="#6D7993",fg="#fef1e8")
-    Button_italic.place(x=120,y=290)
+    Button_italic=tk.Button(props_frame,text="ITALIC",width=8,bd=1,background="#6D7993",fg="#fef1e8")
+    Button_italic.config(relief="raised",bd=0)
+    Button_italic.place(x=100,y=300)
 
-    Button_underline=tk.Button(props_frame,text="UNDERLINE",width=10,bd=1,background="#6D7993",fg="#fef1e8")
-    Button_underline.place(x=210,y=290)
+    Button_underline=tk.Button(props_frame,text="UNDERLINE",width=8,bd=1,background="#6D7993",fg="#fef1e8")
+    Button_italic.config(relief="raised",bd=0)
+    Button_underline.place(x=170,y=300)
 
 
 #Onfocus Properties
 
     Onfocus=tk.Label(props_frame,text="OnFocus Properties",width=15,background='#6D7993',fg="#fef1e8")
-    Onfocus.place(x=100,y=300)
+    Onfocus.place(x=100,y=330)
 
     onfocus_bgcolor=tk.Label(props_frame,text="Onfocus bg:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     onfocus_bgcolor.place(x=30,y=330)
