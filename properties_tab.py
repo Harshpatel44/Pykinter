@@ -63,7 +63,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     design.place(x=0,y=0)
     vscrollbar=tk.Scrollbar(middle_frame3)
 
-    design2=tk.Canvas(middle_frame3,height=495,width=300,yscrollcommand=vscrollbar.set,scrollregion=(0,0,300,1600))   #main canvas
+    design2=tk.Canvas(middle_frame3,height=495,width=300,yscrollcommand=vscrollbar.set,scrollregion=(0,0,300,1200))   #main canvas
 
     vscrollbar.config(command=design2.yview)
     vscrollbar.pack(side=tk.LEFT, fill=tk.Y)
@@ -137,13 +137,13 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     border_props=tk.Label(props_frame,text="Border Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     border_props.place(x=100,y=160)
 
-    bd_name=tk.Label(props_frame,text="Border Size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    bd_name.place(x=30,y=190)
-    bdname_enter=tk.Entry(props_frame,width=20,textvariable=bdn)
-    bdname_enter.bind("<Return>",backend_properties.bd_enter)
-    bdname_enter.bind("<FocusOut>",backend_properties.bd_enter)
-    bdname_enter.bind("<Return>",backend_properties.bd_enter)
-    bdname_enter.place(x=140,y=190)
+    bd_size=tk.Label(props_frame,text="Border Size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    bd_size.place(x=30,y=190)
+    bd_size_enter=tk.Entry(props_frame,width=20,textvariable=bdn)
+    bd_size_enter.bind("<Return>",backend_properties.bd_enter)
+    bd_size_enter.bind("<FocusOut>",backend_properties.bd_enter)
+    bd_size_enter.bind("<Return>",backend_properties.bd_enter)
+    bd_size_enter.place(x=140,y=190)
 
     bdcolor_name=tk.Label(props_frame,text="Border Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     bdcolor_name.place(x=30,y=210)
