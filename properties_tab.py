@@ -63,7 +63,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     vscrollbar.pack(side=tk.LEFT, fill=tk.Y)
 
 
-    props_frame=tk.Frame(design2,height=502,width=300)                                #mainframe inside canvas
+    props_frame=tk.Frame(design2,height=1000,width=300)                                #mainframe inside canvas
     design2.pack(side="left", fill="both", expand=True)
 
     design2.create_window((0,0),window=props_frame,anchor='nw')
@@ -82,22 +82,6 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     name_enter.bind("<Return>",backend_properties.name_enter)
     name_enter.place(x=140,y=50)
 
-    #
-    # X_name=tk.Label(props_frame,text="X:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    # X_name.place(x=30,y=70)
-    # X_enter=tk.Entry(props_frame,width=20,textvariable=he)
-    # X_enter.bind("<Return>",backend_properties.height_enter)
-    # X_enter.bind("<FocusOut>",backend_properties.height_enter)
-    # X_enter.bind("<Return>",backend_properties.height_enter)
-    # X_enter.place(x=140,y=70)
-    #
-    # Y_name=tk.Label(props_frame,text="Y:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    # Y_name.place(x=30,y=90)
-    # Y_enter=tk.Entry(props_frame,width=20,textvariable=he)
-    # Y_enter.bind("<Return>",backend_properties.height_enter)
-    # Y_enter.bind("<FocusOut>",backend_properties.height_enter)
-    # Y_enter.bind("<Return>",backend_properties.height_enter)
-    # Y_enter.place(x=140,y=90)
 
 
     height_name=tk.Label(props_frame,text="Height:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
@@ -237,15 +221,15 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 #Window area
     win=tk.Label(props_frame,text="Window properties",bd=1,background="#6D7993",fg="#fef1e8")
-    win.place(x=100,y=400)
+    win.place(x=100,y=430)
 
     win_name=tk.Label(props_frame,text="Window name",width=15,bd=1, background="#6D7993",fg="#fef1e8")
-    win_name.place(x=30,y=430)
+    win_name.place(x=30,y=450)
     win_name_enter=tk.Entry(props_frame,width=20)
     win_name_enter.bind("<Return>",backend_properties.window_naming)
     win_name_enter.bind("<FocusOut>",backend_properties.window_naming)
     win_name_enter.bind("<Return>",backend_properties.window_naming)
-    win_name_enter.place(x=140,y=430)
+    win_name_enter.place(x=140,y=450)
 
 
     win_icon=tk.Label(props_frame,text="Window Icon",bd=1,width="15",background="#6D7993",fg="#fef1e8")
