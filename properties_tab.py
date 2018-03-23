@@ -119,13 +119,17 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     Button2=tk.Button(props_frame,text="Choose",width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
     Button2.place(x=185,y=130)
 
+ #Border properties
+    border_props=tk.Label(props_frame,text="Border Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    border_props.place(x=100,y=160)
+
     bd_name=tk.Label(props_frame,text="Border Size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    bd_name.place(x=30,y=150)
+    bd_name.place(x=30,y=190)
     bd_enter=tk.Entry(props_frame,width=20,textvariable=bdn)
     bd_enter.bind("<Return>",backend_properties.bd_enter)
     bd_enter.bind("<FocusOut>",backend_properties.bd_enter)
     bd_enter.bind("<Return>",backend_properties.bd_enter)
-    bd_enter.place(x=140,y=150)
+    bd_enter.place(x=140,y=190)
 
     bdcolor_name=tk.Label(props_frame,text="Border Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     bdcolor_name.place(x=30,y=170)
