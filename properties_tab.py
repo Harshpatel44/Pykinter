@@ -171,6 +171,15 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
     fontsize_enter.place(x=140,y=270)
 
+    Button_bold=tk.Button(props_frame,text="BOLD",width=10,bd=1,background="#6D7993",fg="#fef1e8")
+    Button_bold.place(x=30,y=290)
+
+    Button_italic=tk.Button(props_frame,text="ITALIC",width=10,bd=1,background="#6D7993",fg="#fef1e8")
+    Button_italic.place(x=120,y=290)
+
+    Button_underline=tk.Button(props_frame,text="UNDERLINE",width=10,bd=1,background="#6D7993",fg="#fef1e8")
+    Button_underline.place(x=210,y=290)
+
 
 #Onfocus Properties
 
@@ -299,6 +308,8 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_icon.place(x=30,y=640)
     taskbar_icon_enter=ttk.OptionMenu(props_frame,var3,*Iconlist_taskbar,command=backend_properties.taskbar_icon)
     taskbar_icon_enter.place(x=140,y=640)
+
+
 
 
 
