@@ -182,9 +182,10 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     Button_bold.config(relief="raised")
     Button_bold.bind("<Enter>",enter)
     Button_bold.bind("<Leave>",leave)
+    Button_bold.bind()
     Button_bold.place(x=100,y=300)
 
-    Button_italic=tk.Button(props_frame,text="ITALIC",width=15,bd=0,background="#6D7993",fg="#fef1e8")
+    Button_italic=tk.Button(props_frame,text="ITALIC",width=15,bd=0,background="#6D7993",fg="#fef1e8",command=lambda event,arg=2:backend_properties.Font_styling)
     Button_italic.config(relief="raised")
     Button_italic.bind("<Enter>",enter)
     Button_italic.bind("<Leave>",leave)
