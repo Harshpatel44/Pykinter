@@ -165,8 +165,17 @@ def enter_Y(event):
 def cursor_sizechange(event):
     print(event)
 
-def Font_styling(event):
+def Font_styling(event,number):
     widget=event.widget
     Font_style_bold=''
     Font_style_italic=''
     Font_style_underline=''
+
+    if number==0:
+        Font_style_bold=widget.get()
+
+    if number==1:
+        Font_style_italic=widget.get()
+
+    if number==2:
+        Font_style_underline=widget.get()
