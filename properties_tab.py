@@ -63,7 +63,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     vscrollbar.pack(side=tk.LEFT, fill=tk.Y)
 
 
-    props_frame=tk.Frame(design2,height=1000,width=300)                                #mainframe inside canvas
+    props_frame=tk.Frame(design2,height=2000,width=300)                                #mainframe inside canvas
     design2.pack(side="left", fill="both", expand=True)
 
     design2.create_window((0,0),window=props_frame,anchor='nw')
@@ -264,36 +264,36 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
     taskbar_color=tk.Label(props_frame,text="Taskbar color",width=15,bd=1,background='#6D7993',fg="#fef1e8")
-    taskbar_color.place(x=30,y=510)
+    taskbar_color.place(x=30,y=530)
     taskbar_color_enter=tk.Entry(props_frame)
     taskbar_color_enter.bind("<Return>",backend_properties.taskbar_colorchange)
     taskbar_color_enter.bind("<FocusOut>",backend_properties.taskbar_colorchange)
     taskbar_color_enter.bind("<Return>",backend_properties.taskbar_colorchange)
-    taskbar_color_enter.place(x=140,y=510)
+    taskbar_color_enter.place(x=140,y=530)
 
     taskbar_border=tk.Label(props_frame,text="Taskbar border",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    taskbar_border.place(x=30,y=530)
+    taskbar_border.place(x=30,y=550)
     taskbar_border_enter=tk.Entry(props_frame)
     taskbar_border_enter.bind("<Return>",backend_properties.taskbar_borderchange)
     taskbar_border_enter.bind("<FocusOut>",backend_properties.taskbar_borderchange)
     taskbar_border_enter.bind("<Return>",backend_properties.taskbar_borderchange)
-    taskbar_border_enter.place(x=140,y=530)
+    taskbar_border_enter.place(x=140,y=550)
 
     taskbar_height=tk.Label(props_frame,text="Taskbar height",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    taskbar_height.place(x=30,y=550)
+    taskbar_height.place(x=30,y=570)
     taskbar_height_enter=tk.Entry(props_frame)
     taskbar_height_enter.bind("<Return>")
     taskbar_height_enter.bind("<FocusOut>")
     taskbar_height_enter.bind("<Return>")
-    taskbar_height_enter.place(x=140,y=550)
+    taskbar_height_enter.place(x=140,y=570)
 
     taskbar_width=tk.Label(props_frame,text="Taskbar width",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    taskbar_width.place(x=30,y=570)
+    taskbar_width.place(x=30,y=590)
     taskbar_width_enter=tk.Entry(props_frame)
     taskbar_width_enter.bind("<Return>")
     taskbar_width_enter.bind("<FocusOut>")
     taskbar_width_enter.bind("<Return>")
-    taskbar_width_enter.place(x=140,y=570)
+    taskbar_width_enter.place(x=140,y=590)
 
     taskbar_icon=tk.Label(props_frame,text="Taskbar icons",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     taskbar_icon.place(x=30,y=590)
