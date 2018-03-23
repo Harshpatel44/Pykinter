@@ -171,17 +171,26 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
     fontsize_enter.place(x=140,y=270)
 
-    Button_bold=tk.Button(props_frame,text="BOLD",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    Button_bold.config(relief="raised",bd=0)
-    Button_bold.place(x=70,y=300)
+    def bold_enter(event):
+        widget=event.widget
+        widget.configure(bg="#008080")
+    def bold_leave(event):
+        widget=event.widget
+        widget.configure(bg="#6D7993")
 
-    Button_italic=tk.Button(props_frame,text="ITALIC",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    Button_italic.config(relief="raised",bd=0)
-    Button_italic.place(x=70,y=330)
+    Button_bold=tk.Button(props_frame,text="BOLD",width=15,bd=0,background="#6D7993",fg="#fef1e8")
+    Button_bold.config(relief="raised")
+    Button_bold.bind("<Enter>",bold_enter)
+    Button_bold.bind("<Leave>",bold_leave)
+    Button_bold.place(x=100,y=300)
 
-    Button_underline=tk.Button(props_frame,text="UNDERLINE",width=15,bd=1,background="#6D7993",fg="#fef1e8")
-    Button_italic.config(relief="raised",bd=0)
-    Button_underline.place(x=70,y=360)
+    Button_italic=tk.Button(props_frame,text="ITALIC",width=15,bd=0,background="#6D7993",fg="#fef1e8")
+    Button_italic.config(relief="raised")
+    Button_italic.place(x=100,y=325)
+
+    Button_underline=tk.Button(props_frame,text="UNDERLINE",width=15,bd=0,background="#6D7993",fg="#fef1e8")
+    Button_italic.config(relief="sunken",bd=0)
+    Button_underline.place(x=100,y=350)
 
 
 #Onfocus Properties
