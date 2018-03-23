@@ -1126,3 +1126,7 @@ def widget_focus(color_bg,color_text,flag):
 def window_name(self,name):
      self.winfo_toplevel().title(name)
 
+def font_styling_change(bold_style,italic_style,underline_style):
+    current_bold=''
+    current_italic=''
+    current_underline=''
