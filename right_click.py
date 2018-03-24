@@ -223,9 +223,11 @@ def menu_start(event,root,rc):
             rc.update()
             count=0
             # rc.addtag_all('new')
-
+   # event.widget.bind('<Button-1>',lambda event,arg=root,arg2=rc:menu_close(event,arg,arg2))
     first_time()
-def menu_close(event,root,rc):
-    widget=event.widget
 
-    rc.place_forget()
+
+#def menu_close(event,root,rc):
+#    widget=event.widget
+
+
