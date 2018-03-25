@@ -80,7 +80,7 @@ def button(root,root_parent):           #bindings for buttons
     B1.bind("<Button-1>",lambda event,arg2=root,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
     B1.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(B1)
+    update.init_widget(B1)
     B1.place(x=10,y=10)
 
 
@@ -89,7 +89,7 @@ def check_button(root):         #bindings for check buttons
     check.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     check.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     check.bind("<B1-Motion>", lambda event,arg=check,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(check)
+    update.init_widget(check)
     check.place(x=10,y=10)
 
 def radio_button(root):         #bindings for radio button
@@ -97,7 +97,7 @@ def radio_button(root):         #bindings for radio button
     radio.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     radio.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     radio.bind("<B1-Motion>", lambda event,arg=radio,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(radio)
+    update.init_widget(radio)
     radio.place(x=10,y=10)
 
 def entry_button(root):         # bindings for entry button
@@ -105,7 +105,7 @@ def entry_button(root):         # bindings for entry button
     entry.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     entry.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     entry.bind("<B1-Motion>", lambda event,arg=entry,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(entry)
+    update.init_widget(entry)
     entry.place(x=10,y=10)
 
 def label_click(root):          #bindings for label click
@@ -113,7 +113,7 @@ def label_click(root):          #bindings for label click
     label.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     label.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     label.bind("<B1-Motion>", lambda event,arg=label,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(label)
+    update.init_widget(label)
     label.place(x=10,y=10)
 
 
@@ -134,7 +134,7 @@ def scroll_click(root):         #bindings for scroll click
     scrollbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     scrollbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     scrollbar.bind("<B1-Motion>", lambda event,arg=scrollbar,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(scrollbar)
+    update.init_widget(scrollbar)
     scrollbar.place(x=10,y=10,height=100)
 
 
@@ -145,7 +145,7 @@ def dropmenu_click(root):         #bindings for option menu
     dropmenu.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     dropmenu.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     dropmenu.bind("<B1-Motion>", lambda event,arg=dropmenu,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(dropmenu)
+    update.init_widget(dropmenu)
     dropmenu.place(x=10,y=10)
 
 def combobox_click(root):
@@ -153,7 +153,7 @@ def combobox_click(root):
     combobox.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     combobox.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     combobox.bind("<B1-Motion>", lambda event,arg=combobox,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(combobox)
+    update.init_widget(combobox)
     combobox.place(x=10,y=10)
 
 
@@ -162,7 +162,7 @@ def progressbar_click(root):
     progressbar.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     progressbar.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     progressbar.bind("<B1-Motion>", lambda event,arg=progressbar,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(progressbar)
+    update.init_widget(progressbar)
     progressbar.place(x=10,y=10)
 
 
@@ -172,7 +172,7 @@ def listbox_click(root):
     listbox.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     listbox.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     listbox.bind("<B1-Motion>", lambda event,arg=listbox,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(listbox)
+    update.init_widget(listbox)
     listbox.place(x=10,y=10)
 
 
@@ -183,7 +183,7 @@ def image_click(root):
     imagecanvas.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     imagecanvas.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     imagecanvas.bind("<B1-Motion>", lambda event,arg=imagecanvas,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(imagecanvas)
+    update.init_widget(imagecanvas)
     imagecanvas.place(x=10,y=10)
 
 
@@ -194,7 +194,7 @@ def spinbox_click(root):
     spinbox.bind("<Button-1>",lambda event,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
     spinbox.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
     spinbox.bind("<B1-Motion>", lambda event,arg=spinbox,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-    update.get_data(spinbox)
+    update.init_widget(spinbox)
     spinbox.place(x=10,y=10)
 
 

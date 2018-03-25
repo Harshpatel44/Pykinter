@@ -2,6 +2,7 @@ __author__ = 'Harsh'
 
 import tkinter as tk
 import functions
+import update
 
 
 global fontsize
@@ -49,6 +50,7 @@ def name_enter(event):
     name=widget.get()
     functions.update_w(functions.selected.cget('width'))
     functions.selected.configure(text=widget.get())
+    update.update_widget(functions.selected)
 
 
 def height_enter(event):

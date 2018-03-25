@@ -1,22 +1,42 @@
 __author__ = 'Harsh'
 import tkinter as tk
 frames=[]
-properties=[]
-def get_data(widget):
-    #print(widget)
-    # print(widget.cget('text'))
-    properties.append(widget)
+widget_init={}
+btn=0
 
+def get_key(widget):
+    print('widget class',widget.winfo_class())
+    global btn
+    if(widget.winfo_class()=="Button"):
+        btn+=1
+        return "btn"+str(btn)
+def init_widget(widget):                 #this widgets gets invoked when we put widgets first time in firstclick.py
+                                         # and it saves all the widgets name in widget_init[]
+
+    key=get_key(widget)
+    widget_init.update({key:widget})
+    print("dictionary",widget_init)
+    #print(widget_init[0].cget('text'))
+
+def update_widget(widget):
+    print('changed',widget_init)
+    # for i in range(len(widget_init)):
+    #     if(widget_init[i]==widget):
+    #         print('old',widget_init[i].cget("text"))
+    #         widget_init[i]=widget
+    #
+    #         print('new',widget_init[i].cget('text'))
 def frame_append(object):
     frames.append(object)
 
 
 
+
 def sync_data():
-    print(properties)
+    print(widget_init)
 
     a=''
-    for f in properties:
+    for f in widget_init:
         print('here')
         
         print(f.winfo_class())
