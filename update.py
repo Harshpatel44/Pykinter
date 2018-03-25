@@ -1,9 +1,10 @@
 __author__ = 'Harsh'
 import tkinter as tk
+
 frames=[]
 widget_init={}
 btn=0
-
+import time
 def get_key(widget):
     print('widget class',widget.winfo_class())
     global btn
@@ -17,18 +18,30 @@ def init_widget(widget):                 #this widgets gets invoked when we put 
 
     widget_init.update({key:widget})
     print("dictionary",widget_init)
+
     #print(widget_init[0].cget('text'))
 
-def change_key(widget,key):               #invokes when we want to change the key (button id) of the widget in dict
+def change_key(widget,key,default):               #invokes when we want to change the key (button id) of the widget in dict
     for k,v in widget_init.items():
         print(v)
         if(v==widget):
             print('inside')
-            widget_init[key]=v
+            #widget_init[key]=v
             widget_init[key]=widget_init[k]
             del widget_init[k]
+            break
+
+
+
     print(widget_init)
 
+
+
+def find_key(widget):
+    for k,v in widget_init.items():
+        print(v)
+        if(v==widget):
+            return k
 
 def update_widget(widget):              # called each time a property changes
     print('changed',widget_init)

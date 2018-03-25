@@ -59,14 +59,16 @@ def button_id(event,org_widget,rc):
     popup.title('Change Button id')
     lbl=tk.Label(popup,text="Button id",width=200)
     lbl.pack()
-    def close_save(event):
+    default=tk.StringVar(popup,value=update.find_key(org_widget))     #setting a textvariable for default value of entry widget
+    def close_save(event,default):
         print('in fn',org_widget)
-        update.change_key(org_widget,event.widget.get())
+        update.change_key(org_widget,event.widget.get(),default)
         #widget_data.get_data(event.widget,'id',event.widget.get())
         popup.destroy()
-    Entry=tk.Entry(popup)
+    print('in right click',default)
+    Entry=tk.Entry(popup,textvariable=default)
     Entry.pack()
-    Entry.bind("<Return>",close_save)
+    Entry.bind("<Return>", lambda event,arg=default:close_save(event,arg))
     Entry.focus()
     popup.focus_force()
     popup.mainloop()

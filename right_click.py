@@ -2,7 +2,7 @@ import tkinter as tk
 import right_clicks
 count=0
 def menu_start(event,root,rc):
-    org_widget=event.org_widget
+    org_widget=event.widget
 
     def first_time():
         if(org_widget.winfo_class()=="Button"):
