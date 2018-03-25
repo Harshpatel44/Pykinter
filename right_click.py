@@ -2,10 +2,10 @@ import tkinter as tk
 import right_clicks
 count=0
 def menu_start(event,root,rc):
-    widget=event.widget
+    org_widget=event.org_widget
 
     def first_time():
-        if(widget.winfo_class()=="Button"):
+        if(org_widget.winfo_class()=="Button"):
             global count
             if(count==0):
                 rc.delete('all')
@@ -14,7 +14,7 @@ def menu_start(event,root,rc):
 
 
 
-            rc.place(x=widget.winfo_x()+event.x+105,y=widget.winfo_y()+event.y+120)
+            rc.place(x=org_widget.winfo_x()+event.x+105,y=org_widget.winfo_y()+event.y+120)
             def sample():
                 print('working')
 
@@ -32,13 +32,13 @@ def menu_start(event,root,rc):
                 rc.itemconfig(r1,fill="#d9d9d9")
             def hover_out(event):
                 rc.itemconfig(r1,fill="#f7f7f7")
-            def onclick(event,arg):
-                right_clicks.button_id(event,arg)
+            def onclick(event,org_org_widget,arg2):
+                right_clicks.button_id(event,org_widget,arg2)
 
             rc.tag_bind(rt1,"<Enter>",hover_in)
             rc.tag_bind(rt1,"<Leave>",hover_out)
-            rc.tag_bind(r1,"<Button-1>",lambda event,arg=rc:onclick(event,arg))
-            rc.tag_bind(rt1,"<Button-1>",lambda event,arg=rc:onclick(event,arg))
+            rc.tag_bind(r1,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick(event,arg,arg2))
+            rc.tag_bind(rt1,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick(event,arg,arg2))
 
 
 
@@ -54,7 +54,7 @@ def menu_start(event,root,rc):
 
 
             r3=rc.create_rectangle(30,40,155,60,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt3=rc.create_text(32,50,text="Last Widget Properties",anchor='w')
+            rt3=rc.create_text(32,50,text="Last org_widget Properties",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r3,fill="#d9d9d9")
             def hover_out(event):
@@ -99,7 +99,7 @@ def menu_start(event,root,rc):
 
 
             r7=rc.create_rectangle(30,120,155,140,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt7=rc.create_text(32,130,text="Select All Widget",anchor='w')
+            rt7=rc.create_text(32,130,text="Select All org_widget",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r7,fill="#d9d9d9")
             def hover_out(event):
@@ -127,7 +127,7 @@ def menu_start(event,root,rc):
             rc.tag_bind(rt9,"<Enter>",hover_in)
             rc.tag_bind(rt9,"<Leave>",hover_out)
 
-        if(widget.winfo_class()=="Entry"):
+        if(org_widget.winfo_class()=="Entry"):
             global count
             if(count==0):
                 rc.delete('all')
@@ -136,7 +136,7 @@ def menu_start(event,root,rc):
 
 
 
-            rc.place(x=widget.winfo_x()+event.x+105,y=widget.winfo_y()+event.y+120)
+            rc.place(x=org_widget.winfo_x()+event.x+105,y=org_widget.winfo_y()+event.y+120)
             def sample():
                 print('working')
 
@@ -165,7 +165,7 @@ def menu_start(event,root,rc):
 
 
             r3=rc.create_rectangle(30,40,155,60,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt3=rc.create_text(32,50,text="Last Widget Properties",anchor='w')
+            rt3=rc.create_text(32,50,text="Last org_widget Properties",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r3,fill="#d9d9d9")
             def hover_out(event):
@@ -190,7 +190,7 @@ def menu_start(event,root,rc):
 
 
             r5=rc.create_rectangle(30,80,155,100,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt5=rc.create_text(32,90,text="Select All Widget",anchor='w')
+            rt5=rc.create_text(32,90,text="Select All org_widget",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r5,fill="#d9d9d9")
             def hover_out(event):
@@ -223,11 +223,11 @@ def menu_start(event,root,rc):
             rc.update()
             count=0
             # rc.addtag_all('new')
-   # event.widget.bind('<Button-1>',lambda event,arg=root,arg2=rc:menu_close(event,arg,arg2))
+   # event.org_widget.bind('<Button-1>',lambda event,arg=root,arg2=rc:menu_close(event,arg,arg2))
     first_time()
 
 
 #def menu_close(event,root,rc):
-#    widget=event.widget
+#    org_widget=event.org_widget
 
 

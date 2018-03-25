@@ -1,7 +1,9 @@
 __author__ = 'harsh'
 import tkinter as tk
 import widget_data
-def button_id(event,rc):
+import update
+def button_id(event,org_widget,rc):
+
     rc.place_forget()
     popup=tk.Tk()
 
@@ -58,7 +60,9 @@ def button_id(event,rc):
     lbl=tk.Label(popup,text="Button id",width=200)
     lbl.pack()
     def close_save(event):
-        widget_data.get_data(event.widget,'id',event.widget.get())
+        print('in fn',org_widget)
+        update.change_key(org_widget,event.widget.get())
+        #widget_data.get_data(event.widget,'id',event.widget.get())
         popup.destroy()
     Entry=tk.Entry(popup)
     Entry.pack()

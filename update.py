@@ -14,11 +14,23 @@ def init_widget(widget):                 #this widgets gets invoked when we put 
                                          # and it saves all the widgets name in widget_init[]
 
     key=get_key(widget)
+
     widget_init.update({key:widget})
     print("dictionary",widget_init)
     #print(widget_init[0].cget('text'))
 
-def update_widget(widget):
+def change_key(widget,key):               #invokes when we want to change the key (button id) of the widget in dict
+    for k,v in widget_init.items():
+        print(v)
+        if(v==widget):
+            print('inside')
+            widget_init[key]=v
+            widget_init[key]=widget_init[k]
+            del widget_init[k]
+    print(widget_init)
+
+
+def update_widget(widget):              # called each time a property changes
     print('changed',widget_init)
     # for i in range(len(widget_init)):
     #     if(widget_init[i]==widget):
@@ -26,6 +38,7 @@ def update_widget(widget):
     #         widget_init[i]=widget
     #
     #         print('new',widget_init[i].cget('text'))
+
 def frame_append(object):
     frames.append(object)
 
