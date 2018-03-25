@@ -73,7 +73,7 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
     gl=l
     gr=r
     selected=widget_main
-    properties_tab.sync_widget()
+    properties_tab.sync_widget(selected)         #disables the unnecessary properties when widget selected
     g_root=root
 
 

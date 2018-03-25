@@ -1,5 +1,6 @@
 import tkinter  as tk
 import backend_properties
+
 import tkinter.ttk as ttk
 from tkinter.colorchooser import askcolor
 
@@ -8,17 +9,19 @@ from tkinter.colorchooser import askcolor
 root=tk.Tk()
 root.withdraw()
 
-ne=tk.StringVar()
-he=tk.StringVar()
-we=tk.StringVar()
-fce=tk.StringVar()
-fse=tk.StringVar()
-fsie=tk.StringVar()
-aln=tk.StringVar()
-acn=tk.StringVar()
-bdn=tk.StringVar()
-bcn=tk.StringVar()
-bce=tk.StringVar()
+
+#creating variables for global declaration of stringvar to use for showing updated properties on selecting widget
+ne=''
+he=''
+we=''
+fce=''
+fse=''
+fsie=''
+aln=''
+acn=''
+bdn=''
+bcn=''
+bce=''
 var=tk.StringVar()
 var2=tk.StringVar()
 var3=tk.StringVar()
@@ -42,11 +45,12 @@ def get_color():
 Iconlist_win=["abc","def"]
 Iconlist_taskbar=["abc","bdg"]
 cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart","clock","man","mouse","pirate","plus","shuttle","sizing","spider","spraycan","star","target","tcross","trek","watch"]
-def sync_widget():
-
+def sync_widget(selected):
+    global ne,he,we
     backend_properties.check_configure(name_enter,height_enter,fontstyle_enter)    #configures which attrivutes should be disabled acc to widgets
-
-
+    ne.set(selected.cget('text'))
+    he.set(selected.cget('height'))
+    we.set(selected.cget('width'))
 
 
 
@@ -76,6 +80,18 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
 
+    global ne,he,we,fce,fse,fsie,aln,acn,bdn,bcn,bce
+    ne=tk.StringVar(props_frame,value="")
+    he=tk.StringVar(props_frame,value="")
+    we=tk.StringVar(props_frame,value="")
+    fce=tk.StringVar(props_frame,value="")
+    fse=tk.StringVar(props_frame,value="")
+    fsie=tk.StringVar(props_frame,value="")
+    aln=tk.StringVar(props_frame,value="")
+    acn=tk.StringVar(props_frame,value="")
+    bdn=tk.StringVar(props_frame,value="")
+    bcn=tk.StringVar(props_frame,value="")
+    bce=tk.StringVar(props_frame,value="")
 
 
     change_name=tk.Label(props_frame,text="Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
@@ -86,6 +102,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     name_enter.bind("<Tab>",backend_properties.name_enter)
     name_enter.bind("<FocusOut>",backend_properties.name_enter)
     name_enter.bind("<Return>",backend_properties.name_enter)
+
     name_enter.place(x=140,y=50)
 
 

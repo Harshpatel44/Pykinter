@@ -5,12 +5,11 @@ frames=[]
 widget_init={}
 btn=0
 import time
-def get_key(widget):
-    print('widget class',widget.winfo_class())
-    global btn
-    if(widget.winfo_class()=="Button"):
-        btn+=1
-        return "btn"+str(btn)
+
+
+
+
+#functionns for keys(widget id)
 def init_widget(widget):                 #this widgets gets invoked when we put widgets first time in firstclick.py
                                          # and it saves all the widgets name in widget_init[]
 
@@ -21,6 +20,12 @@ def init_widget(widget):                 #this widgets gets invoked when we put 
 
     #print(widget_init[0].cget('text'))
 
+
+def get_key(widget):                         #this functions creates the keys and returns it
+    global btn
+    btn+=1
+    return str(widget.winfo_class())+str(btn)
+
 def change_key(widget,key,default):               #invokes when we want to change the key (button id) of the widget in dict
     for k,v in widget_init.items():
         print(v)
@@ -30,14 +35,10 @@ def change_key(widget,key,default):               #invokes when we want to chang
             widget_init[key]=widget_init[k]
             del widget_init[k]
             break
-
-
-
     print(widget_init)
 
 
-
-def find_key(widget):
+def find_key(widget):                     #this function finds key for the window so that the key can be put in entry box each time
     for k,v in widget_init.items():
         print(v)
         if(v==widget):
