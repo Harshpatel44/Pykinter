@@ -2,7 +2,6 @@ __author__ = 'Harsh'
 
 import tkinter as tk
 import functions
-import update
 
 
 global fontsize
@@ -50,7 +49,6 @@ def name_enter(event):
     name=widget.get()
     functions.update_w(functions.selected.cget('width'))
     functions.selected.configure(text=widget.get())
-    update.update_widget(functions.selected)
 
 
 def height_enter(event):
@@ -181,3 +179,7 @@ def Font_styling(event,number):
 
     if number==2:
         Font_style_underline=widget.get()
+
+    functions.font_styling_change(Font_style_bold,Font_style_italic,Font_style_underline,number)
+
+
