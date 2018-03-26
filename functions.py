@@ -73,7 +73,7 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
     gl=l
     gr=r
     selected=widget_main
-    properties_tab.sync_widget(selected)         #disables the unnecessary properties when widget selected
+    properties_tab.sync_widget()
     g_root=root
 
 
@@ -105,17 +105,18 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
 
      #these functions are for right click context menu
     def right_click_fn(event):
-          right_click.menu_start(event,root,rc)
+         right_click.menu_start(event,root,rc)
     def right_click_close(event):
          right_click.menu_close(event,root,rc)
-    #
-    # #giving all the bindings for right click context menu
-    selected.bind('<Button-3>',right_click_fn)         #starting the right click menu when right mouse clicked
 
-    #root.bind('<Button-1>',right_click_close)
+    #giving all the bindings for right click context menu
+    selected.bind('<Button-3>',right_click_fn)
+    selected.bind('<Button-1>',right_click_close)
+    root.bind('<Button-1>',right_click_close)
     #root_parent.bind("<Button-1>",right_click_close)
 
-    rc.place_forget()                      # to close the right click menu when clicked on widget
+
+
 
     global current_x,current_y
     current_x=0
@@ -1129,4 +1130,11 @@ def font_styling_change(bold_style,italic_style,underline_style,flag):
     current_bold=''
     current_italic=''
     current_underline=''
+
+
+
+
+
+
+
 
