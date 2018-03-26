@@ -1,12 +1,16 @@
 __author__ = 'Harsh'
 import tkinter as tk
-
+#this file manages widgets data , changes widgets data in the windows , initialises its property values and saves all the data in a dict and list
 frames=[]
+widget_props={}
 widget_init={}
 btn=0
+copy_widget=''     # single copied widget data placed here
+copy_widgets=[]    #multiple selected widgets list to paste when required
 import time
 
-
+def save_widget_props():      #this function invokes each time a value of the widget is changed so that dict is maintained for props of widgets
+    print()
 
 
 #functionns for keys(widget id)
@@ -16,7 +20,7 @@ def init_widget(widget):                 #this widgets gets invoked when we put 
     key=get_key(widget)
 
     widget_init.update({key:widget})
-    print("dictionary",widget_init)
+    #print("dictionary",widget_init)
 
     #print(widget_init[0].cget('text'))
 
@@ -28,14 +32,14 @@ def get_key(widget):                         #this functions creates the keys an
 
 def change_key(widget,key,default):               #invokes when we want to change the key (button id) of the widget in dict
     for k,v in widget_init.items():
-        print(v)
+        #print(v)
         if(v==widget):
-            print('inside')
+            #print('inside')
             #widget_init[key]=v
             widget_init[key]=widget_init[k]
             del widget_init[k]
             break
-    print(widget_init)
+    #print(widget_init)
 
 
 def find_key(widget):                     #this function finds key for the window so that the key can be put in entry box each time

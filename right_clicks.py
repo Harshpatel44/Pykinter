@@ -1,10 +1,11 @@
 __author__ = 'harsh'
 import tkinter as tk
-import widget_data
+
 import update
+bg_color="#fef1e8"
 def button_id(event,org_widget,rc):
 
-    rc.place_forget()
+    rc.place_forget()                    #closes the right click menu as soon as function is inovoked
     popup=tk.Tk()
 
     popup.geometry("200x80+%d+%d"%(400,300))
@@ -61,14 +62,44 @@ def button_id(event,org_widget,rc):
     lbl.pack()
     default=tk.StringVar(popup,value=update.find_key(org_widget))     #setting a textvariable for default value of entry widget
     def close_save(event,default):
-        print('in fn',org_widget)
+        #print('in fn',org_widget)
         update.change_key(org_widget,event.widget.get(),default)
         #widget_data.get_data(event.widget,'id',event.widget.get())
         popup.destroy()
-    print('in right click',default)
+    #print('in right click',default)
     Entry=tk.Entry(popup,textvariable=default)
     Entry.pack()
     Entry.bind("<Return>", lambda event,arg=default:close_save(event,arg))
     Entry.focus()
     popup.focus_force()
     popup.mainloop()
+
+
+def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    rc.place_forget()
+    c=0
+    if(org_widget.winfo_class()=="Button"):
+
+        B1=tk.Button(org_widget.master,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
+        B1.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r:start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+        B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
+        B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+        update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
+        #copy_properties(org_widget,B1)    #this is called to copy the properties of widgets
+        update.init_widget(B1)
+        B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
+
+def copy_properties(org_widget,new):
+    for i in org_widget.keys():
+        #fetches each property of the widget and according to conditions , provides it to the widget that is copied
+        print(i,org_widget.cget(i))
+        if(org_widget.cget(i)=="SystemButtonFace" or org_widget.cget(i)=="SystemButtonText"):
+             continue
+        elif(org_widget.cget(i)=="center"):
+            print('in')
+            new.config(i=tk.CENTER)
+
+        else:
+            new.config(i=org_widget.cget(i))
+
+
