@@ -368,6 +368,151 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar_icon_enter.place(x=140,y=850)
 
 
+#Onfocus Properties
+
+    Onfocus=tk.Label(props_frame,text="OnFocus Properties",bd=1,width=15,background='#6D7993',fg="#fef1e8")
+    Onfocus.place(x=100,y=840)
+
+    onfocus_bgcolor=tk.Label(props_frame,text="Onfocus bg:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    onfocus_bgcolor.place(x=30,y=870)
+    onfocus_bgcolor_enter=tk.Entry(props_frame,width=10)
+    onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_bgcolor_enter.bind("<FocusOut>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_bgcolor_enter.bind("<Return>",lambda event,arg=0:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_bgcolor_enter.place(x=140,y=870)
+    Button3=tk.Button(props_frame,text="Choose",relief="flat",bd=0,width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button3.bind("<Enter>",enter)
+    Button3.bind("<Leave>",leave)
+    Button3.place(x=185,y=870)
+
+
+
+    onfocus_textcolor=tk.Label(props_frame,text="Onfocus text:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    onfocus_textcolor.place(x=30,y=890)
+    onfocus_textcolor_enter=tk.Entry(props_frame,width=10)
+    onfocus_textcolor_enter.bind("<Return>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_textcolor_enter.bind("<FocusOut>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_textcolor_enter.bind("<Return>",lambda event,arg=1:backend_properties.onfocus_bgcolor__enter(event,arg))
+    onfocus_textcolor_enter.place(x=140,y=890)
+    Button4=tk.Button(props_frame,text="Choose",relief="flat",bd=0,width=10,height=1,background="#6D7993",fg="#fef1e8",command=get_color)
+    Button4.bind("<Enter>",enter)
+    Button4.bind("<Leave>",leave)
+    Button4.place(x=185,y=890)
+
+    Onfocus_fontfamily=tk.Label(props_frame,text="Font Family:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_fontfamily.place(x=30,y=910)
+    Onfocus_fontfamily_enter=tk.Entry(props_frame,width=20)
+    Onfocus_fontfamily_enter.bind("<Return>")
+    Onfocus_fontfamily_enter.bind("<FocusOut>")
+    Onfocus_fontfamily_enter.bind("<Return>")
+    Onfocus_fontfamily_enter.place(x=140,y=910)
+
+    Onfocus_Fontsize=tk.Label(props_frame,text=" Font size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_Fontsize.place(x=30,y=930)
+    Onfocus_Fontsize_enter=tk.Entry(props_frame,width=20)
+    Onfocus_Fontsize_enter.bind("<Return>")
+    Onfocus_Fontsize_enter.bind("<FocusOut>")
+    Onfocus_Fontsize_enter.bind("<Return>")
+    Onfocus_Fontsize_enter.place(x=140,y=930)
+
+
+    Onfocus_Bold=tk.Label(props_frame,text="Bold:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_Bold.place(x=30,y=950)
+    Onfocus_Bold_enter=tk.Entry(props_frame,width=20)
+    Onfocus_Bold_enter.bind("<Return>")
+    Onfocus_Bold_enter.bind("<FocusOut>")
+    Onfocus_Bold_enter.bind("<Return>")
+    Onfocus_Bold_enter.place(x=140,y=950)
+
+    Onfocus_Italic=tk.Label(props_frame,text="Italic:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_Italic.place(x=30,y=970)
+    Onfocus_Italic_enter=tk.Entry(props_frame,width=20)
+    Onfocus_Italic_enter.bind("<Return>")
+    Onfocus_Italic_enter.bind("<FocusOut>")
+    Onfocus_Italic_enter.bind("<Return>")
+    Onfocus_Italic_enter.place(x=140,y=970)
+
+    Onfocus_Underline=tk.Label(props_frame,text=" Font size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_Underline.place(x=30,y=990)
+    Onfocus_Underline_enter=tk.Entry(props_frame,width=20)
+    Onfocus_Underline_enter.bind("<Return>")
+    Onfocus_Underline_enter.bind("<FocusOut>")
+    Onfocus_Underline_enter.bind("<Return>")
+    Onfocus_Underline_enter.place(x=140,y=990)
+
+
+    Onfocus_Border=tk.Label(props_frame,text="Border Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_Border.place(x=30,y=1010)
+    Onfocus_Border_enter=tk.Entry(props_frame,width=20)
+    Onfocus_Border_enter.bind("<Return>")
+    Onfocus_Border_enter.bind("<FocusOut>")
+    Onfocus_Border_enter.bind("<Return>")
+    Onfocus_Border_enter.place(x=140,y=1010)
+
+
+    Onfocus_Bordersize=tk.Label(props_frame,text="Border Size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_Bordersize.place(x=30,y=1030)
+    Onfocus_Bordersize_enter=tk.Entry(props_frame,width=20)
+    Onfocus_Bordersize_enter.bind("<Return>")
+    Onfocus_Bordersize_enter.bind("<FocusOut>")
+    Onfocus_Bordersize_enter.bind("<Return>")
+    Onfocus_Bordersize_enter.place(x=140,y=1030)
+
+    Onfocus_name=tk.Label(props_frame,text="Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_name.place(x=30,y=1050)
+    Onfocus_name_enter=tk.Entry(props_frame,width=20)
+    Onfocus_name_enter.bind("<Return>")
+    Onfocus_name_enter.bind("<FocusOut>")
+    Onfocus_name_enter.bind("<Return>")
+    Onfocus_name_enter.place(x=140,y=1050)
+
+    Onfocus_height=tk.Label(props_frame,text="Height:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_height.place(x=30,y=1070)
+    Onfocus_height_enter=tk.Entry(props_frame,width=20)
+    Onfocus_height_enter.bind("<Return>")
+    Onfocus_height_enter.bind("<FocusOut>")
+    Onfocus_height_enter.bind("<Return>")
+    Onfocus_height_enter.place(x=140,y=1070)
+
+
+    Onfocus_width=tk.Label(props_frame,text="Width:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_width.place(x=30,y=1090)
+    Onfocus_width_enter=tk.Entry(props_frame,width=20)
+    Onfocus_width_enter.bind("<Return>")
+    Onfocus_width_enter.bind("<FocusOut>")
+    Onfocus_width_enter.bind("<Return>")
+    Onfocus_width_enter.place(x=140,y=1090)
+
+
+    Onfocus_winname=tk.Label(props_frame,text="Window Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_winname.place(x=30,y=2010)
+    Onfocus_winname_enter=tk.Entry(props_frame,width=20)
+    Onfocus_winname_enter.bind("<Return>")
+    Onfocus_winname_enter.bind("<FocusOut>")
+    Onfocus_winname_enter.bind("<Return>")
+    Onfocus_winname_enter.place(x=140,y=2010)
+
+
+    Onfocus_winicon=tk.Label(props_frame,text="Window Icon:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_winicon.place(x=30,y=2030)
+    Onfocus_winicon_enter=tk.Entry(props_frame,width=20)
+    Onfocus_winicon_enter.bind("<Return>")
+    Onfocus_winicon_enter.bind("<FocusOut>")
+    Onfocus_winicon_enter.bind("<Return>")
+    Onfocus_winicon_enter.place(x=140,y=2030)
+
+
+    Onfocus_winopacity=tk.Label(props_frame,text="Window Opacity:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
+    Onfocus_winopacity.place(x=30,y=2050)
+    Onfocus_winopacity_enter=tk.Entry(props_frame,width=20)
+    Onfocus_winopacity_enter.bind("<Return>")
+    Onfocus_winopacity_enter.bind("<FocusOut>")
+    Onfocus_winopacity_enter.bind("<Return>")
+    Onfocus_winopacity_enter.place(x=140,y=2050)
+
+
+
+
 
 
 
