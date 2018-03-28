@@ -85,21 +85,101 @@ def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
         B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
         B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
         update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
-        #copy_properties(org_widget,B1)    #this is called to copy the properties of widgets
+        copy_properties(org_widget,B1)    #this is called to copy the properties of widgets
         update.init_widget(B1)
         B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
 
 def copy_properties(org_widget,new):
+    skip_list=["SystemButtonFace","SystemButtonText","SystemDisabledText","SystemButtonFace","SystemWindowFrame","TkDefaultFont","disabled","none"]
     for i in org_widget.keys():
+        print('value',i,org_widget.cget(i))
+        # print(org_widget.cget(i) not in skip_list)
+        # input()
         #fetches each property of the widget and according to conditions , provides it to the widget that is copied
-        print(i,org_widget.cget(i))
-        if(org_widget.cget(i)=="SystemButtonFace" or org_widget.cget(i)=="SystemButtonText"):
-             continue
-        elif(org_widget.cget(i)=="center"):
-            print('in')
-            new.config(i=tk.CENTER)
+        if(org_widget.cget(i) not in skip_list):
+            if(org_widget.cget(i)=="center"):
+                new.config(anchor=tk.CENTER)
+            elif(i=="background"):
+                print(i,org_widget.cget(i))
+                new.config(background=str(org_widget.cget(i)))
+            elif(i=="bg"):
+                print(i,org_widget.cget(i))
+                new.config(bg=str(org_widget.cget(i)))
+            elif(i=="bd"):
+                print(i,org_widget.cget(i))
+                new.config(bd=int(org_widget.cget(i)))
+            elif(i=="borderwidth"):
+                print(i,org_widget.cget(i))
+                new.config(borderwidth=int(org_widget.cget(i)))
+            elif(i=="height"):
+                print(i,org_widget.cget(i))
+                new.config(height=int(org_widget.cget(i)))
+            elif(i=="width"):
+                print(i,org_widget.cget(i))
+                new.config(width=int(org_widget.cget(i)))
+            elif(i=="highlightthickness"):
+                print(i,org_widget.cget(i))
+                new.config(highlightthickness=int(str(org_widget.cget(i))))
+            elif(i=="padx"):
+                print(i,org_widget.cget(i))
+                new.config(padx=int(str(org_widget.cget(i))))
+            elif(i=="pady"):
+                print(i,org_widget.cget(i))
+                new.config(pady=int(str(org_widget.cget(i))))
+            elif(i=="relief"):
+                #left
+                print(i,org_widget.cget(i))
+                new.config(relief=tk.RAISED)
+            elif(i=="repeatdelay"):
+                print(i,org_widget.cget(i))
+                #print(i,org_widget.cget(i))
+                new.config(repeatdelay=int(str(org_widget.cget(i))))
+            elif(i=="repeatinterval"):
+                print(i,org_widget.cget(i))
+                #print(i,org_widget.cget(i))
+                new.config(repeatinterval=int(str(org_widget.cget(i))))
+            elif(i=="underline"):
+                print(i,org_widget.cget(i))
+                #print(i,org_widget.cget(i))
+                new.config(underline=int(str(org_widget.cget(i))))
 
-        else:
-            new.config(i=org_widget.cget(i))
+            elif(i=="state"):
+                #left
+                print(i,org_widget.cget(i))
+                #print(i,org_widget.cget(i))
+                new.config(state=tk.NORMAL)
+            elif(i=="text"):
+                print(i,org_widget.cget(i))
+                #print(i,org_widget.cget(i))
+                new.config(text=str(org_widget.cget(i)))
+            elif(i=="wraplength"):
+                print(i,org_widget.cget(i))
+                #print(i,org_widget.cget(i))
+                new.config(wraplength=int(str(org_widget.cget(i))))
+            else:
+                print(i,org_widget.cget(i))
+                new.config(i=str(org_widget.cget(i)))
+        #print(i,org_widget.cget(i))
+        # if(i=="activebackground"):
+        #     print(i,org_widget.cget(i))
+        #     print()
+        # elif(i=="activeforeground"):
+        #     print(i,org_widget.cget(i))
+        # elif(i=="anchor"):
+        #     print(i,org_widget.cget(i))
+        # elif(i=="background"):
+        #     print(i,org_widget.cget(i))
+        # elif(i=="bd"):
+        #     print
+        # if(org_widget.cget(i)=="SystemButtonFace" or org_widget.cget(i)=="SystemButtonText"):
+        #      continue
+        # elif(org_widget.cget(i)=="center"):
+        #     print('in')
+        #     new.config(i=tk.CENTER)
+
+        # else:
+        #     print('')
+        #     print(i)
+        #     new.config(i=org_widget.cget(i))
 
 
