@@ -88,7 +88,7 @@ def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
         B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
         B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
         update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
-        update.init_widget(B1)
+        update.init_widget(B1)     # adds to the list of widgets as soon as created
         B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
 
 def copy_props(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
@@ -200,5 +200,18 @@ def copy_properties(org_widget,new):     #checks each property of the widget and
         #     print('')
         #     print(i)
         #     new.config(i=org_widget.cget(i))
+def delete(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    rc.place_forget()
+    org_widget.destroy()
+    l1.place_forget()
+    l2.place_forget()
+    r1.place_forget()
+    r2.place_forget()
+    u.place_forget()
+    d.place_forget()
+    l.place_forget()
+    r.place_forget()
+    update.remove_wid(org_widget)
+
 
 

@@ -3,7 +3,7 @@ import tkinter as tk
 #this file manages widgets data , changes widgets data in the windows , initialises its property values and saves all the data in a dict and list
 frames=[]
 widget_props={}
-widget_init={}
+widget_init={}     #has all the list of widgets with id name {id:widget}
 btn=0
 copy_widget=''     # single copied widget data placed here
 copy_widgets=[]    #multiple selected widgets list to paste when required
@@ -44,12 +44,18 @@ def change_key(widget,key,default):               #invokes when we want to chang
 
 def find_key(widget):                     #this function finds key for the window so that the key can be put in entry box each time
     for k,v in widget_init.items():
-        print(v)
+        #print(v)
         if(v==widget):
             return k
 
+def remove_wid(widget):
+      key=find_key(widget)
+      widget_init.pop(key)
+      print(widget_init)
+
 def update_widget(widget):              # called each time a property changes
-    print('changed',widget_init)
+    print()
+    #print('changed',widget_init)
     # for i in range(len(widget_init)):
     #     if(widget_init[i]==widget):
     #         print('old',widget_init[i].cget("text"))
