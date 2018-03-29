@@ -1,6 +1,6 @@
 import tkinter  as tk
 import backend_properties
-
+import update
 import tkinter.ttk as ttk
 from tkinter.colorchooser import askcolor
 
@@ -22,6 +22,7 @@ acn=''
 bdn=''
 bcn=''
 bce=''
+variables=[ne,he,we,fce,fse,fsie,aln,acn,bdn,bcn,bce]
 var=tk.StringVar()
 var2=tk.StringVar()
 var3=tk.StringVar()
@@ -46,11 +47,9 @@ Iconlist_win=["abc","def"]
 Iconlist_taskbar=["abc","bdg"]
 cursorlist=["arrow","circle","cross","dotbox","exchange","fleur","heart","clock","man","mouse","pirate","plus","shuttle","sizing","spider","spraycan","star","target","tcross","trek","watch"]
 def sync_widget(selected):
-    global ne,he,we
+    global variables
     backend_properties.check_configure(name_enter,height_enter,fontstyle_enter)    #configures which attrivutes should be disabled acc to widgets
-    ne.set(selected.cget('text'))
-    he.set(selected.cget('height'))
-    we.set(selected.cget('width'))
+    update.save_widget_props(selected,variables)
 
 
 
@@ -80,36 +79,35 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
 
 
-    global ne,he,we,fce,fse,fsie,aln,acn,bdn,bcn,bce
-    ne=tk.StringVar(props_frame,value="")
-    he=tk.StringVar(props_frame,value="")
-    we=tk.StringVar(props_frame,value="")
-    fce=tk.StringVar(props_frame,value="")
-    fse=tk.StringVar(props_frame,value="")
-    fsie=tk.StringVar(props_frame,value="")
-    aln=tk.StringVar(props_frame,value="")
-    acn=tk.StringVar(props_frame,value="")
-    bdn=tk.StringVar(props_frame,value="")
-    bcn=tk.StringVar(props_frame,value="")
-    bce=tk.StringVar(props_frame,value="")
+    global variables
+    variables[0]=tk.StringVar(props_frame,value="")
+    variables[1]=tk.StringVar(props_frame,value="")
+    variables[2]=tk.StringVar(props_frame,value="")
+    variables[3]=tk.StringVar(props_frame,value="")
+    variables[4]=tk.StringVar(props_frame,value="")
+    variables[5]=tk.StringVar(props_frame,value="")
+    variables[6]=tk.StringVar(props_frame,value="")
+    variables[7]=tk.StringVar(props_frame,value="")
+    variables[8]=tk.StringVar(props_frame,value="")
+    variables[9]=tk.StringVar(props_frame,value="")
+    variables[10]=tk.StringVar(props_frame,value="")
 
 
     change_name=tk.Label(props_frame,text="Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     change_name.place(x=30,y=50)
-    name_enter=tk.Entry(props_frame,width=20,textvariable=ne)
+    name_enter=tk.Entry(props_frame,width=20,textvariable=variables[0])
     #name_enter.bind("<FocusIn>",backend_properties.check_configure)
     #name_enter.bind("<Enter>",backend_properties.check_configure)
     name_enter.bind("<Tab>",backend_properties.name_enter)
     name_enter.bind("<FocusOut>",backend_properties.name_enter)
     name_enter.bind("<Return>",backend_properties.name_enter)
-
     name_enter.place(x=140,y=50)
 
 
 
     height_name=tk.Label(props_frame,text="Height:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     height_name.place(x=30,y=70)
-    height_enter=tk.Entry(props_frame,width=20,textvariable=he)
+    height_enter=tk.Entry(props_frame,width=20,textvariable=variables[1])
     # height_enter.bind("<FocusIn>",backend_properties.check_configure)
     # height_enter.bind("<Enter>",backend_properties.check_configure)
     height_enter.bind("<Return>",backend_properties.height_enter)
@@ -119,7 +117,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     width_name=tk.Label(props_frame,text="Width:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     width_name.place(x=30,y=90)
-    width_enter=tk.Entry(props_frame,width=20,textvariable=we)
+    width_enter=tk.Entry(props_frame,width=20,textvariable=variables[2])
     width_enter.bind("<Return>",backend_properties.width_enter)
     width_enter.bind("<FocusOut>",backend_properties.width_enter)
     width_enter.place(x=140,y=90)
@@ -128,16 +126,19 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     alignment_name=tk.Label(props_frame,text="Align:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     alignment_name.place(x=30,y=110)
-    alignment_enter=tk.Entry(props_frame,width=20,textvariable=aln)
+    alignment_enter=tk.Entry(props_frame,width=20)
+    alignment_enter.bind("<Return>",backend_properties.width_enter)
+    alignment_enter.bind("<FocusOut>",backend_properties.width_enter)
     alignment_enter.place(x=140,y=110)
 
 
     bgcolor_name=tk.Label(props_frame,text="Background color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     bgcolor_name.place(x=30,y=130)
-    bg_enter=tk.Entry(props_frame,width=10,textvariable=bcn)
+    bg_enter=tk.Entry(props_frame,width=10,textvariable=variables[9])
     bg_enter.bind("<Return>",backend_properties.bg_enter)
     bg_enter.bind("<FocusOut>",backend_properties.bg_enter)
     bg_enter.bind("<Return>",backend_properties.bg_enter)
+
     def enter(event):
         widget=event.widget
         widget.configure(bg='#96858F')
@@ -156,7 +157,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     bd_size=tk.Label(props_frame,text="Border Size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     bd_size.place(x=30,y=190)
-    bd_size_enter=tk.Entry(props_frame,width=20,textvariable=bdn)
+    bd_size_enter=tk.Entry(props_frame,width=20,textvariable=variables[8])
     bd_size_enter.bind("<Return>",backend_properties.bd_enter)
     bd_size_enter.bind("<FocusOut>",backend_properties.bd_enter)
     bd_size_enter.bind("<Return>",backend_properties.bd_enter)
@@ -164,7 +165,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     bdcolor_name=tk.Label(props_frame,text="Border Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     bdcolor_name.place(x=30,y=210)
-    bdcolor_enter=tk.Entry(props_frame,width=10,textvariable=bce)
+    bdcolor_enter=tk.Entry(props_frame,width=10,textvariable=variables[10])
     bdcolor_enter.bind("<Return>",backend_properties.bdcolor_enter)
     bdcolor_enter.bind("<FocusOut>",backend_properties.bdcolor_enter)
     bdcolor_enter.bind("<Return>",backend_properties.bdcolor_enter)
@@ -183,7 +184,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     change_fontcolor=tk.Label(props_frame,text="Font Color:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     change_fontcolor.place(x=30,y=300)
-    fontcolor_enter=tk.Entry(props_frame,width=10,textvariable=fce)
+    fontcolor_enter=tk.Entry(props_frame,width=10,textvariable=variables[3])
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<FocusOut>",backend_properties.fontcolor_enter)
     fontcolor_enter.bind("<Return>",backend_properties.fontcolor_enter)
@@ -195,7 +196,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     fontstyle_name=tk.Label(props_frame,text="Font Style:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     fontstyle_name.place(x=30,y=320)
-    fontstyle_enter=tk.Entry(props_frame,width=20,textvariable=fse)
+    fontstyle_enter=tk.Entry(props_frame,width=20,textvariable=variables[4])
     fontstyle_enter.bind("<Return>",backend_properties.fontstyle_enter)
     fontstyle_enter.bind("<FocusOut>",backend_properties.fontstyle_enter)
     fontstyle_enter.bind("<Return>",backend_properties.fontstyle_enter)
@@ -204,7 +205,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
 
     font_size=tk.Label(props_frame,text="Font size:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     font_size.place(x=30,y=340)
-    fontsize_enter=tk.Entry(props_frame,width=20,textvariable=fsie)
+    fontsize_enter=tk.Entry(props_frame,width=20,textvariable=variables[5])
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)
     fontsize_enter.bind("<FocusOut>",backend_properties.fontsize_enter)
     fontsize_enter.bind("<Return>",backend_properties.fontsize_enter)

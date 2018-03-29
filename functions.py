@@ -106,12 +106,12 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
      #these functions are for right click context menu
     def right_click_fn(event):
          right_click.menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r)
-    def right_click_close(event):
-          right_click.menu_close(event,root,rc)
+    #def right_click_close(event):
+    right_click.menu_close(event,root,rc)
 
     #giving all the bindings for right click context menu
     selected.bind('<Button-3>',right_click_fn)
-    selected.bind('<Button-1>',right_click_close)
+    #selected.bind('<Button-1>',right_click_close)
     #root.bind('<Button-1>',right_click_close)
     # #root_parent.bind("<Button-1>",right_click_close)
 
@@ -966,6 +966,7 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
             update_h(arg.cget('height'))
             update_w(arg.cget('width'))
 
+    #these are the bindings for the selection dots (about changing the height and width using seletion dots)
 
     l1.bind("<Button-1>",lambda event,arg=widget_main:l1_bindE(event,arg))
     l1.bind("<B1-Motion>",lambda event,arg=widget_main:l1_bindM(event,arg))
@@ -992,9 +993,10 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
     l.bind("<B1-Motion>",lambda event,arg=widget_main:l_bindM(event,arg))
     l.bind("<ButtonRelease-1>",lambda event,arg=widget_main:l_bindL(event,arg))
     #print(widget)
+    # widget_main.drag_start_x=event.x
+    # widget_main.drag_start_y=event.y
     widget_main.drag_start_x=event.x
     widget_main.drag_start_y=event.y
-
 
 
 

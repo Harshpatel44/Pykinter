@@ -1,5 +1,7 @@
 __author__ = 'Harsh'
 import tkinter as tk
+import properties_tab
+
 #this file manages widgets data , changes widgets data in the windows , initialises its property values and saves all the data in a dict and list
 frames=[]
 widget_props={}
@@ -9,10 +11,25 @@ copy_widget=''     # single copied widget data placed here
 copy_widgets=[]    #multiple selected widgets list to paste when required
 import time
 
-def save_widget_props():      #this function invokes each time a value of the widget is changed so that dict is maintained for props of widgets
+def save_widget_props(widget,variables):      #this function invokes each time a value of the widget is changed so that dict is maintained for props of widgets
+
+    if(widget.winfo_class()!="Entry"):
+        variables[1].set(widget.cget('height'))
+
+    variables[0].set(widget.cget('text'))
+    #properties_tab.he.set(widget.cget('height'))
+    variables[2].set(widget.cget('width'))
+    variables[3].set(widget.cget('fg'))
+    variables[4].set(widget.cget('font'))
+    variables[5].set(widget.cget('font'))
+    #properties_tab.aln.set(widget.cget('orient'))
+    #properties_tab.acn.set(widget.cget('text'))
+    variables[8].set(widget.cget('bd'))
+    variables[9].set(widget.cget('background'))
+    variables[10].set(widget.cget('highlightbackground'))
+
+def change_property():   #this function deals with changing the value of the properties tab on changing or clicking on the widget
     print()
-
-
 #functionns for keys(widget id)
 def init_widget(widget):                 #this widgets gets invoked when we put widgets first time in firstclick.py
                                          # and it saves all the widgets name in widget_init[]
