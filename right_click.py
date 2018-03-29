@@ -15,16 +15,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
             rc.place(x=org_widget.winfo_x()+event.x+105,y=org_widget.winfo_y()+event.y+120)
-            def sample():
-                print('working')
 
-            #r.bind('<Button-1>',sample)
-
-
-            # btn_id_text=tk.Label(rc,text="Id",bd=0,background="#f7f7f7")
-            # btn_id_text.place(x=32,y=5)
-            # btn_id_entry=tk.Entry(rc,bd=0.5,background="#f7f7f7",width=20,show="Button id")
-            # btn_id_entry.place(x=15,y=10)
 
             rt1=rc.create_rectangle(30,0,155,20,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
             rte1=rc.create_text(32,10,text="Button Id",anchor='w',tag='id')
@@ -60,17 +51,21 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
             r3=rc.create_rectangle(30,40,155,60,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt3=rc.create_text(32,50,text="Last org_widget Properties",anchor='w')
+            rt3=rc.create_text(32,50,text="Copy Widget Properties",anchor='w')
+
             def hover_in(event):
                 rc.itemconfig(r3,fill="#d9d9d9")
             def hover_out(event):
                 rc.itemconfig(r3,fill="#f7f7f7")
+            def onclick2(event,org_org_widget,arg2):
+               right_clicks.copy_props(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
             rc.tag_bind(rt3,"<Enter>",hover_in)
             rc.tag_bind(rt3,"<Leave>",hover_out)
-
+            rc.tag_bind(r3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
+            rc.tag_bind(rt3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
 
             r4=rc.create_rectangle(30,60,155,80,tag='delete',fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt4=rc.create_text(32,70,tag='delete',text="Delete",anchor='w')
+            rt4=rc.create_text(32,70,tag='Delete',text="Delete",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r4,fill="#d9d9d9")
                 rc.tag_bind(rt4,"<Button-1>",click_copy)
@@ -105,7 +100,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
             r7=rc.create_rectangle(30,120,155,140,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt7=rc.create_text(32,130,text="Select All org_widget",anchor='w')
+            rt7=rc.create_text(32,130,text="Select All widget",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r7,fill="#d9d9d9")
             def hover_out(event):
@@ -171,7 +166,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
             r3=rc.create_rectangle(30,40,155,60,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt3=rc.create_text(32,50,text="Last org_widget Properties",anchor='w')
+            rt3=rc.create_text(32,50,text="Last Widget Properties",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r3,fill="#d9d9d9")
             def hover_out(event):
@@ -196,7 +191,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
             r5=rc.create_rectangle(30,80,155,100,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-            rt5=rc.create_text(32,90,text="Select All org_widget",anchor='w')
+            rt5=rc.create_text(32,90,text="Select All Widget",anchor='w')
             def hover_in(event):
                 rc.itemconfig(r5,fill="#d9d9d9")
             def hover_out(event):
@@ -233,7 +228,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
     first_time()
 
 
-#def menu_close(event,root,rc):
-#    org_widget=event.org_widget
-
+def menu_close(event,root,rc):
+    widget=event.widget
+    rc.place_forget()
 

@@ -106,13 +106,13 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
      #these functions are for right click context menu
     def right_click_fn(event):
          right_click.menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r)
-    # def right_click_close(event):
-    #      right_click.menu_close(event,root,rc)
+    def right_click_close(event):
+          right_click.menu_close(event,root,rc)
 
     #giving all the bindings for right click context menu
     selected.bind('<Button-3>',right_click_fn)
-    # selected.bind('<Button-1>',right_click_close)
-    # root.bind('<Button-1>',right_click_close)
+    selected.bind('<Button-1>',right_click_close)
+    #root.bind('<Button-1>',right_click_close)
     # #root_parent.bind("<Button-1>",right_click_close)
 
 

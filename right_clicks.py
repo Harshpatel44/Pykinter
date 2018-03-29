@@ -2,6 +2,11 @@ __author__ = 'harsh'
 import tkinter as tk
 
 import update
+
+
+
+#this file deals from clicking on any right click context menu item
+#all the functions binded to the items of the right click context menu
 bg_color="#fef1e8"
 def button_id(event,org_widget,rc):
 
@@ -73,13 +78,24 @@ def button_id(event,org_widget,rc):
     Entry.focus()
     popup.focus_force()
     popup.mainloop()
-
-
 def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     rc.place_forget()
     c=0
     if(org_widget.winfo_class()=="Button"):
+        print('copy')
+        B1=tk.Button(org_widget.master,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
+        B1.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r:start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+        B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
+        B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+        update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
+        update.init_widget(B1)
+        B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
 
+def copy_props(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    rc.place_forget()
+    c=0
+    if(org_widget.winfo_class()=="Button"):
+        print('copy props')
         B1=tk.Button(org_widget.master,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
         B1.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r:start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
         B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
@@ -89,7 +105,7 @@ def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
         update.init_widget(B1)
         B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
 
-def copy_properties(org_widget,new):
+def copy_properties(org_widget,new):     #checks each property of the widget and copy it to another
     skip_list=["SystemButtonFace","SystemButtonText","SystemDisabledText","SystemButtonFace","SystemWindowFrame","TkDefaultFont","disabled","none"]
     for i in org_widget.keys():
         print('value',i,org_widget.cget(i))
@@ -97,7 +113,7 @@ def copy_properties(org_widget,new):
         # input()
         #fetches each property of the widget and according to conditions , provides it to the widget that is copied
         if(org_widget.cget(i) not in skip_list):
-            if(org_widget.cget(i)=="center"):
+            if(i=="anchor"):
                 new.config(anchor=tk.CENTER)
             elif(i=="background"):
                 print(i,org_widget.cget(i))
@@ -156,6 +172,9 @@ def copy_properties(org_widget,new):
                 print(i,org_widget.cget(i))
                 #print(i,org_widget.cget(i))
                 new.config(wraplength=int(str(org_widget.cget(i))))
+            elif(i=="justify"):
+                print(i,org_widget.cget(i))
+                new.config(justify=str(org_widget.cget(i)))
             else:
                 print(i,org_widget.cget(i))
                 new.config(i=str(org_widget.cget(i)))
