@@ -8,7 +8,7 @@ import update
 #this file deals from clicking on any right click context menu item
 #all the functions binded to the items of the right click context menu
 bg_color="#fef1e8"
-def button_id(event,org_widget,rc):
+def id_change(event,org_widget,rc):
 
     rc.place_forget()                    #closes the right click menu as soon as function is inovoked
     popup=tk.Tk()
@@ -37,8 +37,9 @@ def button_id(event,org_widget,rc):
         y = popup.winfo_y() + deltay
         popup.geometry("+%s+%s" % (x, y))
 
+
     title_bar=tk.Frame(popup,width=200,height=22,background="#6D7993",highlightbackground="#6d7993",highlightthickness=1)
-    title_lbl=tk.Label(title_bar,text="Change Button id",background="#6D7993",fg="white")
+    title_lbl=tk.Label(title_bar,text="Change "+org_widget.winfo_class()+" id",background="#6D7993",fg="white")
     title_lbl.place(x=0,y=0)
     title_bar.bind("<Button-1>",StartMove)
     title_lbl.bind("<Button-1>",StartMove)
@@ -62,8 +63,8 @@ def button_id(event,org_widget,rc):
 
     title_bar.pack()
 
-    popup.title('Change Button id')
-    lbl=tk.Label(popup,text="Button id",width=200)
+    popup.title("Change "+org_widget.winfo_class()+" id")
+    lbl=tk.Label(popup,text=org_widget.winfo_class()+" id",width=200)
     lbl.pack()
     default=tk.StringVar(popup,value=update.find_key(org_widget))     #setting a textvariable for default value of entry widget
     def close_save(event,default):
@@ -73,11 +74,14 @@ def button_id(event,org_widget,rc):
         popup.destroy()
     #print('in right click',default)
     Entry=tk.Entry(popup,textvariable=default)
+    Entry.select_range(0,tk.END)
+    Entry.icursor(tk.END)
     Entry.pack()
     Entry.bind("<Return>", lambda event,arg=default:close_save(event,arg))
     Entry.focus()
     popup.focus_force()
     popup.mainloop()
+
 def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     rc.place_forget()
     c=0
@@ -90,6 +94,15 @@ def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
         update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
         update.init_widget(B1)     # adds to the list of widgets as soon as created
         B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
+    if(org_widget.winfo_class()=="Entry"):
+        print('copy')
+        entry=tk.Entry(org_widget.master,background=bg_color)
+        entry.bind("<Button-1>",lambda event,arg2=org_widget,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+        entry.bind("<ButtonRelease-1>",lambda event,arg2=org_widget: stop_btn(event,arg2))
+        entry.bind("<B1-Motion>", lambda event,arg=entry,arg2=org_widget,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+        update.copy_widget=entry      # added this widget in copy_widgets list to paste it when required
+        update.init_widget(entry)
+        entry.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
 
 def copy_props(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     rc.place_forget()
@@ -104,9 +117,29 @@ def copy_props(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r
         copy_properties(org_widget,B1)    #this is called to copy the properties of widgets
         update.init_widget(B1)
         B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
+    elif(org_widget.winfo_class()=="Entry"):
+        print('copy props')
+        B1=tk.Button(org_widget.master,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
+        B1.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r:start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+        B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
+        B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+        update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
+        copy_properties(org_widget,B1)    #this is called to copy the properties of widgets
+        update.init_widget(B1)
+        B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
+    elif(org_widget.winfo_class()=="Label"):
+        print('copy props')
+        B1=tk.Button(org_widget.master,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
+        B1.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r:start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+        B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
+        B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+        update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
+        copy_properties(org_widget,B1)    #this is called to copy the properties of widgets
+        update.init_widget(B1)
+        B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
 
 def copy_properties(org_widget,new):     #checks each property of the widget and copy it to another
-    skip_list=["SystemButtonFace","SystemButtonText","SystemDisabledText","SystemButtonFace","SystemWindowFrame","TkDefaultFont","disabled","none"]
+    skip_list=["SystemButtonFace","SystemButtonText","SystemDisabledText","SystemButtonFace","SystemWindowFrame","TkDefaultFont","disabled","none","SystemWindowText","TkTextFont"]
     for i in org_widget.keys():
         print('value',i,org_widget.cget(i))
         # print(org_widget.cget(i) not in skip_list)
@@ -175,9 +208,23 @@ def copy_properties(org_widget,new):     #checks each property of the widget and
             elif(i=="justify"):
                 print(i,org_widget.cget(i))
                 new.config(justify=str(org_widget.cget(i)))
+            elif(i=="cursor"):
+                print(i,org_widget.cget(i))
+                new.config(cursor=str(org_widget.cget(i)))
+            elif(i=="insertborderwidth"):
+                print(i,org_widget.cget(i))
+                new.config(borderwidth=int(str(org_widget.cget(i))))
+            elif(i=="insertofftime"):
+                print(i,org_widget.cget(i))
+                new.config(insertOffTime=int(str(org_widget.cget(i))))
+            elif(i=="exportselection"):
+                pass
+                # print(i,org_widget.cget(i))
+                # new.config(exportselection=int(str(org_widget.cget(i))))
             else:
                 print(i,org_widget.cget(i))
                 new.config(i=str(org_widget.cget(i)))
+
         #print(i,org_widget.cget(i))
         # if(i=="activebackground"):
         #     print(i,org_widget.cget(i))
@@ -211,7 +258,8 @@ def delete(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     d.place_forget()
     l.place_forget()
     r.place_forget()
-    update.remove_wid(org_widget)
+    update.remove_wid(org_widget)     #removes the widget from the list of all the widgets
 
 
-
+def change_name(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    print()

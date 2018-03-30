@@ -1,12 +1,13 @@
 __author__ = 'Harsh'
 import tkinter as tk
-import properties_tab
+
 
 #this file manages widgets data , changes widgets data in the windows , initialises its property values and saves all the data in a dict and list
 frames=[]
 widget_props={}
 widget_init={}     #has all the list of widgets with id name {id:widget}
 btn=0
+etry=0
 copy_widget=''     # single copied widget data placed here
 copy_widgets=[]    #multiple selected widgets list to paste when required
 import time
@@ -42,9 +43,12 @@ def init_widget(widget):                 #this widgets gets invoked when we put 
     #print(widget_init[0].cget('text'))
 
 
-def get_key(widget):                         #this functions creates the keys and returns it
-    global btn
-    btn+=1
+def get_key(widget):        #this functions creates the keys and returns it
+    global btn,etry
+    if(widget.winfo_class()=="Button"):
+        btn+=1
+    if(widget.winfo_class()=="Entry"):
+        etry+=1
     return str(widget.winfo_class())+str(btn)
 
 def change_key(widget,key,default):               #invokes when we want to change the key (button id) of the widget in dict

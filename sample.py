@@ -392,6 +392,8 @@ import tkinter as tk
 
 main=tk.Tk()
 
-btn=tk.Button(text="harsh",anchor=tk.CENTER)
+btn=tk.Label()
+for i in btn.keys():
+    print(i,btn.cget(i))
 btn.pack()
 main.mainloop()
