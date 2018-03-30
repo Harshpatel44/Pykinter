@@ -1,5 +1,3 @@
-__author__ = 'Harsh'
-
 #this file is for functioning of the widgets after they are placed on the middle frame , from creation of selection dots to dragging
 # the widgets and also right click menu.
 
@@ -9,6 +7,7 @@ import time
 import tkinter as tk
 import properties_tab
 import right_click
+import re
 
 
 global gl1,gl2,gr1,gr2,gu,gd,gl,gr
@@ -1132,6 +1131,12 @@ def font_styling_change(bold_style,italic_style,underline_style,flag):
     current_bold=''
     current_italic=''
     current_underline=''
+
+    if flag==0:
+        current_bold=selected.cget("font")
+        answer=re.compile(r"\w+",current_bold)
+        print(answer)
+
 
 
 
