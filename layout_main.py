@@ -206,11 +206,11 @@ class editor_frame(tk.Frame,main):
             maximize.bind("<Button-1>",maximize)
             title_bar.pack()
 
-    def mb(self,main):
+    def mb(self,main):     #menu bar
         menu_bar=tk.Frame(self,height=23,width=1300,highlightthickness=1,relief='solid',background="white",highlightbackground="#555555")
         menu_bar.pack()
 
-    def ob(self,main):
+    def ob(self,main):       #option bar
         option_bar=tk.Frame(self,height=81,width=1300,highlightthickness=1,highlightbackground="#555555",relief='solid',background='#0B3CFD')
         option_bar.pack(side='top')
     def eb(self,main,controller):
