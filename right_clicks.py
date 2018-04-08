@@ -100,9 +100,9 @@ def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
         print('copy')
         for i in update.selected_widget:   #for all the widgets in the list
             entry=tk.Entry(org_widget.master,background=bg_color)
-            entry.bind("<Button-1>",lambda event,arg2=org_widget,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
-            entry.bind("<ButtonRelease-1>",lambda event,arg2=org_widget: stop_btn(event,arg2))
-            entry.bind("<B1-Motion>", lambda event,arg=entry,arg2=org_widget,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+            entry.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc: start_btn(event,arg2,arg3))
+            entry.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
+            entry.bind("<B1-Motion>", lambda event,arg=entry,arg2=org_widget.master: motion(event,arg2))
             update.copy_widget=entry      # added this widget in copy_widgets list to paste it when required
             update.init_widget(entry)
             entry.place(x=i.winfo_x()+10,y=i.winfo_y()+10)
@@ -424,14 +424,15 @@ def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2
     rc.place_forget()   #place forget the right click menu
 
     print(org_widget.master.winfo_children())
+    update.clear_selectiondots()
+    update.selected_widget.clear()      #clear the selection list before adding new items to the selection list
     length=len(org_widget.master.winfo_children())
     print(length)
     count=0
     print('selected list before select all',update.selected_widget)
-    update.clear_selectiondots()
-    update.selected_widget.clear()      #clear the selection list before adding new items to the selection list
+
     for i in range(0,length):
-        if(org_widget.master.winfo_children()[count].winfo_class()=='Button'):
+        if(org_widget.master.winfo_children()[count].winfo_class()==org_widget.winfo_class()):
             widget_main=(org_widget.master.winfo_children()[count])
             print(widget_main)
             count+=1
@@ -457,4 +458,90 @@ def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2
 
             update.selected_widget.append(widget_main)
     print('selected list in select all',update.selected_widget)
+
+def select_all(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    rc.place_forget()   #place forget the right click menu
+
+    print(org_widget.master.winfo_children())
+    update.clear_selectiondots()
+    update.selected_widget.clear()      #clear the selection list before adding new items to the selection list
+    length=len(org_widget.master.winfo_children())
+    print(length)
+    count=0
+    print('selected list before select all',update.selected_widget)
+
+    for i in range(0,length):
+
+            widget_main=(org_widget.master.winfo_children()[count])
+            print(widget_main)
+            count+=1
+            l1=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="ul_angle")   #creation of 6 dots which makes the selected part of the widget
+            l2=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="ll_angle")
+            r1=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="ur_angle")
+            r2=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="lr_angle")
+            u=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="top_tee")
+            d=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="bottom_tee")
+            l=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="left_tee")
+            r=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="right_tee")
+
+
+            l1.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()-6)
+            u.place(x=widget_main.winfo_x()-1+(widget_main.winfo_width())/2,y=widget_main.winfo_y()-6)
+            r1.place(x=widget_main.winfo_x()-0 + widget_main.winfo_width(),y=widget_main.winfo_y()-6)
+            l2.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+widget_main.winfo_height()+2)
+            d.place(x=widget_main.winfo_x()-1+(widget_main.winfo_width())/2,y=widget_main.winfo_y()+widget_main.winfo_height()+2)
+            r2.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height()+2)
+            r.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
+            l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
+            update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])   #adding the selection dots to the list to pack.forget() it afterwards
+
+            update.selected_widget.append(widget_main)
+    print('selected list in select all',update.selected_widget)
+
+    # def start_multiple(event):
+    #     print('inside')
+    #     for i in update.selected_widget:
+    #
+    #         i.drag_start_x=event.x
+    #         i.drag_start_y=event.y
+    # def motion_multiple(event):
+    #     for i in update.selectiondots_list:
+    #         i.place_forget()
+    #
+    #     for i in update.selected_widget:
+    #         widget=i
+    #         x=widget.winfo_x()-widget.drag_start_x+event.x
+    #         y=widget.winfo_y()-widget.drag_start_y+event.y
+    #         widget.place(x=x,y=y)
+    #
+    # def stop_multiple(event):
+    #     count=1
+        # for i in update.selected_widget:
+        #     for j in range(0,8):
+        #
+        #
+        #         if(count%8==1):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()-4,y=i.winfo_y()-6)
+        #         if(count%8==2):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()-4,y=i.winfo_y()+i.winfo_height()+2)
+        #         if(count%8==3):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()-0 + i.winfo_width(),y=i.winfo_y()-6)
+        #         if(count%8==4):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()+0+i.winfo_width(),y=i.winfo_y()+i.winfo_height()+2)
+        #         if(count%8==5):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()-1+(i.winfo_width())/2,y=i.winfo_y()-6)
+        #         if(count%8==6):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()-1+(i.winfo_width())/2,y=i.winfo_y()+i.winfo_height()+2)
+        #         if(count%8==7):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()+0+i.winfo_width(),y=i.winfo_y()+(i.winfo_height()/2)-2)
+        #         if(count%8==0):
+        #             update.selectiondots_list[count-1].place(x=i.winfo_x()-4,y=i.winfo_y()+(i.winfo_height()/2)-2)
+        #         count+=1
+        #         print(count)
+
+
+    # org_widget.bind("<Button-1>",start_multiple)
+    # org_widget.bind("<B1-Motion>",motion_multiple)
+    # org_widget.bind("<ButtonRelease-1>",stop_multiple)
+
 

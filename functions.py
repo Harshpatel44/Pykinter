@@ -120,6 +120,7 @@ def start_btn(event,root,rc):    #rc is right click canvas
     gl=l
     gr=r
     update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])
+    print(update.selectiondots_list)
     update.selected_widget.clear()
     update.selected_widget.append(selected)       # add the widget to the list selected_widget in update
     print('selected list in function',update.selected_widget)
