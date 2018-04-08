@@ -14,7 +14,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
 
-        rc.place(x=org_widget.winfo_x()+event.x+105,y=org_widget.winfo_y()+event.y+120)
+        rc.place(x=org_widget.winfo_x()+event.x,y=org_widget.winfo_y()+event.y+18)
 
 
         rt1=rc.create_rectangle(30,0,155,20,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
@@ -55,7 +55,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
         r3=rc.create_rectangle(30,40,155,60,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-        rt3=rc.create_text(32,50,text="Copy Widget Properties",anchor='w')
+        rte3=rc.create_text(32,50,text="Copy Widget Properties",anchor='w')
 
         def hover_in(event):
             rc.itemconfig(r3,fill="#d9d9d9")
@@ -63,28 +63,29 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             rc.itemconfig(r3,fill="#f7f7f7")
         def onclick2(event,org_org_widget,arg2):
            right_clicks.copy_props(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
-        rc.tag_bind(rt3,"<Enter>",hover_in)
-        rc.tag_bind(rt3,"<Leave>",hover_out)
+        rc.tag_bind(rte3,"<Enter>",hover_in)
+        rc.tag_bind(rte3,"<Leave>",hover_out)
         rc.tag_bind(r3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
-        rc.tag_bind(rt3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
+        rc.tag_bind(rte3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
 
 
 
 
 
         r4=rc.create_rectangle(30,60,155,80,tag='delete',fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-        rt4=rc.create_text(32,70,tag='Delete',text="Delete",anchor='w')
+        rte4=rc.create_text(32,70,tag='Delete',text="Delete",anchor='w')
         def hover_in(event):
             rc.itemconfig(r4,fill="#d9d9d9")
         def hover_out(event):
             rc.itemconfig(r4,fill="#f7f7f7")
-        def onclick3(event,org_org_widget,arg2):
+        def onclick3_b(event,org_org_widget,arg2):
+           print('here')
            right_clicks.delete(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
 
-        rc.tag_bind(rt4,"<Enter>",hover_in)
-        rc.tag_bind(rt4,"<Leave>",hover_out)
-        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3(event,arg,arg2))
-        rc.tag_bind(rt4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3(event,arg,arg2))
+        rc.tag_bind(rte4,"<Enter>",hover_in)
+        rc.tag_bind(rte4,"<Leave>",hover_out)
+        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3_b(event,arg,arg2))
+        rc.tag_bind(rte4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3_b(event,arg,arg2))
 
 
         r5=rc.create_rectangle(30,80,155,100,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
@@ -98,7 +99,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         rc.tag_bind(rt5,"<Enter>",hover_in)
         rc.tag_bind(rt5,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick4(event,arg,arg2))
-        rc.tag_bind(rt4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick4(event,arg,arg2))
+        rc.tag_bind(rt5,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick4(event,arg,arg2))
 
         r6=rc.create_rectangle(30,100,155,120,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
         rt6=rc.create_text(32,110,text="Command",anchor='w')
@@ -151,7 +152,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
 
 
-        rc.place(x=org_widget.winfo_x()+event.x+105,y=org_widget.winfo_y()+event.y+120)
+        rc.place(x=org_widget.winfo_x()+event.x,y=org_widget.winfo_y()+event.y+18)
 
 
         rt1=rc.create_rectangle(30,0,155,20,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
@@ -215,12 +216,12 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             rc.itemconfig(r4,fill="#d9d9d9")
         def hover_out(event):
             rc.itemconfig(r4,fill="#f7f7f7")
-        def onclick3(event,org_org_widget,arg2):
+        def onclick3_e(event,org_org_widget,arg2):
            right_clicks.delete(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
         rc.tag_bind(rt4,"<Enter>",hover_in)
         rc.tag_bind(rt4,"<Leave>",hover_out)
-        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3(event,arg,arg2))
-        rc.tag_bind(rt4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3(event,arg,arg2))
+        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3_e(event,arg,arg2))
+        rc.tag_bind(rt4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3_e(event,arg,arg2))
 
 
         # r5=rc.create_rectangle(30,80,155,100,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
@@ -345,13 +346,13 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             rc.itemconfig(r4,fill="#d9d9d9")
         def hover_out(event):
             rc.itemconfig(r4,fill="#f7f7f7")
-        def onclick3(event,org_org_widget,arg2):
+        def onclick3_l(event,org_org_widget,arg2):
            right_clicks.delete(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
 
         rc.tag_bind(rt4,"<Enter>",hover_in)
         rc.tag_bind(rt4,"<Leave>",hover_out)
-        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3(event,arg,arg2))
-        rc.tag_bind(rt4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3(event,arg,arg2))
+        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3_l(event,arg,arg2))
+        rc.tag_bind(rt4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3_l(event,arg,arg2))
 
 
         r5=rc.create_rectangle(30,80,155,100,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
