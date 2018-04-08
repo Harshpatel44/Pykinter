@@ -263,6 +263,7 @@ def delete(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
 
 
 def change_name(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    #creating a window and changing the variables[0] of properties tab and also changing the widget name
     import properties_tab
 
     rc.place_forget()                    #closes the right click menu as soon as function is inovoked
@@ -321,7 +322,7 @@ def change_name(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,
     popup.title("Change "+org_widget.winfo_class()+" Name")
     lbl=tk.Label(popup,text=org_widget.winfo_class()+" Name",width=200)
     lbl.pack()
-    default=tk.StringVar(popup,value=update.find_key(org_widget))     #setting a textvariable for default value of entry widget
+    default=tk.StringVar(popup,value=properties_tab.variables[0].get())     #setting a textvariable for default value of entry widget
     def close_save(event,default):
         #print('in fn',org_widget)
         org_widget.configure(text=event.widget.get())
@@ -338,4 +339,81 @@ def change_name(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,
     popup.focus_force()
     popup.mainloop()
 
+def command(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    print('harsh')
+    rc.place_forget()                    #closes the right click menu as soon as function is inovoked
+    popup=tk.Tk()
 
+    popup.geometry("200x80+%d+%d"%(400,300))
+
+    popup.overrideredirect(True)
+
+
+    x_1=0
+    y_1=0
+    def StartMove(event):   #dragging the window
+        global x_1,y_1
+        x_1 = event.x
+        y_1 = event.y
+
+    def StopMove(event):    #dragging the window
+        event.widget.move.x = None
+        event.widget.move.y = None
+
+    def OnMotion(event):    #dragging the window
+        global x_1,y_1
+        deltax = event.x - x_1
+        deltay = event.y - y_1
+        x = popup.winfo_x() + deltax
+        y = popup.winfo_y() + deltay
+        popup.geometry("+%s+%s" % (x, y))
+
+
+    title_bar=tk.Frame(popup,width=200,height=22,background="#6D7993",highlightbackground="#6d7993",highlightthickness=1)
+    title_lbl=tk.Label(title_bar,text="Change "+org_widget.winfo_class()+" Name",background="#6D7993",fg="white")
+    title_lbl.place(x=0,y=0)
+    title_bar.bind("<Button-1>",StartMove)
+    title_lbl.bind("<Button-1>",StartMove)
+    title_bar.bind("<B1-Motion>",OnMotion)
+    title_lbl.bind("<B1-Motion>",OnMotion)
+    #title_bar.bind("<B1-Release>",StopMove)
+
+    def entering(event):
+            widget=event.widget
+            widget.configure(background='#CC1166')
+    def leaving(event):
+            widget=event.widget
+            widget.configure(background="#333333")
+    def close(event):
+        popup.destroy()
+    closeButton=tk.Canvas(title_bar,height=10,width=10,background="#333333",relief='flat')
+    closeButton.place(x=180,y=3)
+    closeButton.bind('<Enter>',entering)
+    closeButton.bind("<Button-1>",close)
+    closeButton.bind('<Leave>',leaving)
+
+    title_bar.pack()
+
+    popup.title("Change "+org_widget.winfo_class()+" Name")
+    lbl=tk.Label(popup,text=org_widget.winfo_class()+" Name",width=200)
+    lbl.pack()
+    default=tk.StringVar(popup,value=update.find_command(org_widget))     #setting a textvariable for default value of entry widget
+    def close_save(event,default):
+        #print('in fn',org_widget)
+        #org_widget.configure(text=event.widget.get())
+        update.change_command(org_widget,event.widget.get(),default)
+        #properties_tab.variables[0].set(str(event.widget.get()))
+        #widget_data.get_data(event.widget,'id',event.widget.get())
+        popup.destroy()
+    #print('in right click',default)
+    Entry=tk.Entry(popup,textvariable=default)
+    Entry.select_range(0,tk.END)
+    Entry.icursor(tk.END)
+    Entry.pack()
+    Entry.bind("<Return>", lambda event,arg=default:close_save(event,arg))
+    Entry.focus()
+    popup.focus_force()
+    popup.mainloop()
+
+def select_all_specific(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    print()

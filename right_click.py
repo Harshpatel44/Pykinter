@@ -102,23 +102,30 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         rc.tag_bind(rt5,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick4(event,arg,arg2))
 
         r6=rc.create_rectangle(30,100,155,120,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-        rt6=rc.create_text(32,110,text="Command",anchor='w')
+        rte6=rc.create_text(32,110,text="Command",anchor='w')
         def hover_in(event):
             rc.itemconfig(r6,fill="#d9d9d9")
         def hover_out(event):
             rc.itemconfig(r6,fill="#f7f7f7")
-        rc.tag_bind(rt6,"<Enter>",hover_in)
-        rc.tag_bind(rt6,"<Leave>",hover_out)
-
+        def onclick5(event,org_org_widget,arg2):
+            right_clicks.command(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+        rc.tag_bind(rte6,"<Enter>",hover_in)
+        rc.tag_bind(rte6,"<Leave>",hover_out)
+        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick5(event,arg,arg2))
+        rc.tag_bind(rte6,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick5(event,arg,arg2))
 
         r7=rc.create_rectangle(30,120,155,140,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-        rt7=rc.create_text(32,130,text="Select All Buttons",anchor='w')
+        rte7=rc.create_text(32,130,text="Select All Buttons",anchor='w')
         def hover_in(event):
             rc.itemconfig(r7,fill="#d9d9d9")
         def hover_out(event):
             rc.itemconfig(r7,fill="#f7f7f7")
-        rc.tag_bind(rt7,"<Enter>",hover_in)
-        rc.tag_bind(rt7,"<Leave>",hover_out)
+        def onclick6(event,org_org_widget,arg2):
+            right_clicks.select_all_specific(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+        rc.tag_bind(rte7,"<Enter>",hover_in)
+        rc.tag_bind(rte7,"<Leave>",hover_out)
+        rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick6(event,arg,arg2))
+        rc.tag_bind(rte7,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick6(event,arg,arg2))
 
 
         r8=rc.create_rectangle(30,140,155,160,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")

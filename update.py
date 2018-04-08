@@ -6,6 +6,7 @@ import tkinter as tk
 frames=[]
 widget_props={}
 widget_init={}     #has all the list of widgets with id name {id:widget}
+button_command={}
 btn=0
 etry=0
 copy_widget=''     # single copied widget data placed here
@@ -42,6 +43,21 @@ def init_widget(widget):                 #this widgets gets invoked when we put 
 
     #print(widget_init[0].cget('text'))
 
+def change_command(widget,command,default):    #this function gets invokes for changing the command for a button. set the specific command attribute
+    #for each button
+    flag=0
+    for k,v in button_command.items():     #if  we are changing the command then finding the command item and replacing.
+        #print(v)
+        if(v==widget):
+            flag=1
+            button_command[command]=button_command[k]
+            del button_command[k]
+            break
+    if(flag==0):    #if the command is first time for a button.
+        button_command.update({command:widget})
+    print(button_command)
+
+
 
 def get_key(widget):        #this functions creates the keys and returns it
     global btn,etry
@@ -65,6 +81,11 @@ def change_key(widget,key,default):               #invokes when we want to chang
 
 def find_key(widget):                     #this function finds key for the window so that the key can be put in entry box each time
     for k,v in widget_init.items():
+        #print(v)
+        if(v==widget):
+            return k
+def find_command(widget):                     #this function finds key for the window so that the key can be put in entry box each time
+    for k,v in button_command.items():
         #print(v)
         if(v==widget):
             return k
