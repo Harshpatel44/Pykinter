@@ -59,22 +59,31 @@ def motion_frame(event,taskbar,root):
 
 
 
-def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
+def start_btn(event,root,rc):    #rc is right click canvas
     widget_main=event.widget
 
     print('reached')
     global gl1,gl2,gr1,gr2,gu,gd,gl,gr,selected,g_root
-    gl1=l1
-    gl2=l2
-    gr1=r1
-    gr2=r2
-    gu=u
-    gd=d
-    gl=l
-    gr=r
+
     selected=widget_main
     properties_tab.sync_widget(selected)
     g_root=root
+    update.clear_selectiondots()
+    l1=tk.Canvas(root,bd=0,highlightthickness=0)   #creation of 6 dots which makes the selected part of the widget
+
+    l2=tk.Canvas(root,bd=0,highlightthickness=0)
+
+    r1=tk.Canvas(root,bd=0,highlightthickness=0)
+
+    r2=tk.Canvas(root,bd=0,highlightthickness=0)
+
+    u=tk.Canvas(root,bd=0,highlightthickness=0)
+
+    d=tk.Canvas(root,bd=0,highlightthickness=0)
+
+    l=tk.Canvas(root,bd=0,highlightthickness=0)
+
+    r=tk.Canvas(root,bd=0,highlightthickness=0)
 
 
 
@@ -102,9 +111,15 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
     l.configure(height=4,width=4,background="#666666",cursor="left_tee")
     l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
 
-
-
-    update.clear_selectiondots()                # removing all the other selected dots
+    gl1=l1
+    gl2=l2
+    gr1=r1
+    gr2=r2
+    gu=u
+    gd=d
+    gl=l
+    gr=r
+    update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])
     update.selected_widget.clear()
     update.selected_widget.append(selected)       # add the widget to the list selected_widget in update
     print('selected list in function',update.selected_widget)
@@ -1019,19 +1034,20 @@ def stop_btn(event,root):    #invokes when drag is stopped.
 
 
 
-def motion(event,root,l1,l2,r1,r2,u,d,l,r):    #motion of widget
-
+def motion(event,root):    #motion of widget
+    global gl1,gl2,gr1,gr2,gu,gd,gl,gr
     widget=event.widget
+
     x=widget.winfo_x()-widget.drag_start_x+event.x
     y=widget.winfo_y()-widget.drag_start_y+event.y
-    l1.place_forget()
-    l2.place_forget()
-    r1.place_forget()
-    r2.place_forget()
-    u.place_forget()
-    d.place_forget()
-    l.place_forget()
-    r.place_forget()
+    gl1.place_forget()
+    gl2.place_forget()
+    gr1.place_forget()
+    gr2.place_forget()
+    gu.place_forget()
+    gd.place_forget()
+    gl.place_forget()
+    gr.place_forget()
     widget.place(x=x,y=y)
 
 

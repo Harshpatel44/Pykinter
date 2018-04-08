@@ -88,22 +88,24 @@ def copy(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     c=0
     if(org_widget.winfo_class()=="Button"):
         print('copy')
-        B1=tk.Button(org_widget.master,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
-        B1.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r:start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
-        B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
-        B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-        update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
-        update.init_widget(B1)     # adds to the list of widgets as soon as created
-        B1.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
+        for i in update.selected_widget:
+            B1=tk.Button(org_widget.master,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
+            B1.bind("<Button-1>",lambda event,arg2=org_widget.master,arg3=rc:start_btn(event,arg2,arg3))
+            B1.bind("<ButtonRelease-1>",lambda event,arg2=org_widget.master: stop_btn(event,arg2))
+            B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=org_widget.master: motion(event,arg2))
+            update.copy_widget=B1      # added this widget in copy_widgets list to paste it when required
+            update.init_widget(B1)     # adds to the list of widgets as soon as created
+            B1.place(x=i.winfo_x()+10,y=i.winfo_y()+10)
     if(org_widget.winfo_class()=="Entry"):
         print('copy')
-        entry=tk.Entry(org_widget.master,background=bg_color)
-        entry.bind("<Button-1>",lambda event,arg2=org_widget,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
-        entry.bind("<ButtonRelease-1>",lambda event,arg2=org_widget: stop_btn(event,arg2))
-        entry.bind("<B1-Motion>", lambda event,arg=entry,arg2=org_widget,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
-        update.copy_widget=entry      # added this widget in copy_widgets list to paste it when required
-        update.init_widget(entry)
-        entry.place(x=org_widget.winfo_x(),y=org_widget.winfo_y())
+        for i in update.selected_widget:   #for all the widgets in the list
+            entry=tk.Entry(org_widget.master,background=bg_color)
+            entry.bind("<Button-1>",lambda event,arg2=org_widget,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+            entry.bind("<ButtonRelease-1>",lambda event,arg2=org_widget: stop_btn(event,arg2))
+            entry.bind("<B1-Motion>", lambda event,arg=entry,arg2=org_widget,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+            update.copy_widget=entry      # added this widget in copy_widgets list to paste it when required
+            update.init_widget(entry)
+            entry.place(x=i.winfo_x()+10,y=i.winfo_y()+10)
 
 def copy_props(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     rc.place_forget()
@@ -420,19 +422,13 @@ def command(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
 
 def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     rc.place_forget()   #place forget the right click menu
-    l1.place_forget()   #place forget all the selection dots of current widget
-    l2.place_forget()
-    r1.place_forget()
-    r2.place_forget()
-    u.place_forget()
-    d.place_forget()
-    l.place_forget()
-    r.place_forget()
-    #print(org_widget.master.winfo_children()[8:])
-    length=len(org_widget.master.winfo_children()[8:])
+
+    print(org_widget.master.winfo_children())
+    length=len(org_widget.master.winfo_children())
     print(length)
-    count=8
+    count=0
     print('selected list before select all',update.selected_widget)
+    update.clear_selectiondots()
     update.selected_widget.clear()      #clear the selection list before adding new items to the selection list
     for i in range(0,length):
         if(org_widget.master.winfo_children()[count].winfo_class()=='Button'):

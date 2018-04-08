@@ -14,22 +14,22 @@ bg_color="#fef1e8"
 def allTime(root,middle_frame2,centre_frame):
     global l1,l2,r1,r2,u,d,rect,l,r,rc
 
-    l1=tk.Canvas(root,bd=0,highlightthickness=0)   #creation of 6 dots which makes the selected part of the widget
-    l1.place_forget()
-    l2=tk.Canvas(root,bd=0,highlightthickness=0)
-    l2.place_forget()    # to hide the widget
-    r1=tk.Canvas(root,bd=0,highlightthickness=0)
-    r1.place_forget()
-    r2=tk.Canvas(root,bd=0,highlightthickness=0)
-    r2.place_forget()
-    u=tk.Canvas(root,bd=0,highlightthickness=0)
-    u.place_forget()
-    d=tk.Canvas(root,bd=0,highlightthickness=0)
-    d.place_forget()
-    l=tk.Canvas(root,bd=0,highlightthickness=0)
-    l.place_forget()
-    r=tk.Canvas(root,bd=0,highlightthickness=0)
-    r.place_forget()
+    # l1=tk.Canvas(root,bd=0,highlightthickness=0)   #creation of 6 dots which makes the selected part of the widget
+    # l1.place_forget()
+    # l2=tk.Canvas(root,bd=0,highlightthickness=0)
+    # l2.place_forget()    # to hide the widget
+    # r1=tk.Canvas(root,bd=0,highlightthickness=0)
+    # r1.place_forget()
+    # r2=tk.Canvas(root,bd=0,highlightthickness=0)
+    # r2.place_forget()
+    # u=tk.Canvas(root,bd=0,highlightthickness=0)
+    # u.place_forget()
+    # d=tk.Canvas(root,bd=0,highlightthickness=0)
+    # d.place_forget()
+    # l=tk.Canvas(root,bd=0,highlightthickness=0)
+    # l.place_forget()
+    # r=tk.Canvas(root,bd=0,highlightthickness=0)
+    # r.place_forget()
     rc=tk.Canvas(centre_frame,height=177,width=160,background="#f7f7f7",bd=0)
     rc.place_forget()
     #rect=root.create_rectangle(0,0,200,200,fill="red")
@@ -41,14 +41,14 @@ def moveIn_MF(event,arg):     #when pressed in middle frame , to hide the select
     widget.bind("<Button-1>",lambda event:forget_all(arg))
 
 def forget_all(root):          # to hide the selection dots
-     l1.place_forget()
-     l2.place_forget()
-     r1.place_forget()
-     r2.place_forget()
-     u.place_forget()
-     d.place_forget()
-     l.place_forget()
-     r.place_forget()
+     # l1.place_forget()
+     # l2.place_forget()
+     # r1.place_forget()
+     # r2.place_forget()
+     # u.place_forget()
+     # d.place_forget()
+     # l.place_forget()
+     # r.place_forget()
      rc.place_forget()
      update.clear_selectiondots()           # clears all the selection dots
      update.selected_widget.clear()          # clears the list containing all the widgets that are selected
@@ -56,14 +56,14 @@ def forget_all(root):          # to hide the selection dots
      print('selected list',update.selected_widget)
 
 def startMultiSelect(event):    #this invokes when we click in working window
-    l1.place_forget()           #place forget all the selection dots
-    l2.place_forget()
-    r1.place_forget()
-    r2.place_forget()
-    u.place_forget()
-    d.place_forget()
-    l.place_forget()
-    r.place_forget()
+    # l1.place_forget()           #place forget all the selection dots
+    # l2.place_forget()
+    # r1.place_forget()
+    # r2.place_forget()
+    # u.place_forget()
+    # d.place_forget()
+    # l.place_forget()
+    # r.place_forget()
     rc.place_forget()
     update.clear_selectiondots()     # clears all the selection dots
     update.selected_widget.clear()   # clears the list containing all the widgets that are selected
@@ -74,16 +74,16 @@ def moveIn_Frame(event_main,centre_frame,taskbar,working_window):              #
 
     working_window.bind("<Button-1>",lambda event,arg=working_window:startMultiSelect(centre_frame))    #to hide the selection_lines when clicked on the frame
     #provide motion and drag the main_frame when taskbar is dragged
-    taskbar.bind("<Button-1>",lambda event,arg=taskbar,arg2=centre_frame,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d: functions.start_frame(event,arg,arg2,a1,a2,a3,a4,a5,a6))
+    taskbar.bind("<Button-1>",lambda event,arg=taskbar,arg2=centre_frame: functions.start_frame(event,arg,arg2))
     taskbar.bind("<B1-Motion>",lambda event,arg=taskbar,arg2=centre_frame: functions.motion_frame(event,arg,arg2))
     taskbar.bind("<ButtonRelease-1>",lambda event,arg2=centre_frame: functions.stop_frame(event,arg2))
 
 def button(root,root_parent):           #bindings for buttons
 
     B1=tk.Button(root,text="Button",height=1,bd=0,width=10,background=bg_color,relief=tk.RAISED)
-    B1.bind("<Button-1>",lambda event,arg2=root,arg3=rc,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.start_btn(event,arg2,arg3,a1,a2,a3,a4,a5,a6,a7,a8))
+    B1.bind("<Button-1>",lambda event,arg2=root,arg3=rc: functions.start_btn(event,arg2,arg3))
     B1.bind("<ButtonRelease-1>",lambda event,arg2=root: functions.stop_btn(event,arg2))
-    B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=root,a1=l1,a2=l2,a3=r1,a4=r2,a5=u,a6=d,a7=l,a8=r: functions.motion(event,arg2,a1,a2,a3,a4,a5,a6,a7,a8))
+    B1.bind("<B1-Motion>", lambda event,arg=B1,arg2=root: functions.motion(event,arg2))
     update.init_widget(B1)
     B1.place(x=10,y=10)
 
