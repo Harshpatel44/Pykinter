@@ -8,6 +8,7 @@ import update
 #this file deals from clicking on any right click context menu item
 #all the functions binded to the items of the right click context menu
 bg_color="#fef1e8"
+
 def id_change(event,org_widget,rc):
 
     rc.place_forget()                    #closes the right click menu as soon as function is inovoked

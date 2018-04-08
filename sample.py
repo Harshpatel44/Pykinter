@@ -392,8 +392,17 @@ import tkinter as tk
 
 main=tk.Tk()
 
-btn=tk.Label()
-for i in btn.keys():
-    print(i,btn.cget(i))
-btn.pack()
+
+button=tk.Button(text="harsh")
+button.pack()
+button=tk.Button(text="harsh")
+button.pack()
+button=tk.Button(text="harsh")
+button.pack()
+button=tk.Button(text="harsh")
+button.pack()
+button=tk.Button(text="harsh")
+button.pack()
+button.configure(text="annu")
+
 main.mainloop()

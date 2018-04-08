@@ -78,14 +78,19 @@ def get_key(widget):        #this functions creates the keys and returns it
     return str(widget.winfo_class())+str(btn)
 
 def change_key(widget,key,default):               #invokes when we want to change the key (button id) of the widget in dict
+
     for k,v in widget_init.items():
         #print(v)
-        if(v==widget):
+        if(v==i):
             #print('inside')
             #widget_init[key]=v
             widget_init[key]=widget_init[k]
             del widget_init[k]
             break
+
+
+
+
     #print(widget_init)
 
 

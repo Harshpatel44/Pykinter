@@ -1,11 +1,13 @@
 import tkinter as tk
 import right_clicks
+import update
 count=0
 def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r):
     org_widget=event.widget
 
 
     if(org_widget.winfo_class()=="Button"):
+
         global count
         #if(count==0):
         rc.delete('all')            #deletes the content of canvas first so repetation dont occur each time
@@ -15,20 +17,24 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
 
         rc.place(x=org_widget.winfo_x()+event.x,y=org_widget.winfo_y()+event.y+18)
 
+        if(len(update.selected_widget)!=1):
+            #rc.itemconfig(rt1,fill="#a9a9a9")
+            rt1=rc.create_rectangle(30,0,170,20,fill="#a9a9a9",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
+            rte1=rc.create_text(32,10,text="Button Id",anchor='w',tag='id')
+        else:
+            rt1=rc.create_rectangle(30,0,170,20,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
+            rte1=rc.create_text(32,10,text="Button Id",anchor='w',tag='id')
+            def hover_in(event):
+                rc.itemconfig(rt1,fill="#d9d9d9")
+            def hover_out(event):
+                rc.itemconfig(rt1,fill="#f7f7f7")
+            def onclick(event,org_org_widget,arg2):
+                right_clicks.id_change(event,org_widget,arg2)       #button_id function invoked
 
-        rt1=rc.create_rectangle(30,0,170,20,fill="#f7f7f7",activefill="#d9d9d9",outline="#f7f7f7",activeoutline="#d9d9d9")
-        rte1=rc.create_text(32,10,text="Button Id",anchor='w',tag='id')
-        def hover_in(event):
-            rc.itemconfig(rt1,fill="#d9d9d9")
-        def hover_out(event):
-            rc.itemconfig(rt1,fill="#f7f7f7")
-        def onclick(event,org_org_widget,arg2):
-            right_clicks.id_change(event,org_widget,arg2)       #button_id function invoked
-
-        rc.tag_bind(rte1,"<Enter>",hover_in)
-        rc.tag_bind(rte1,"<Leave>",hover_out)
-        rc.tag_bind(rt1,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick(event,arg,arg2))
-        rc.tag_bind(rte1,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick(event,arg,arg2))
+            rc.tag_bind(rte1,"<Enter>",hover_in)
+            rc.tag_bind(rte1,"<Leave>",hover_out)
+            rc.tag_bind(rt1,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick(event,arg,arg2))
+            rc.tag_bind(rte1,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick(event,arg,arg2))
 
 
 
@@ -145,6 +151,10 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             rc.itemconfig(r9,fill="#f7f7f7")
         rc.tag_bind(rt9,"<Enter>",hover_in)
         rc.tag_bind(rt9,"<Leave>",hover_out)
+
+
+
+
 
 
 
