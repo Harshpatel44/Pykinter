@@ -1,4 +1,3 @@
-__author__ = 'Harsh'
 import tkinter as tk
 import editor_tab
 import properties_tab
@@ -174,7 +173,7 @@ class editor_frame(tk.Frame,main):
         self.eb(self,controller)
         self.program_area(self)
 
-    def tb(self,main):
+    def tb(self,main):      #the bar
 
             def maximize(event):
                 print("maximize")
@@ -206,14 +205,14 @@ class editor_frame(tk.Frame,main):
             maximize.bind("<Button-1>",maximize)
             title_bar.pack()
 
-    def mb(self,main):
+    def mb(self,main):     #menu bar
         menu_bar=tk.Frame(self,height=23,width=1300,highlightthickness=1,relief='solid',background="white",highlightbackground="#555555")
         menu_bar.pack()
 
-    def ob(self,main):
+    def ob(self,main):       #option bar
         option_bar=tk.Frame(self,height=81,width=1300,highlightthickness=1,highlightbackground="#555555",relief='solid',background='#0B3CFD')
         option_bar.pack(side='top')
-    def eb(self,main,controller):
+    def eb(self,main,controller):    #extra bar
         extra_bar=tk.Frame(self,height=25,width=1300,highlightthickness=1,highlightbackground="#555555",relief='solid',background='#96858F')
         extra_bar.pack()
 
@@ -221,7 +220,7 @@ class editor_frame(tk.Frame,main):
         editor_button.place(x=400,y=1)
         design_button=tk.Button(extra_bar,text="Design",command=lambda:controller.show_frame(main_frame))
         design_button.place(x=450,y=1)
-    def program_area(self,main):
+    def program_area(self,main):      #main drawing area
 
         frame1=tk.Frame(self,height=530,width=230,relief='solid',background="#96858F",highlightthickness=1,highlightbackground="#555555")
         frame2=tk.Frame(self,height=530,width=2000,relief='solid',background="#96858F",highlightthickness=1,highlightbackground="#555555")
