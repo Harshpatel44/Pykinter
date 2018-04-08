@@ -422,7 +422,8 @@ def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2
     length=len(org_widget.master.winfo_children()[8:])
     print(length)
     count=8
-
+    print('selected list before select all',update.selected_widget)
+    update.selected_widget.clear()      #clear the selection list before adding new items to the selection list
     for i in range(0,length):
         if(org_widget.master.winfo_children()[count].winfo_class()=='Button'):
             widget_main=(org_widget.master.winfo_children()[count])
@@ -448,5 +449,6 @@ def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2
             l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
             update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])   #adding the selection dots to the list to pack.forget() it afterwards
 
-
+            update.selected_widget.append(widget_main)
+    print('selected list in select all',update.selected_widget)
 

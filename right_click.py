@@ -13,7 +13,6 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         #rc=tk.Canvas(root,height=150,width=120,background="#dddddd",bd=0)
 
 
-
         rc.place(x=org_widget.winfo_x()+event.x,y=org_widget.winfo_y()+event.y+18)
 
 

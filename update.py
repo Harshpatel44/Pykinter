@@ -12,10 +12,12 @@ etry=0
 copy_widget=''     # single copied widget data placed here
 copy_widgets=[]    #multiple selected widgets list to paste when required
 selectiondots_list=[]     #a list containing all the selected widget's selections dots
+selected_list=[]      #list containing all the selected widgets (specific)
+selected_widget=[]
 import time
 
 
-def forget_selection_all():
+def clear_selectiondots():
     for i in selectiondots_list:
         i.place_forget()
     selectiondots_list.clear()

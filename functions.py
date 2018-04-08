@@ -104,7 +104,10 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
 
 
 
-    update.forget_selection_all()
+    update.clear_selectiondots()                # removing all the other selected dots
+    update.selected_widget.clear()
+    update.selected_widget.append(selected)       # add the widget to the list selected_widget in update
+    print('selected list in function',update.selected_widget)
      #these functions are for right click context menu
     def right_click_fn(event):
          right_click.menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r)
