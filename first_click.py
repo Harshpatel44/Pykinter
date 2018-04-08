@@ -65,7 +65,7 @@ def startMultiSelect(event):    #this invokes when we click in working window
     l.place_forget()
     r.place_forget()
     rc.place_forget()
-    update.clear_selectiondots()    # clears all the selection dots
+    update.clear_selectiondots()     # clears all the selection dots
     update.selected_widget.clear()   # clears the list containing all the widgets that are selected
     print('selected list',update.selected_widget)
 

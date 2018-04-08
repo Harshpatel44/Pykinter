@@ -250,7 +250,9 @@ def copy_properties(org_widget,new):     #checks each property of the widget and
 def delete(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     print('harsh')
     rc.place_forget()
-    org_widget.destroy()
+    for i in update.selected_widget:
+        i.destroy()
+    update.clear_selectiondots()
     l1.place_forget()
     l2.place_forget()
     r1.place_forget()
@@ -416,8 +418,15 @@ def command(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     popup.mainloop()
 
 def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
-    rc.place_forget()
-
+    rc.place_forget()   #place forget the right click menu
+    l1.place_forget()   #place forget all the selection dots of current widget
+    l2.place_forget()
+    r1.place_forget()
+    r2.place_forget()
+    u.place_forget()
+    d.place_forget()
+    l.place_forget()
+    r.place_forget()
     #print(org_widget.master.winfo_children()[8:])
     length=len(org_widget.master.winfo_children()[8:])
     print(length)

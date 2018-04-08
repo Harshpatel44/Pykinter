@@ -19,7 +19,7 @@ import time
 
 def clear_selectiondots():
     for i in selectiondots_list:
-        i.place_forget()
+        i.destroy()
     selectiondots_list.clear()
     print()
     print('done')
