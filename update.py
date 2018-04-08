@@ -11,8 +11,16 @@ btn=0
 etry=0
 copy_widget=''     # single copied widget data placed here
 copy_widgets=[]    #multiple selected widgets list to paste when required
+selectiondots_list=[]     #a list containing all the selected widget's selections dots
 import time
 
+
+def forget_selection_all():
+    for i in selectiondots_list:
+        i.place_forget()
+    selectiondots_list.clear()
+    print()
+    print('done')
 def save_widget_props(widget,variables):      #this function invokes each time a value of the widget is changed so that dict is maintained for props of widgets
 
     if(widget.winfo_class()!="Entry"):
@@ -84,7 +92,7 @@ def find_key(widget):                     #this function finds key for the windo
         #print(v)
         if(v==widget):
             return k
-def find_command(widget):                     #this function finds key for the window so that the key can be put in entry box each time
+def find_command(widget):                     #this function finds command for the window so that the command of button can be put in entry box each time
     for k,v in button_command.items():
         #print(v)
         if(v==widget):

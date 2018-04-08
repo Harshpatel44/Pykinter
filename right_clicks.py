@@ -415,5 +415,38 @@ def command(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     popup.focus_force()
     popup.mainloop()
 
-def select_all_specific(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
-    print()
+def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
+    rc.place_forget()
+
+    #print(org_widget.master.winfo_children()[8:])
+    length=len(org_widget.master.winfo_children()[8:])
+    print(length)
+    count=8
+
+    for i in range(0,length):
+        if(org_widget.master.winfo_children()[count].winfo_class()=='Button'):
+            widget_main=(org_widget.master.winfo_children()[count])
+            print(widget_main)
+            count+=1
+            l1=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="ul_angle")   #creation of 6 dots which makes the selected part of the widget
+            l2=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="ll_angle")
+            r1=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="ur_angle")
+            r2=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="lr_angle")
+            u=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="top_tee")
+            d=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="bottom_tee")
+            l=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="left_tee")
+            r=tk.Canvas(root,bd=0,highlightthickness=0,height=4,width=4,background="#666666",cursor="right_tee")
+
+
+            l1.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()-6)
+            u.place(x=widget_main.winfo_x()-1+(widget_main.winfo_width())/2,y=widget_main.winfo_y()-6)
+            r1.place(x=widget_main.winfo_x()-0 + widget_main.winfo_width(),y=widget_main.winfo_y()-6)
+            l2.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+widget_main.winfo_height()+2)
+            d.place(x=widget_main.winfo_x()-1+(widget_main.winfo_width())/2,y=widget_main.winfo_y()+widget_main.winfo_height()+2)
+            r2.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height()+2)
+            r.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
+            l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
+            update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])   #adding the selection dots to the list to pack.forget() it afterwards
+
+
+

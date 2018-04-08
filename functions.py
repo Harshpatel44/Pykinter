@@ -8,6 +8,7 @@ import tkinter as tk
 import properties_tab
 import right_click
 import re
+import update
 
 
 global gl1,gl2,gr1,gr2,gu,gd,gl,gr
@@ -102,6 +103,8 @@ def start_btn(event,root,rc,l1,l2,r1,r2,u,d,l,r):    #rc is right click canvas
     l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
 
 
+
+    update.forget_selection_all()
      #these functions are for right click context menu
     def right_click_fn(event):
          right_click.menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r)

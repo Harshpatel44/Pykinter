@@ -50,12 +50,12 @@ def forget_all(root):          # to hide the selection dots
      l.place_forget()
      r.place_forget()
      rc.place_forget()
-
+     update.forget_selection_all()
      root.configure(highlightbackground="#555555")
 
 
-def startMultiSelect(event):
-    l1.place_forget()
+def startMultiSelect(event):    #this invokes when we click in working window
+    l1.place_forget()           #place forget all the selection dots
     l2.place_forget()
     r1.place_forget()
     r2.place_forget()
@@ -64,6 +64,7 @@ def startMultiSelect(event):
     l.place_forget()
     r.place_forget()
     rc.place_forget()
+    update.forget_selection_all()
 
 
 def moveIn_Frame(event_main,centre_frame,taskbar,working_window):              #bindings when we enter in centre frame
