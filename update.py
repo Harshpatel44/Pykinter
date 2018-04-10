@@ -31,14 +31,22 @@ def save_widget_props(widget,variables):      #this function invokes each time a
     variables[0].set(widget.cget('text'))
     #properties_tab.he.set(widget.cget('height'))
     variables[2].set(widget.cget('width'))
-    variables[3].set(widget.cget('fg'))
+    if widget.cget('fg')=="SystemButtonText":
+        variables[3].set("Default")
+    else:
+        variables[3].set(widget.cget('fg'))
+
+
     variables[4].set(widget.cget('font'))
     variables[5].set(widget.cget('font'))
     #properties_tab.aln.set(widget.cget('orient'))
     #properties_tab.acn.set(widget.cget('text'))
     variables[8].set(widget.cget('bd'))
     variables[9].set(widget.cget('background'))
-    variables[10].set(widget.cget('highlightbackground'))
+    if widget.cget('highlightbackground')== "SystemButtonFace":
+        variables[10].set("Default")
+    else :
+        variables[10].set(widget.cget("highlightbackground"))
     variables[11].set(widget.cget('cursor'))
 
 def change_property():   #this function deals with changing the value of the properties tab on changing or clicking on the widget
