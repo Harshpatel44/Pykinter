@@ -216,18 +216,28 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     Button_bold.config(relief="raised")
     Button_bold.bind("<Enter>",enter)
     Button_bold.bind("<Leave>",leave)
+    Button_bold.bind("<Button-1>",lambda event,arg=0:backend_properties.Font_styling(event,arg))
+    # Button_bold.bind("<FocusOut>",lambda event,arg=0:backend_properties.Font_styling(event,arg))
+    # Button_bold.bind("<Return>",lambda event,arg=0:backend_properties.Font_styling(event,arg))
+
     Button_bold.place(x=100,y=370)
 
     Button_italic=tk.Button(props_frame,text="ITALIC",width=15,bd=0,background="#6D7993",fg="#fef1e8",command=lambda event,arg=2:backend_properties.Font_styling)
     Button_italic.config(relief="raised")
     Button_italic.bind("<Enter>",enter)
     Button_italic.bind("<Leave>",leave)
+    Button_italic.bind("<Button-1>",lambda event,arg=1:backend_properties.Font_styling(event,arg))
+    # Button_italic.bind("<FocusOut>",lambda event,arg=1:backend_properties.Font_styling(event,arg))
+    # Button_italic.bind("<Return>",lambda event,arg=1:backend_properties.Font_styling(event,arg))
     Button_italic.place(x=100,y=395)
 
     Button_underline=tk.Button(props_frame,text="UNDERLINE",width=15,bd=0,background="#6D7993",fg="#fef1e8",command=lambda event,arg=2:backend_properties.Font_styling)
     Button_italic.config(relief="sunken",bd=0)
     Button_underline.bind("<Enter>",enter)
     Button_underline.bind("<Leave>",leave)
+    Button_underline.bind("<Button-1>",lambda event,arg=2:backend_properties.Font_styling(event,arg))
+    # Button_underline.bind("<FocusOut>",lambda event,arg=2:backend_properties.Font_styling(event,arg))
+    # Button_underline.bind("<Return>",lambda event,arg=2:backend_properties.Font_styling(event,arg))
     Button_underline.place(x=100,y=420)
 
 #cursors department

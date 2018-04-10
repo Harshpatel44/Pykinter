@@ -1155,10 +1155,11 @@ def font_styling_change(bold_style,italic_style,underline_style,flag):
     current_italic=''
     current_underline=''
 
-    if flag==0:
-        current_bold=selected.cget("font")
-        answer=re.compile(r"\w+",current_bold)
-        print(answer)
+    def change_bold(event,bold,number):
+        if number==0:
+            event.widget.configure(font="bold")
+
+
 
 
 

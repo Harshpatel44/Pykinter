@@ -1,4 +1,3 @@
-__author__ = 'Harsh'
 
 import tkinter as tk
 import functions
@@ -93,6 +92,7 @@ def fontsize_enter(event):
     widget=event.widget
     global fontsize
     fontsize=widget.get()
+
     functions.selected.configure(font=(widget.cget("font"),fontsize))
 
 def bg_enter(event):
@@ -166,20 +166,25 @@ def cursor_sizechange(event):
     print(event)
 
 def Font_styling(event,number):
+    print("Reached fontstyling")
+
+
     widget=event.widget
+    print(widget.cget("font"))
+
     Font_style_bold=''
     Font_style_italic=''
     Font_style_underline=''
 
     if number==0:
-        Font_style_bold=widget.get()
+        functions.selected.configure(font=(widget.cget("font"),fontsize,"bold"))
+
 
     if number==1:
-        Font_style_italic=widget.get()
-
+       functions.selected.configure(font=(widget.cget("font"),fontsize,"italic"))
     if number==2:
-        Font_style_underline=widget.get()
+        functions.selected.configure(font=(widget.cget("font"),"underline",fontsize))
 
-    functions.font_styling_change(Font_style_bold,Font_style_italic,Font_style_underline,number)
+    #functions.font_styling_change(Font_style_bold,Font_style_italic,Font_style_underline,number)
 
 
