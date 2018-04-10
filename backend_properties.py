@@ -14,7 +14,9 @@ global bd_size
 global bd_color
 global onfocus_bdcolor
 global onfocus_textclor
+global counter_bold
 
+counter_bold=0
 
 fontsize=10
 
@@ -83,6 +85,8 @@ def fontstyle_enter(event):
     widget=event.widget
     global fontsize,fontstyle
     fontstyle=widget.get()
+
+
     functions.selected.configure(font=(widget.get(),fontsize))
 
 
@@ -167,23 +171,28 @@ def cursor_sizechange(event):
 
 def Font_styling(event,number):
     print("Reached fontstyling")
+    global counter_bold
 
 
     widget=event.widget
-    print(widget.cget("font"))
+    # print(widget.cget("font"))
+    #
+    # Font_style_bold=widget.cget("font")
+    # Font_style_italic=widget.cget("font")
+    # Font_style_underline=widget.cget("font")
 
-    Font_style_bold=''
-    Font_style_italic=''
-    Font_style_underline=''
+
 
     if number==0:
-        functions.selected.configure(font=(widget.cget("font"),fontsize,"bold"))
 
-
+       functions.selected.configure(font=(widget.cget("font"),fontsize,"bold"))
     if number==1:
        functions.selected.configure(font=(widget.cget("font"),fontsize,"italic"))
     if number==2:
-        functions.selected.configure(font=(widget.cget("font"),"underline",fontsize))
+       functions.selected.configure(font=(widget.cget("font"),fontsize,"underline"))
+
+
+
 
     #functions.font_styling_change(Font_style_bold,Font_style_italic,Font_style_underline,number)
 

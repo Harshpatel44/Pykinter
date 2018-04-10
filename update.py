@@ -39,6 +39,7 @@ def save_widget_props(widget,variables):      #this function invokes each time a
     variables[8].set(widget.cget('bd'))
     variables[9].set(widget.cget('background'))
     variables[10].set(widget.cget('highlightbackground'))
+    variables[11].set(widget.cget('cursor'))
 
 def change_property():   #this function deals with changing the value of the properties tab on changing or clicking on the widget
     print()
