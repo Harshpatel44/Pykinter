@@ -36,9 +36,16 @@ def save_widget_props(widget,variables):      #this function invokes each time a
     else:
         variables[3].set(widget.cget('fg'))
 
+    if widget.cget('font')=="TkDefaultFont":
 
-    variables[4].set(widget.cget('font'))
-    variables[5].set(widget.cget('font'))
+        variables[4].set("Default")
+    else:
+        variables[4].set(widget.cget('font'))
+    if widget.cget('font')=="TkDefaultFont":
+
+        variables[5].set("Default")
+    else:
+        variables[5].set(widget.cget('font'))
     #properties_tab.aln.set(widget.cget('orient'))
     #properties_tab.acn.set(widget.cget('text'))
     variables[8].set(widget.cget('bd'))
