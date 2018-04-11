@@ -6,6 +6,7 @@ import first_click
 
 
 
+
 def wid_tab(self,main,middle_frame1,middle_frame2):
 
     def on_configure(event):
@@ -54,6 +55,8 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
 
 
 
+    title_label=tk.Label(centre_frame,text=" ")
+    title_label.place(x=7,y=1)
     centre_frame.bind("<Enter>",lambda event,arg=centre_frame,arg2=taskbar,arg3=working_window:first_click.moveIn_Frame(event,arg,arg2,arg3))    #bindings when entered in frame
     middle_frame2.bind('<Enter>',lambda event,arg=centre_frame:first_click.moveIn_MF(event,arg))
 

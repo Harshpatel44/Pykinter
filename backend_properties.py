@@ -2,6 +2,7 @@
 import tkinter as tk
 import functions
 import update
+import widgets_tab
 
 global fontsize
 global name
@@ -137,7 +138,11 @@ def cursor_change(value):
 
 
 def window_naming(event,name):
-    functions.window_name(event,name)
+    #widgets_tab.wid_tab().title_label.configure(text=name)
+    print(name)
+
+
+
 
 
 def window_icon(value):

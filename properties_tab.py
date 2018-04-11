@@ -5,6 +5,7 @@ import tkinter.ttk as ttk
 from tkinter.colorchooser import askcolor
 
 
+
 #this file deals with the layout of the right section of the application , that is properties tab .
 root=tk.Tk()
 root.withdraw()
@@ -91,6 +92,27 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     variables[8]=tk.StringVar(props_frame,value="")
     variables[9]=tk.StringVar(props_frame,value="")
     variables[10]=tk.StringVar(props_frame,value="")
+    #variables[11]=tk.StringVar(props_frame,value="")
+    # variables[12]=tk.StringVar(props_frame,value="")
+    # variables[13]=tk.StringVar(props_frame,value="")
+
+
+    X_taskbar=tk.Label(props_frame,text="X",width=5,bd=1,background="#6D7993",fg="#fef1e8")
+    X_taskbar.place(x=30,y=30)
+    X_taskbar_enter=tk.Entry(props_frame,width=10)
+    X_taskbar_enter.bind("<Return>",backend_properties.enter_X)
+    X_taskbar_enter.bind('<FocusOut>',backend_properties.enter_X)
+    X_taskbar_enter.bind("<Return>",backend_properties.enter_X)
+    X_taskbar_enter.place(x=80,y=30)
+
+
+    Y_taskbar=tk.Label(props_frame,text="Y",width=5,bd=1,background="#6D7993",fg="#fef1e8")
+    Y_taskbar.place(x=150,y=30)
+    Y_taskbar_enter=tk.Entry(props_frame,width=10)
+    Y_taskbar_enter.bind("<Return>",backend_properties.enter_Y)
+    Y_taskbar_enter.bind('<FocusOut>',backend_properties.enter_Y)
+    Y_taskbar_enter.bind("<Return>",backend_properties.enter_Y)
+    Y_taskbar_enter.place(x=200,y=30)
 
 
     change_name=tk.Label(props_frame,text="Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
@@ -267,9 +289,9 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     win_name=tk.Label(props_frame,text="Window name",width=15,bd=1, background="#6D7993",fg="#fef1e8")
     win_name.place(x=30,y=570)
     win_name_enter=tk.Entry(props_frame,width=20)
-    win_name_enter.bind("<Return>",backend_properties.window_naming)
-    win_name_enter.bind("<FocusOut>",backend_properties.window_naming)
-    win_name_enter.bind("<Return>",backend_properties.window_naming)
+    win_name_enter.bind("<Return>",lambda event,name:backend_properties.window_naming(event,name))
+    win_name_enter.bind("<FocusOut>",lambda event,name:backend_properties.window_naming(event,name))
+    win_name_enter.bind("<Return>",lambda event,name:backend_properties.window_naming(event,name))
     win_name_enter.place(x=140,y=570)
 
 
@@ -288,22 +310,6 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     taskbar=tk.Label(props_frame,text="TaskBar Properties",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     taskbar.place(x=100,y=640)
 
-    X_taskbar=tk.Label(props_frame,text="X",width=5,bd=1,background="#6D7993",fg="#fef1e8")
-    X_taskbar.place(x=30,y=670)
-    X_taskbar_enter=tk.Entry(props_frame,width=10)
-    X_taskbar_enter.bind("<Return>",backend_properties.enter_X)
-    X_taskbar_enter.bind('<FocusOut>',backend_properties.enter_X)
-    X_taskbar_enter.bind("<Return>",backend_properties.enter_X)
-    X_taskbar_enter.place(x=80,y=670)
-
-
-    Y_taskbar=tk.Label(props_frame,text="Y",width=5,bd=1,background="#6D7993",fg="#fef1e8")
-    Y_taskbar.place(x=150,y=690)
-    Y_taskbar_enter=tk.Entry(props_frame,width=10)
-    Y_taskbar_enter.bind("<Return>",backend_properties.enter_Y)
-    Y_taskbar_enter.bind('<FocusOut>',backend_properties.enter_Y)
-    Y_taskbar_enter.bind("<Return>",backend_properties.enter_Y)
-    Y_taskbar_enter.place(x=200,y=690)
 
 
 
