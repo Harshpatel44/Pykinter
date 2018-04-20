@@ -118,8 +118,7 @@ def prop_tab(self,main,middle_frame3,middle_frame2):
     change_name=tk.Label(props_frame,text="Name:",width=15,bd=1,background="#6D7993",fg="#fef1e8")
     change_name.place(x=30,y=50)
     name_enter=tk.Entry(props_frame,width=20,textvariable=variables[0])
-    #name_enter.bind("<FocusIn>",backend_properties.check_configure)
-    #name_enter.bind("<Enter>",backend_properties.check_configure)
+
     name_enter.bind("<Tab>",backend_properties.name_enter)
     name_enter.bind("<FocusOut>",backend_properties.name_enter)
     name_enter.bind("<Return>",backend_properties.name_enter)
