@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39576577-c002-4abc-a4d2-ddd6af34fb53" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Pykinter-github.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pykinter-github.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pykinter_version2/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version2/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pykinter_version2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Pykinter_version2/new_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version2/new_file.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,17 +38,15 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="Harsh_edit" />
       </map>
     </option>
-    <push-targets>
-      <push-target-info repo="$PROJECT_DIR$" source="Harsh_edit" target-remote="origin" target-branch="master" />
-    </push-targets>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1bpW1lRerssyZJ2lBziw9F6ipbA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -57,6 +54,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="FullScreen" value="false" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -68,7 +66,7 @@
       <recent name="C:\Users\harsh\PycharmProjects\Pykinter-github" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.utkARSH">
+  <component name="RunManager" selected="Python.layout_main">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -230,8 +228,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.utkARSH" />
         <item itemvalue="Python.layout_main" />
+        <item itemvalue="Python.utkARSH" />
         <item itemvalue="Python.functions" />
         <item itemvalue="Python.resize_function" />
         <item itemvalue="Python.sample" />
@@ -261,6 +259,8 @@
       <option name="presentableId" value="Default" />
       <updated>1520269287154</updated>
       <workItem from="1589329307148" duration="545000" />
+      <workItem from="1596906155504" duration="4820000" />
+      <workItem from="1599952638043" duration="34000" />
     </task>
     <task id="LOCAL-00014" summary="selection dots updated&#10;">
       <created>1520622358001</created>
@@ -643,33 +643,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="Onfocus_added" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589329707982">
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom" timestamp="1599952671534">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1589329707982" />
-    <state width="1323" height="220" key="GridCell.Tab.0.bottom" timestamp="1589330048374">
+    <state width="1323" height="260" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1599952671534" />
+    <state width="1323" height="260" key="GridCell.Tab.0.center" timestamp="1599952671533">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1589330048374" />
-    <state width="1323" height="220" key="GridCell.Tab.0.center" timestamp="1589330048374">
+    <state width="1323" height="260" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1599952671533" />
+    <state width="1323" height="260" key="GridCell.Tab.0.left" timestamp="1599952671533">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1589330048374" />
-    <state width="1323" height="220" key="GridCell.Tab.0.left" timestamp="1589330048374">
+    <state width="1323" height="260" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1599952671533" />
+    <state width="1323" height="260" key="GridCell.Tab.0.right" timestamp="1599952671533">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1589330048374" />
-    <state width="1323" height="220" key="GridCell.Tab.0.right" timestamp="1589330048374">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state width="1323" height="220" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1589330048374" />
-    <state x="133" y="21" key="SettingsEditor" timestamp="1589329685469">
-      <screen x="0" y="0" width="1366" height="738" />
-    </state>
-    <state x="133" y="21" key="SettingsEditor/0.0.1366.738@0.0.1366.738" timestamp="1589329685469" />
+    <state width="1323" height="260" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1599952671533" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Pykinter_github$layout_main.coverage" NAME="layout_main Coverage Results" MODIFIED="1589329760124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Pykinter_github$layout_main.coverage" NAME="layout_main Coverage Results" MODIFIED="1599952650266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Pykinter_github$utkARSH.coverage" NAME="utkARSH Coverage Results" MODIFIED="1589330048335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

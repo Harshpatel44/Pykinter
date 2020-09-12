@@ -1,4 +1,6 @@
-import tkinter as tk
+import_part=["tkinter as tk"]
+
+init_part="""
 def start(event,arg,arg2):
     widget=event.widget
     print(widget)
@@ -75,14 +77,16 @@ class frame1(tk.Frame,main):
         closeButton.bind('<Enter>',entering)
         closeButton.bind("<Button-1>",lambda event,arg=self,arg2=main:close(event,arg,arg2))
         closeButton.bind('<Leave>',leaving)
-        ButtonHarsh=tk.Button(self,text="Harsh",height=2,width=10,background="#fef1e8",foreground="SystemButtonText",relief=tk.RAISED,bd=0)
-        ButtonHarsh.place(x=27,y=75)
+"""
 
+mainloop="""
+app=main()
+app.mainloop()
+"""
+
+frame2_s="""
 class frame2(tk.Frame):
     def __init__(self,parent,controller):
         tk.Frame.__init__(self,parent)
         self.controller=controller
-
-app=main()
-app.mainloop()
-
+"""
