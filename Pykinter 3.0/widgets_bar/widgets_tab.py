@@ -2,8 +2,7 @@ __author__ = 'Harsh'
 
 
 import tkinter as tk
-import first_click
-
+from widgets_bar import first_click
 
 
 def wid_tab(self,main,middle_frame1,middle_frame2):
@@ -12,8 +11,6 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
         # update scrollregion after starting 'mainloop'
         # when all widgets are in canvas
             design2.configure(scrollregion=design2.bbox('all'))
-
-
 
     design = tk.Canvas(middle_frame1, width=250, height=25,bg='#96858F',highlightthickness=0,background="#333333")
     design.place(x=0,y=0)
@@ -29,8 +26,6 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
 
     widgets_frame=tk.Frame(design2,height=502,width=250)
     design2.create_window((0,0),window=widgets_frame,anchor='nw')
-
-
 
     centre_frame=tk.Frame(middle_frame2,height=400,width=400,background="#6D7993",highlightthickness=3,highlightbackground="#555555",relief=tk.SOLID)
     centre_frame.place(x=100,y=100)
@@ -54,8 +49,8 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
 
 
 
-    centre_frame.bind("<Enter>",lambda event,arg=centre_frame,arg2=taskbar,arg3=working_window:first_click.moveIn_Frame(event,arg,arg2,arg3))    #bindings when entered in frame
-    middle_frame2.bind('<Enter>',lambda event,arg=centre_frame:first_click.moveIn_MF(event,arg))
+    centre_frame.bind("<Enter>", lambda event,arg=centre_frame,arg2=taskbar,arg3=working_window: first_click.moveIn_Frame(event, arg, arg2, arg3))    #bindings when entered in frame
+    middle_frame2.bind('<Enter>', lambda event,arg=centre_frame: first_click.moveIn_MF(event, arg))
 
 
     #Creating a centre_frame and changing the coordinates on binding
@@ -105,7 +100,7 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
 
 
     #b=tk.Button()
-    button=tk.Button(widgets_frame,text="Button",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief=tk.SUNKEN,command=lambda: first_click.button(working_window))
+    button=tk.Button(widgets_frame, text="Button", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief=tk.SUNKEN, command=lambda: first_click.button(working_window))
     button.config(font=('Copperplate Gothic Light',12))
     button.place(x=10,y=30)
 
@@ -113,43 +108,43 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
     tool_button.config(font=('Copperplate Gothic Light',12))
     tool_button.place(x=10,y=60)
 
-    radio_button=tk.Button(widgets_frame,text="Radio Button",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief=tk.SUNKEN,command= lambda: first_click.radio_button(working_window))
+    radio_button=tk.Button(widgets_frame, text="Radio Button", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief=tk.SUNKEN, command= lambda: first_click.radio_button(working_window))
     radio_button.config(font=('Copperplate Gothic Light',12))
     radio_button.place(x=10,y=90)
 
-    check_button=tk.Button(widgets_frame,text="Check Button",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief=tk.GROOVE,command= lambda: first_click.check_button(working_window))
+    check_button=tk.Button(widgets_frame, text="Check Button", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief=tk.GROOVE, command= lambda: first_click.check_button(working_window))
     check_button.config(font=('Copperplate Gothic Light',12))
     check_button.place(x=10,y=120)
 
-    entrybox=tk.Button(widgets_frame,text="Entry Box",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief=tk.SOLID,command= lambda: first_click.entry_button(working_window))
+    entrybox=tk.Button(widgets_frame, text="Entry Box", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief=tk.SOLID, command= lambda: first_click.entry_button(working_window))
     entrybox.config(font=('Copperplate Gothic Light',12))
     entrybox.place(x=10,y=150)
 
-    label=tk.Button(widgets_frame,text="Label",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.label_click(working_window))
+    label=tk.Button(widgets_frame, text="Label", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.label_click(working_window))
     label.config(font=('Copperplate Gothic Light',12))
     label.place(x=10,y=180)
 
-    scroll_bar=tk.Button(widgets_frame,text="Scroll Bar",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.scroll_click(working_window))
+    scroll_bar=tk.Button(widgets_frame, text="Scroll Bar", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.scroll_click(working_window))
     scroll_bar.config(font=('Copperplate Gothic Light',12))
     scroll_bar.place(x=10,y=210)
 
-    progress_bar=tk.Button(widgets_frame,text="Progress Bar",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.progressbar_click(working_window))
+    progress_bar=tk.Button(widgets_frame, text="Progress Bar", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.progressbar_click(working_window))
     progress_bar.config(font=('Copperplate Gothic Light',12))
     progress_bar.place(x=10,y=240)
 
-    spin_box=tk.Button(widgets_frame,text="Spin Box",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.spinbox_click(working_window))
+    spin_box=tk.Button(widgets_frame, text="Spin Box", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.spinbox_click(working_window))
     spin_box.config(font=('Copperplate Gothic Light',12))
     spin_box.place(x=10,y=270)
 
-    combo_box=tk.Button(widgets_frame,text="Combo Box",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.combobox_click(working_window))
+    combo_box=tk.Button(widgets_frame, text="Combo Box", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.combobox_click(working_window))
     combo_box.config(font=('Copperplate Gothic Light',12))
     combo_box.place(x=10,y=300)
 
-    drop_view=tk.Button(widgets_frame,text="Drop View",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.dropmenu_click(working_window))
+    drop_view=tk.Button(widgets_frame, text="Drop View", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.dropmenu_click(working_window))
     drop_view.config(font=('Copperplate Gothic Light',12))
     drop_view.place(x=10,y=330)
 
-    list_view=tk.Button(widgets_frame,text="List View",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.listbox_click(working_window))
+    list_view=tk.Button(widgets_frame, text="List View", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.listbox_click(working_window))
     list_view.config(font=('Copperplate Gothic Light',12))
     list_view.place(x=10,y=360)
 
@@ -165,7 +160,7 @@ def wid_tab(self,main,middle_frame1,middle_frame2):
     shapes.config(font=('Copperplate Gothic Light',12))
     shapes.place(x=10,y=450)
 
-    image_insert=tk.Button(widgets_frame,text="Image",height=1,bd=0,width=15,background="#6D7993",fg="#FFFFFF",relief="solid",command=lambda:first_click.image_click(working_window))
+    image_insert=tk.Button(widgets_frame, text="Image", height=1, bd=0, width=15, background="#6D7993", fg="#FFFFFF", relief="solid", command=lambda: first_click.image_click(working_window))
     image_insert.config(font=('Copperplate Gothic Light',12))
     image_insert.place(x=10,y=480)
 

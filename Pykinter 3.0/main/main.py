@@ -1,11 +1,11 @@
 __author__ = 'Harsh'
 
 import tkinter as tk
-import editor_tab
+from program_editor import editor_tab
 import window_basic_functions.functions as basic_func
-import widgets_tab
-import properties_tab
-import update
+from widgets_bar import widgets_tab
+from properties_bar import properties_tab
+
 
 class Main(tk.Tk):
     def __init__(self, *args, **kwargs):
@@ -20,12 +20,13 @@ class Main(tk.Tk):
         self.w = self.winfo_screenwidth()
         print("Window width: {0} and height: {1}".format(self.w, self.h))
         self.geometry("%dx%d+0+0" % (self.w, self.h))
+        self.state("zoomed")
 
         container = tk.Frame(self)
         container.pack(side='top', fill='both', expand='true')
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
-        self.overrideredirect('false')
+        # self.overrideredirect('false')
 
         # self.titlebar_func()
         # self.bind("<Map>",self.display_window)
@@ -82,6 +83,7 @@ class CreatorFrames(tk.Frame,Main):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         tk.controller = controller
+        self.controller = controller
         self.w = self.winfo_screenwidth()
         self.h = self.winfo_screenheight()
         self.parent = parent
@@ -94,39 +96,42 @@ class CreatorFrames(tk.Frame,Main):
         self.bind('<B1-Motion>', basic_func.motion_window_drag)
 
     def toolbar_func(self):
-        toolbar = tk.Frame(self, height=24, width=self.w, highlightthickness=1, relief='solid', background="white",
+        toolbar = tk.Frame(self, height=self.h*0.03, width=self.w, highlightthickness=0.5, background="white",
                             highlightbackground="black")
         toolbar.pack(side='top')
 
     def menubar_func(self):  # menu bar
-        menu_bar = tk.Frame(self, height=24, width=self.w, highlightthickness=1, relief='solid', background="white",
+        menu_bar = tk.Frame(self, height=self.h*0.03, width=self.w, highlightthickness=0.5, background="white",
                             highlightbackground="black")
         menu_bar.pack(side='top')
 
     def optionbar_func(self):  # option bar
-        option_bar = tk.Frame(self, height=81, width=self.w, highlightthickness=1, highlightbackground="#555555",
-                              relief='solid', background='#96858F')
+        option_bar = tk.Frame(self, height=self.h*0.06, width=self.w, highlightthickness=0.5, background='white',
+                              highlightbackground="black")
         option_bar.pack(side='top')
 
     def extrabar_func(self):  # extra bar
-        extra_bar = tk.Frame(self, height=25, width=self.w, highlightthickness=1, highlightbackground="#555555",
-                             relief='solid', background='#6D7993')
+        extra_bar = tk.Frame(self, height=self.h*0.03, width=self.w, highlightthickness=0.5, background='white',
+                             highlightbackground="black")
         extra_bar.pack(side='top')
 
-        change_frames_btn = tk.Button(extra_bar, text="Design", relief="flat",
-                                  command=lambda: self.show_frame(CreatorFrames))
-        change_frames_btn.place(x=450, y=1)
-        save_button = tk.Button(extra_bar, text="Editor", command=lambda: update.save_data)
-        save_button.place(x=450, y=1)
+        editor_button=tk.Button(extra_bar,text="Editor",relief="flat",command=lambda:self.controller.show_frame(EditorFrames))
+        editor_button.place(x=400,y=1)
+        design_btn = tk.Button(extra_bar, text="Design", relief="flat",
+                                  command=lambda: self.controller.show_frame(CreatorFrames))
+        design_btn.place(x=450, y=1)
+
+        # save_button = tk.Button(extra_bar, text="Editor", command=lambda: update.save_data)
+        # save_button.place(x=550, y=1)
 
     def middle_frames_func(self):
-        middle_frame1 = tk.Frame(self, height=530, width=230, relief='solid', background="#96858F",
+        middle_frame1 = tk.Frame(self, height=self.h*0.785, width=self.w*0.15, relief='solid', background="#96858F",
                                  highlightthickness=1, highlightbackground="#555555")
         global middle_frame1_instance
         middle_frame1_instance = self
-        middle_frame2 = tk.Frame(self, height=530, width=750, relief='solid', background="#999999",
+        middle_frame2 = tk.Frame(self, height=self.h*0.785, width=self.w*0.65, relief='solid', background="#999999",
                                  highlightthickness=1, highlightbackground="#555555")
-        middle_frame3 = tk.Frame(self, height=530, width=300, relief='solid', background="#d8c9c9",
+        middle_frame3 = tk.Frame(self, height=self.h*0.785, width=self.w*0.20, relief='solid', background="#d8c9c9",
                                  highlightthickness=1, highlightbackground="#555555")
         middle_frame1.pack(side='left')
         middle_frame2.pack(side="left")

@@ -1,12 +1,8 @@
 __author__ = 'Harsh'
 
-import tkinter as tk
 selected=0
 g_root=0
 import time
-from PIL import ImageTk,Image
-import properties_tab
-
 
 global gl1,gl2,gr1,gr2,gu,gd
 
