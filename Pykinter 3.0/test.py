@@ -1,7 +1,6 @@
-import Tkinter as tk
-
-
+import tkinter as tk
 main=tk.Tk()
+
 e1=tk.StringVar()
 e2=tk.StringVar()
 
