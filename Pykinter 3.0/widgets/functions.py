@@ -6,7 +6,7 @@ g_root=0
 import time
 import tkinter as tk
 from properties_bar import properties_tab
-from widgets_bar import right_click
+from widgets import right_click
 import re
 from program_editor import update
 

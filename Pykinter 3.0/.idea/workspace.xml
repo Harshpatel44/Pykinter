@@ -2,24 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bef4e03-9365-481b-87bb-dd2e9ce08e1e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/widgets_bar/right_click.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/program_editor/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/program_editor/update.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties_bar/backend_properties.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties_bar/backend_properties.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/properties_bar/properties_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/properties_bar/properties_tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgets_bar/first_click.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets_bar/first_click.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgets_bar/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets_bar/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/widgets_bar/widgets_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets_bar/widgets_tab.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/access_properties.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/copy_button.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/first_click.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version1/first_click.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/last_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/new_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version1/new_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version1/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/update.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version1/update.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version1/widget_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Pykinter_version2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Pykinter_version2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets_bar/first_click.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/first_click.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets_bar/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/functions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets_bar/right_click.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/right_click.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets_bar/right_clicks.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/right_clicks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/widgets_bar/widgets_tab.py" beforeDir="false" afterPath="$PROJECT_DIR$/widgets/widgets_controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +82,7 @@
       <recent name="D:\Project Works\Python Projects\Pykinter\Pykinter 3.0" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main (1)">
+  <component name="RunManager" selected="Python.main">
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -125,7 +116,7 @@
       <option name="ADDITIONAL_ARGS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="layout_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="constants" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Pykinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -133,12 +124,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/application_standards" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/layout_main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/application_standards/constants.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -213,7 +204,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="widgets_tab" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="widgets_controller" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Pykinter" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -221,12 +212,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/widgets" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="D:\Project Works\Python Projects\Pykinter\Pykinter 3.0\widgets_bar\widgets_tab.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/widgets/widgets_controller.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -245,19 +236,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.layout_main" />
-      <item itemvalue="Python.widgets_tab" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.main (1)" />
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.constants" />
+      <item itemvalue="Python.widgets_controller" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main (1)" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.layout_main" />
-        <item itemvalue="Python.widgets_tab" />
+        <item itemvalue="Python.widgets_controller" />
+        <item itemvalue="Python.main (1)" />
+        <item itemvalue="Python.constants" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -288,6 +279,10 @@
       <workItem from="1599952983611" duration="5686000" />
       <workItem from="1600009817398" duration="25037000" />
       <workItem from="1600094372708" duration="2160000" />
+      <workItem from="1600100520335" duration="3163000" />
+      <workItem from="1600207758155" duration="2064000" />
+      <workItem from="1600398219300" duration="254000" />
+      <workItem from="1600490742538" duration="9458000" />
     </task>
     <servers />
   </component>
@@ -311,35 +306,41 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="425" y="171" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.738@0.0.1366.738" timestamp="1600052889570" />
-    <state width="1323" height="155" key="GridCell.Tab.0.bottom" timestamp="1600100485534">
+    <state width="1323" height="155" key="GridCell.Tab.0.bottom" timestamp="1600500546526">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1600100485534" />
+    <state width="1323" height="155" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1600500546526" />
     <state width="1323" height="153" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1600053998880" />
-    <state width="1323" height="155" key="GridCell.Tab.0.center" timestamp="1600100485534">
+    <state width="1323" height="155" key="GridCell.Tab.0.center" timestamp="1600500546526">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1600100485534" />
+    <state width="1323" height="155" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1600500546526" />
     <state width="1323" height="153" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1600053998880" />
-    <state width="1323" height="155" key="GridCell.Tab.0.left" timestamp="1600100485534">
+    <state width="1323" height="155" key="GridCell.Tab.0.left" timestamp="1600500546525">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1600100485534" />
+    <state width="1323" height="155" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1600500546525" />
     <state width="1323" height="153" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1600053998880" />
-    <state width="1323" height="155" key="GridCell.Tab.0.right" timestamp="1600100485534">
+    <state width="1323" height="155" key="GridCell.Tab.0.right" timestamp="1600500546526">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="155" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1600100485534" />
+    <state width="1323" height="155" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1600500546526" />
     <state width="1323" height="153" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1600053998880" />
     <state x="379" y="106" width="607" height="526" key="find.popup" timestamp="1600015890887">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="379" y="106" width="607" height="526" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1600015890887" />
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup" timestamp="1600498845136">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="346" y="59" width="672" height="678" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1600498845136" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Pykinter$main.coverage" NAME="main Coverage Results" MODIFIED="1600016214268" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+    <SUITE FILE_PATH="coverage/Pykinter$constants.coverage" NAME="constants Coverage Results" MODIFIED="1600493589765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/application_standards" />
+    <SUITE FILE_PATH="coverage/Pykinter$main.coverage" NAME="main Coverage Results" MODIFIED="1600500546517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+    <SUITE FILE_PATH="coverage/Pykinter$widgets_controller.coverage" NAME="widgets_controller Coverage Results" MODIFIED="1600497804350" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/widgets" />
     <SUITE FILE_PATH="coverage/Pykinter$layout_main.coverage" NAME="layout_main Coverage Results" MODIFIED="1599954648431" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Pykinter$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1600100365643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
+    <SUITE FILE_PATH="coverage/Pykinter$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1600493690155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/Pykinter$test.coverage" NAME="test Coverage Results" MODIFIED="1600029647445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -4,7 +4,7 @@ __author__ = 'Harsh'
 # done in this file.
 from tkinter import ttk
 import tkinter as tk
-from widgets_bar import functions
+from widgets import functions
 from properties_bar import properties_tab
 from program_editor import update
 from PIL import ImageTk

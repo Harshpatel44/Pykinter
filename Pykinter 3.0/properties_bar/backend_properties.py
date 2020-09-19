@@ -1,8 +1,8 @@
 
 import tkinter as tk
-from widgets_bar import functions
+from widgets import functions
 from program_editor import update
-from widgets_bar import widgets_tab
+from widgets import widgets_controller
 
 global fontsize
 global name

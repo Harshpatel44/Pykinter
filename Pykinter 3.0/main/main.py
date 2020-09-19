@@ -1,9 +1,10 @@
 __author__ = 'Harsh'
 
 import tkinter as tk
+from application_standards import constants as const
 from program_editor import editor_tab
 import window_basic_functions.functions as basic_func
-from widgets_bar import widgets_tab
+from widgets import widgets_controller
 from properties_bar import properties_tab
 
 
@@ -49,7 +50,7 @@ class Main(tk.Tk):
 
     def titlebar_func(self):
         """ Creation of Title bar and its buttons """
-        title_bar = tk.Frame(self, height=24, width=self.w, relief='solid', background="white",
+        title_bar = tk.Frame(self, height=24, width=self.w, relief='solid', background=const.bg_color,
                              highlightbackground="#555555")
         title_bar.place(x=0,y=0)
         title_name_frame = tk.Frame(title_bar, height=24, width=self.w*0.90, background="green")
@@ -57,7 +58,7 @@ class Main(tk.Tk):
         title_bar_btns_frame = tk.Frame(title_bar, height=24, width=self.w*0.10, background="green")
         title_bar_btns_frame.pack(side="left", fill="both", expand=True)
 
-        title_name = tk.Label(title_name_frame, text="PyKinter", background="green", fg ="white", font="bold")
+        title_name = tk.Label(title_name_frame, text="PyKinter", background="green", fg =const.bg_color, font="bold")
         title_name.place(x=0, y=0)
 
         minimize = tk.Canvas(title_bar_btns_frame, height=12, width=12, background="#333333", relief='flat')
@@ -96,23 +97,23 @@ class CreatorFrames(tk.Frame,Main):
         self.bind('<B1-Motion>', basic_func.motion_window_drag)
 
     def toolbar_func(self):
-        toolbar = tk.Frame(self, height=self.h*0.03, width=self.w, highlightthickness=0.5, background="white",
-                            highlightbackground="black")
+        toolbar = tk.Frame(self, height=self.h*const.bar_height, width=self.w, bd=1, relief="raised", background=const.bg_color,
+                            highlightbackground=const.main_border)
         toolbar.pack(side='top')
 
     def menubar_func(self):  # menu bar
-        menu_bar = tk.Frame(self, height=self.h*0.03, width=self.w, highlightthickness=0.5, background="white",
-                            highlightbackground="black")
+        menu_bar = tk.Frame(self, height=self.h*const.bar_height, width=self.w, bd=1, relief="raised", background=const.bg_color,
+                            highlightbackground=const.main_border)
         menu_bar.pack(side='top')
 
     def optionbar_func(self):  # option bar
-        option_bar = tk.Frame(self, height=self.h*0.06, width=self.w, highlightthickness=0.5, background='white',
-                              highlightbackground="black")
+        option_bar = tk.Frame(self, height=self.h*const.optionbar_height, width=self.w, bd=1, relief="raised", background=const.bg_color,
+                              highlightbackground=const.main_border)
         option_bar.pack(side='top')
 
     def extrabar_func(self):  # extra bar
-        extra_bar = tk.Frame(self, height=self.h*0.03, width=self.w, highlightthickness=0.5, background='white',
-                             highlightbackground="black")
+        extra_bar = tk.Frame(self, height=self.h*const.bar_height, width=self.w, bd=1, relief="raised", background=const.bg_color,
+                             highlightbackground=const.main_border)
         extra_bar.pack(side='top')
 
         editor_button=tk.Button(extra_bar,text="Editor",relief="flat",command=lambda:self.controller.show_frame(EditorFrames))
@@ -125,20 +126,21 @@ class CreatorFrames(tk.Frame,Main):
         # save_button.place(x=550, y=1)
 
     def middle_frames_func(self):
-        middle_frame1 = tk.Frame(self, height=self.h*0.785, width=self.w*0.15, relief='solid', background="#96858F",
-                                 highlightthickness=1, highlightbackground="#555555")
-        global middle_frame1_instance
-        middle_frame1_instance = self
-        middle_frame2 = tk.Frame(self, height=self.h*0.785, width=self.w*0.65, relief='solid', background="#999999",
-                                 highlightthickness=1, highlightbackground="#555555")
-        middle_frame3 = tk.Frame(self, height=self.h*0.785, width=self.w*0.20, relief='solid', background="#d8c9c9",
-                                 highlightthickness=1, highlightbackground="#555555")
-        middle_frame1.pack(side='left')
-        middle_frame2.pack(side="left")
-        middle_frame3.pack(side='left')
+        self.widget_frame = tk.Frame(self, height=self.h*const.frame_height, width=self.w*const.widget_frame_width, relief='ridge', background=const.bg_color,
+                                 bd=0)
 
-        widgets_tab.wid_tab(self, self.parent, middle_frame1, middle_frame2)  # function for widgets placement
-        properties_tab.prop_tab(self, self.parent, middle_frame3, middle_frame2)  # function for properties placement
+        self.dev_frame = tk.Frame(self, height=self.h*const.frame_height, width=self.w*const.dev_frame_width, relief='ridge', background=const.dev_window_color,
+                                 bd=0)
+        self.props_frame = tk.Frame(self, height=self.h*const.frame_height, width=self.w*const.props_frame_width, relief='ridge', background=const.bg_color,
+                                 bd=0)
+        self.widget_frame.pack(side='left')
+        self.dev_frame.pack(side="left")
+        self.props_frame.pack(side='left')
+
+        widgets_tab = widgets_controller.WidgetsTab(self)
+
+        # widgets_tab.wid_tab(self, self.parent, middle_frame1, middle_frame2)  # function for widgets placement
+        # properties_tab.prop_tab(self, self.parent, self.properties_frame, self.dev_frame)  # function for properties placement
 
 
 class EditorFrames(tk.Frame):
@@ -155,7 +157,7 @@ class EditorFrames(tk.Frame):
         pass
 
     def menubar_func(self):
-        menu_bar = tk.Frame(self, height=23, width=1300, highlightthickness=1, relief='solid', background="white",
+        menu_bar = tk.Frame(self, height=23, width=1300, highlightthickness=1, relief='solid', background=const.bg_color,
                             highlightbackground="#555555")
         menu_bar.pack()
 
