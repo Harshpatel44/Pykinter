@@ -128,7 +128,6 @@ class CreatorFrames(tk.Frame,Main):
     def middle_frames_func(self):
         self.widget_frame = tk.Frame(self, height=self.h*const.frame_height, width=self.w*const.widget_frame_width, relief='ridge', background=const.bg_color,
                                  bd=0)
-
         self.dev_frame = tk.Frame(self, height=self.h*const.frame_height, width=self.w*const.dev_frame_width, relief='ridge', background=const.dev_window_color,
                                  bd=0)
         self.props_frame = tk.Frame(self, height=self.h*const.frame_height, width=self.w*const.props_frame_width, relief='ridge', background=const.bg_color,

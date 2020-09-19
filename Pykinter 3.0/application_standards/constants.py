@@ -13,8 +13,9 @@ frame_height = 0.785
 
 
 # widgets_controller
-widget_area_height = 0.782
-button_width = 0.08
-button_height = 0.04
+widget_area_height = 0.785
+button_width = 0.10
+button_height = 0.03
+widgets_font_size = 10
 
 
