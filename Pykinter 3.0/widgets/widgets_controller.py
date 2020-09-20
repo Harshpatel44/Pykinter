@@ -32,20 +32,20 @@ class WidgetsTab:
         #     """ update scrollregion after starting 'mainloop', when all widgets are in canvas """
         #     widget_area_canvas.configure(scrollregion=widget_area_canvas.bbox('all'))
 
-        title = tk.Frame(self.main.widget_frame, height=self.title_height, width=self.title_width,
-                         bd=1, relief="raised", background=const.bg_color, highlightbackground=const.main_border)
-        title.pack(side="top", fill="both", expand=1)
-
         # widget_area_canvas= tk.Canvas(self.main.widget_frame,scrollregion=(0,0,600,600),
         #                               width=self.widget_area_width,
-        #                               height=self.widget_area_height)
+        #                               height=self.widget_area_height, background="grey")
         #
         # scrollbar=tk.Scrollbar(self.main.widget_frame,command=widget_area_canvas.yview)
-        # scrollbar.place(x=231,y=26,height=self.widget_area_height)
+        # scrollbar.place(x=20,y=26,height=self.widget_area_height)
         #
         # widget_area_canvas.configure(yscrollcommand=scrollbar.set)
         # widget_area_canvas.bind('<Configure>', on_configure)
-        # widget_area_canvas.pack(side="top")
+        # widget_area_canvas.place(x=0,y=0)
+
+        title = tk.Frame(self.main.widget_frame, height=self.title_height, width=self.title_width,
+                         bd=1, relief="raised", background=const.bg_color, highlightbackground=const.main_border)
+        title.pack(side="top", fill="both", expand=1)
 
         widget_frame = tk.Frame(self.main.widget_frame, background=const.bg_color, width=self.widget_area_width,
                                 height=self.widget_area_height)
@@ -57,7 +57,7 @@ class WidgetsTab:
         title_label = tk.Label(title, text="Widgets", background=const.bg_color, fg=const.primary_font_color)
         title_label.config(font=(const.primary_font, 9))
         title_label.pack(side="top")
-        #
+
         button = tk.Button(widget_frame, text="Button", bd=0, background="#6D7993", fg="#FFFFFF",
                            relief=tk.SUNKEN, command=lambda: first_click.button(working_window, self.main.dev_frame))
         button.config(font=(self.widget_font, self.widget_font_size))
