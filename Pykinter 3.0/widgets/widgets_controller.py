@@ -15,8 +15,8 @@ class WidgetsTab:
         self.widget_area_width = self.main.w * const.widget_frame_width
         self.widget_area_height = self.main.h * const.widget_area_height - self.main.h * const.bar_height
 
-        self.button_width = round(self.main.w * const.button_width)
-        self.button_height = round(self.main.h * const.button_height)
+        self.button_width = round(self.main.w * const.widgets_button_width)
+        self.button_height = round(self.main.h * const.widgets_button_height)
         self.button_x = (self.widget_area_width - self.button_width) / 2
         self.button_y = (self.widget_area_height / 16.5)
 

@@ -26,19 +26,20 @@
 
 import tkinter as tk
 main = tk.Tk()
-widget_frame_1 = tk.Frame(main, height=500, width=200, relief='ridge', background="black",
-                                 bd=1, highlightbackground="white")
-widget_frame_1.pack(side="left")
-widget_frame_2 = tk.Frame(main, height=500, width=200, relief='ridge', background="black",
-                                 bd=1, highlightbackground="white")
-widget_frame_2.pack(side="left")
-widget_frame_3 = tk.Frame(main, height=500, width=200, relief='ridge', background="black",
-                                 bd=1, highlightbackground="white")
-widget_frame_3.pack(side="left")
-
-frame2 = tk.Frame(widget_frame_1, height=20, width=200, relief='ridge', background="grey",
-                                 bd=1, highlightbackground="white")
-frame2.pack(side="left")
+main.geometry("100x100")
+# widget_frame_1 = tk.Frame(main, height=500, width=200, relief='ridge', background="black",
+#                                  bd=1, highlightbackground="white")
+# widget_frame_1.pack(side="left")
+# widget_frame_2 = tk.Frame(main, height=500, width=200, relief='ridge', background="black",
+#                                  bd=1, highlightbackground="white")
+# widget_frame_2.pack(side="left")
+# widget_frame_3 = tk.Frame(main, height=500, width=200, relief='ridge', background="black",
+#                                  bd=1, highlightbackground="white")
+# widget_frame_3.pack(side="left")
+#
+# frame2 = tk.Frame(widget_frame_1, height=20, width=200, relief='ridge', background="grey",
+#                                  bd=1, highlightbackground="white")
+# frame2.pack(side="left")
 main.mainloop()
 
 

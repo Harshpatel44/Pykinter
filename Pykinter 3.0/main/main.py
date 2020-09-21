@@ -136,7 +136,6 @@ class CreatorFrames(tk.Frame,Main):
 
         widgets_tab = widgets_controller.WidgetsTab(self)
         dev_window = dev_window_controller.DevWindow(self)
-        # widgets_tab.wid_tab(self, self.parent, middle_frame1, middle_frame2)  # function for widgets placement
         # properties_tab.prop_tab(self, self.parent, self.properties_frame, self.dev_frame)  # function for properties placement
 
 
