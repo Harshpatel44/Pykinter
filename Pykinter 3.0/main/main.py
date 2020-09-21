@@ -6,16 +6,15 @@ from program_editor import editor_tab
 import window_basic_functions.functions as basic_func
 from widgets import widgets_controller
 from properties_bar import properties_tab
-
+from dev_window import dev_window_controller
 
 class Main(tk.Tk):
     def __init__(self, *args, **kwargs):
         tk.Tk.__init__(self, *args, **kwargs)
 
+        """ Initial configuration of the main window """
         self.title("PyKinter")
         self.iconbitmap("../media/logo2.ico")
-
-        """ Initial configuration of the main window """
         self.main_window_obj = self
         self.h = self.winfo_screenheight()
         self.w = self.winfo_screenwidth()
@@ -37,7 +36,6 @@ class Main(tk.Tk):
             self.frames[f] = frame
             frame.grid(row=0, column=0, sticky='nsew')
         self.show_frame(CreatorFrames)
-
 
     def show_frame(self, con):
         frame = self.frames[con]
@@ -137,7 +135,7 @@ class CreatorFrames(tk.Frame,Main):
         self.props_frame.pack(side='left')
 
         widgets_tab = widgets_controller.WidgetsTab(self)
-
+        dev_window = dev_window_controller.DevWindow(self)
         # widgets_tab.wid_tab(self, self.parent, middle_frame1, middle_frame2)  # function for widgets placement
         # properties_tab.prop_tab(self, self.parent, self.properties_frame, self.dev_frame)  # function for properties placement
 
