@@ -23,10 +23,14 @@
 #
 # main.mainloop()
 
-
+from PIL import Image,ImageTk
 import tkinter as tk
 main = tk.Tk()
-main.geometry("100x100")
+main.geometry("400x400")
+main.title("PyKinter window")
+img = ImageTk.PhotoImage(Image.open("media/logo2.ico"), master=main)
+taskbar_logo = tk.Label(main, image=img)
+taskbar_logo.place(x=0, y=0)
 # widget_frame_1 = tk.Frame(main, height=500, width=200, relief='ridge', background="black",
 #                                  bd=1, highlightbackground="white")
 # widget_frame_1.pack(side="left")
