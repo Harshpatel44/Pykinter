@@ -12,26 +12,26 @@ from PIL import ImageTk
 bg_color = "#fef1e8"
 
 
-def allTime(root, middle_frame2, centre_frame):
+def allTime(dev_window_obj):
     global l1, l2, r1, r2, u, d, rect, l, r, rc
 
-    l1 = tk.Canvas(root, bd=0, highlightthickness=0)  # creation of 6 dots which makes the selected part of the widget
+    l1 = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)  # creation of 6 dots which makes the selected part of the widget
     l1.place_forget()
-    l2 = tk.Canvas(root, bd=0, highlightthickness=0)
+    l2 = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)
     l2.place_forget()  # to hide the widget
-    r1 = tk.Canvas(root, bd=0, highlightthickness=0)
+    r1 = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)
     r1.place_forget()
-    r2 = tk.Canvas(root, bd=0, highlightthickness=0)
+    r2 = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)
     r2.place_forget()
-    u = tk.Canvas(root, bd=0, highlightthickness=0)
+    u = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)
     u.place_forget()
-    d = tk.Canvas(root, bd=0, highlightthickness=0)
+    d = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)
     d.place_forget()
-    l = tk.Canvas(root, bd=0, highlightthickness=0)
+    l = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)
     l.place_forget()
-    r = tk.Canvas(root, bd=0, highlightthickness=0)
+    r = tk.Canvas(dev_window_obj.working_window, bd=0, highlightthickness=0)
     r.place_forget()
-    rc = tk.Canvas(centre_frame, height=177, width=160, background="#f7f7f7", bd=0)
+    rc = tk.Canvas(dev_window_obj.centre_frame, height=177, width=160, background="#f7f7f7", bd=0)
     rc.place_forget()
     # rect=root.create_rectangle(0,0,200,200,fill="red")
 

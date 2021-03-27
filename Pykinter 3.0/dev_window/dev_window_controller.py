@@ -1,7 +1,7 @@
 import tkinter as tk
 from PIL import ImageTk, Image
 from widgets import first_click
-from application_standards import constants as const
+import constants as const
 from dev_window import dev_window_properties
 
 
@@ -14,7 +14,7 @@ class DevWindow:
         self.center_frame_width = self.main.w * const.center_frame_width
 
         self.taskbar_height = const.center_frame_taskbar_height
-        self.taskbar_width = self.main.w * const.center_frame_taskbar_width
+        self.taskbar_width = self.center_frame_width - const.center_frame_taskbar_width
         self.center_frame_x = (self.dev_frame_width - self.center_frame_width) / 2
         self.center_frame_y = (self.dev_frame_height - self.center_frame_height) / 2
         self.window_layout()
@@ -33,28 +33,28 @@ class DevWindow:
                                 background=const.center_frame_taskbar_bg)
         self.taskbar.place(x=0, y=0)
         self.maximize_button = tk.Canvas(self.centre_frame,
-                                         height=self.taskbar_height * const.center_frame_taskbar_button_height,
-                                         width=self.taskbar_width * const.center_frame_taskbar_button_width,
+                                         height=const.center_frame_taskbar_button_height,
+                                         width=const.center_frame_taskbar_button_width,
                                          background=const.center_frame_taskbar_buttons_bg, relief='flat')
-        self.maximize_button.place(x=self.taskbar_width * const.center_frame_maximize_button_x,
+        self.maximize_button.place(x=self.taskbar_width - const.center_frame_maximize_button_x,
                                    y=self.taskbar_height * const.center_frame_buttons_y)
         self.close_button = tk.Canvas(self.centre_frame,
-                                      height=self.taskbar_height * const.center_frame_taskbar_button_height,
-                                      width=self.taskbar_width * const.center_frame_taskbar_button_width,
+                                      height=const.center_frame_taskbar_button_height,
+                                      width=const.center_frame_taskbar_button_width,
                                       background=const.center_frame_taskbar_buttons_bg, relief='flat')
-        self.close_button.place(x=self.taskbar_width * const.center_frame_close_button_x,
+        self.close_button.place(x=self.taskbar_width - const.center_frame_close_button_x,
                                 y=self.taskbar_height * const.center_frame_buttons_y)
 
         self.working_window = tk.Canvas(self.centre_frame, highlightthickness=0, bd=0,
                                         background=const.center_frame_working_window_bg,
-                                        height=self.center_frame_height * const.center_frame_working_window_height,
-                                        width=self.center_frame_width * const.center_frame_working_window_width)
+                                        height=self.center_frame_height - const.center_frame_working_window_height,
+                                        width=self.center_frame_width - const.center_frame_working_window_width)
         self.working_window.place(x=0, y=self.taskbar_height)
 
         self.title_label = tk.Label(self.centre_frame, text=const.center_frame_taskbar_title,
                                     background=const.center_frame_taskbar_bg, fg=const.center_frame_taskbar_title_fg)
         self.title_label.config(font=("Arial", const.center_frame_taskbar_title_fontsize))
-        self.title_label.place(x=self.taskbar_width * const.center_frame_title_x, y=0)
+        self.title_label.place(x=const.center_frame_title_x, y=0)
 
         image = Image.open(const.logo_location)
         resized_img = image.resize((round(self.taskbar_width * const.center_frame_logo_width),
@@ -68,6 +68,8 @@ class DevWindow:
                                                  arg3=self.working_window: first_click.moveIn_Frame(event, arg, arg2,
                                                                                                     arg3))
         self.main.dev_frame.bind('<Enter>', lambda event, arg=self.centre_frame: first_click.moveIn_MF(event, arg))
+
+        first_click.allTime(self)  # by default initializing selections lines using this function
 
     def working_window_geometry(self):
         screenx_name = tk.Label(self.main.dev_frame, text="X:", width=2, bd=1, background="#333333", fg="#fef1e8")

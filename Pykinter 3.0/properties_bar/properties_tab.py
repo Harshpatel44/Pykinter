@@ -52,17 +52,8 @@ def sync_widget(selected):
     backend_properties.check_configure(name_enter,height_enter,fontstyle_enter)    #configures which attrivutes should be disabled acc to widgets
     update.save_widget_props(selected,variables)
 
-
-
-
 def prop_tab(self,main,middle_frame3,middle_frame2):
-
-
-
     global name_enter,width_enter,height_enter,fontstyle_enter
-
-
-
     design = tk.Canvas(middle_frame3, width=300, height=25,bg='#99AAAA',highlightthickness=0,background="#333333")    #title canvas
     # design.place(x=0,y=0)
     vscrollbar=tk.Scrollbar(middle_frame3)
