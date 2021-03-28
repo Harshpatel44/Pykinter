@@ -7,7 +7,7 @@ primary_font_color = "#f8f8ff"
 primary_font = "Arial"
 bar_height = 0.03
 optionbar_height = 0.06
-widget_frame_width = 0.13
+widget_frame_width = 0.15
 widget_frame_title_height = 10
 dev_frame_width = 0.72
 props_frame_width = 0.15
@@ -17,8 +17,8 @@ logo_location = "../media/logo2.ico"
 
 """widgets_controller"""
 widget_button_frame_height = 0.685
-widgets_button_width = 0.70
-widgets_button_height = 0.08
+widgets_button_width = 0.1
+widgets_button_height = 0.06
 widgets_font_size = 10 #original
 
 
