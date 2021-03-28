@@ -1,11 +1,13 @@
 import tkinter as tk
+from frames.IFrame import IFrame
 from singleton import singleton
 from common import constants as const
 
 
 @singleton
-class MenuBarFrame:
+class MenuBarFrame(IFrame):
     def __init__(self, creator_frame):
+        IFrame.__init__(self)
         self.creator_frame = creator_frame
         self.menubar_height = self.creator_frame.creator_frame_height * const.optionbar_height
         self.menubar_width = self.creator_frame.creator_frame_width

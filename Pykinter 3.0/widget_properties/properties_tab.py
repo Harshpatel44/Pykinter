@@ -1,5 +1,5 @@
 import tkinter  as tk
-from properties_bar import backend_properties
+from widget_properties import backend_properties
 from old.program_editor import update
 import tkinter.ttk as ttk
 from tkinter.colorchooser import askcolor

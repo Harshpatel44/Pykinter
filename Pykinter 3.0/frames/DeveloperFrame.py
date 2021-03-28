@@ -1,3 +1,4 @@
+from frames.IFrame import IFrame
 from singleton import singleton
 import Injector
 
@@ -7,12 +8,13 @@ import Injector
 
 
 @singleton
-class DeveloperFrame:
+class DeveloperFrame(IFrame):
     def __init__(self, creator_frame):
+        IFrame.__init__(self)
         self.creator_frame = creator_frame
-        self.content()
+        self.layout()
 
-    def content(self):
+    def layout(self):
         Injector.get_widget_frame(self)
         # self.creator_frame.widget_frame = tk.Frame(self.creator_frame, height=self.creator_frame.h * const.frame_height, width=self.creator_frame.w * const.widget_frame_width,
         #                              relief='ridge', background=const.bg_color,

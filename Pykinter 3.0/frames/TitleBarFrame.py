@@ -1,12 +1,14 @@
 import tkinter as tk
+from frames.IFrame import IFrame
 from singleton import singleton
 from common import constants as const
 import utils.windowBasicFunctions as windowBasicFunc
 
 
 @singleton
-class TitleBarFrame(object):
+class TitleBarFrame(IFrame):
     def __init__(self, parent):
+        IFrame.__init__(self)
         self.parent = parent
         self.layout()
 
