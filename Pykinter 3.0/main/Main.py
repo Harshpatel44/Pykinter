@@ -2,9 +2,9 @@ __author__ = 'Harsh'
 
 import tkinter as tk
 import Injector
-import constants as const
-from program_editor import editor_tab
-import window_basic_functions.functions as basic_func
+from common import constants as const
+from old.program_editor import editor_tab
+import utils.windowBasicFunctions as windowBasicFunc
 
 
 class Main(tk.Tk):
@@ -61,13 +61,13 @@ class CreatorFrame(tk.Frame, Main):
         self.creator_frame_height = self.winfo_screenheight()
         self.parent = parent
 
-        Injector.get_toolbar_layout(self)
-        Injector.get_menubar1_layout(self)
-        Injector.get_menubar2_layout(self)
+        Injector.get_toolbar_frame(self)
+        Injector.get_menubar_frame(self)
+        Injector.get_optionbar_frame(self)
         Injector.get_developer_frame(self)
         # self.middle_frames_func()
-        self.bind('<Button-1>', basic_func.start_window_drag)
-        self.bind('<B1-Motion>', basic_func.motion_window_drag)
+        self.bind('<Button-1>', windowBasicFunc.start_window_drag)
+        self.bind('<B1-Motion>', windowBasicFunc.motion_window_drag)
 
 
 class EditorFrames(tk.Frame):

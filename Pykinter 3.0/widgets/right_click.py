@@ -1,6 +1,6 @@
-import tkinter as tk
 from widgets import right_clicks
-from program_editor import update
+from old.program_editor import update
+
 count=0
 def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r):
     org_widget=event.widget

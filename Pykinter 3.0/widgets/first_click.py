@@ -5,9 +5,7 @@ __author__ = 'Harsh'
 from tkinter import ttk
 import tkinter as tk
 from widgets import functions
-from properties_bar import properties_tab
-from program_editor import update
-from PIL import ImageTk
+from old.program_editor import update
 
 bg_color = "#fef1e8"
 

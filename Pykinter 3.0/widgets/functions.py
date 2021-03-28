@@ -7,9 +7,7 @@ import time
 import tkinter as tk
 from properties_bar import properties_tab
 from widgets import right_click
-import re
-from program_editor import update
-
+from old.program_editor import update
 
 global gl1,gl2,gr1,gr2,gu,gd,gl,gr
 
@@ -119,11 +117,11 @@ def start_btn(event,root,rc):    #rc is right click canvas
     gd=d
     gl=l
     gr=r
-    update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])
+    update.selectiondots_list.extend([l1, l2, r1, r2, u, d, r, l])
     print(update.selectiondots_list)
     update.selected_widget.clear()
     update.selected_widget.append(selected)       # add the widget to the list selected_widget in update
-    print('selected list in function',update.selected_widget)
+    print('selected list in function', update.selected_widget)
      #these functions are for right click context menu
     def right_click_fn(event):
          right_click.menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r)

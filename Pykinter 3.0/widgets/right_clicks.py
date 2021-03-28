@@ -1,9 +1,7 @@
 __author__ = 'harsh'
 import tkinter as tk
 
-from program_editor import update
-
-
+from old.program_editor import update
 
 #this file deals from clicking on any right click context menu item
 #all the functions binded to the items of the right click context menu
@@ -67,10 +65,10 @@ def id_change(event,org_widget,rc):
     popup.title("Change "+org_widget.winfo_class()+" id")
     lbl=tk.Label(popup,text=org_widget.winfo_class()+" id",width=200)
     lbl.pack()
-    default=tk.StringVar(popup,value=update.find_key(org_widget))     #setting a textvariable for default value of entry widget
+    default=tk.StringVar(popup, value=update.find_key(org_widget))     #setting a textvariable for default value of entry widget
     def close_save(event,default):
         #print('in fn',org_widget)
-        update.change_key(org_widget,event.widget.get(),default)
+        update.change_key(org_widget, event.widget.get(), default)
         #widget_data.get_data(event.widget,'id',event.widget.get())
         popup.destroy()
     #print('in right click',default)
@@ -402,11 +400,11 @@ def command(event,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     popup.title("Change "+org_widget.winfo_class()+" Name")
     lbl=tk.Label(popup,text=org_widget.winfo_class()+" Name",width=200)
     lbl.pack()
-    default=tk.StringVar(popup,value=update.find_command(org_widget))     #setting a textvariable for default value of entry widget
+    default=tk.StringVar(popup, value=update.find_command(org_widget))     #setting a textvariable for default value of entry widget
     def close_save(event,default):
         #print('in fn',org_widget)
         #org_widget.configure(text=event.widget.get())
-        update.change_command(org_widget,event.widget.get(),default)
+        update.change_command(org_widget, event.widget.get(), default)
         #properties_tab.variables[0].set(str(event.widget.get()))
         #widget_data.get_data(event.widget,'id',event.widget.get())
         popup.destroy()
@@ -429,7 +427,7 @@ def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2
     length=len(org_widget.master.winfo_children())
     print(length)
     count=0
-    print('selected list before select all',update.selected_widget)
+    print('selected list before select all', update.selected_widget)
 
     for i in range(0,length):
         if(org_widget.master.winfo_children()[count].winfo_class()==org_widget.winfo_class()):
@@ -454,10 +452,10 @@ def select_all_specific(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2
             r2.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height()+2)
             r.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
             l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
-            update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])   #adding the selection dots to the list to pack.forget() it afterwards
+            update.selectiondots_list.extend([l1, l2, r1, r2, u, d, r, l])   #adding the selection dots to the list to pack.forget() it afterwards
 
             update.selected_widget.append(widget_main)
-    print('selected list in select all',update.selected_widget)
+    print('selected list in select all', update.selected_widget)
 
 def select_all(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r):
     rc.place_forget()   #place forget the right click menu
@@ -468,7 +466,7 @@ def select_all(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,
     length=len(org_widget.master.winfo_children())
     print(length)
     count=0
-    print('selected list before select all',update.selected_widget)
+    print('selected list before select all', update.selected_widget)
 
     for i in range(0,length):
 
@@ -493,10 +491,10 @@ def select_all(event,root,org_widget,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,
             r2.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+widget_main.winfo_height()+2)
             r.place(x=widget_main.winfo_x()+0+widget_main.winfo_width(),y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
             l.place(x=widget_main.winfo_x()-4,y=widget_main.winfo_y()+(widget_main.winfo_height()/2)-2)
-            update.selectiondots_list.extend([l1,l2,r1,r2,u,d,r,l])   #adding the selection dots to the list to pack.forget() it afterwards
+            update.selectiondots_list.extend([l1, l2, r1, r2, u, d, r, l])   #adding the selection dots to the list to pack.forget() it afterwards
 
             update.selected_widget.append(widget_main)
-    print('selected list in select all',update.selected_widget)
+    print('selected list in select all', update.selected_widget)
 
     # def start_multiple(event):
     #     print('inside')

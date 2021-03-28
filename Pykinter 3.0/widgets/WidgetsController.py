@@ -2,7 +2,7 @@ __author__ = 'Harsh'
 
 import tkinter as tk
 # from widgets import first_click
-import constants as const
+from common import constants as const
 
 
 class WidgetsController:
