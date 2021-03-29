@@ -2,7 +2,6 @@ import tkinter as tk
 from frames.IFrame import IFrame
 from singleton import singleton
 from common import constants as const
-from widgets import WidgetsController
 
 
 @singleton
@@ -48,7 +47,6 @@ class WidgetsFrame(IFrame):
                                       bd=0)
         self.widgets_frame.pack(side='left')
 
-
     def widget_title_frame(self):
         widgets_tab_title = tk.Frame(self.widgets_frame,
                                      height=self.widgets_frame_title_height,
@@ -73,17 +71,41 @@ class WidgetsFrame(IFrame):
         title_label.config(font=(const.primary_font, 9))
         title_label.pack(side='top')
 
-
     def widget_buttons(self):
-        button = tk.Button(self.widget_buttons_frame,
-                           text='Button',
-                           bd=0,
-                           background='#6D7993',
-                           fg='#FFFFFF',
-                           relief=tk.SUNKEN)
-        button.config(font=(self.widget_font, self.widget_font_size))
-        # button.pack(side='top')
-        button.place(x=self.widget_button_x,
-                     y=self.widget_button_y - self.widget_button_height,
-                     height=self.widget_button_height,
-                     width=self.widget_button_width)
+        widgets_text_list = [
+            'Button',
+            'Tool Button',
+            'Radio Button',
+            'Check Button',
+            'Scroll Bar',
+            'Progress Bar',
+            'Spin Box',
+            'Combo Box',
+            'Drop View',
+            'List View',
+            'Frame',
+            'Spinner',
+            'Shapes',
+            'Image'
+        ]
+        widget_button_properties_dict = {
+            'bd': 0,
+            'background': '#6D7993',
+            'fg': '#FFFFFF',
+            'relief': tk.SUNKEN
+        }
+        self.widget_objects_dictionary = {}
+
+        for i, j in zip(range(1, len(widgets_text_list) + 1), widgets_text_list):
+            widget = tk.Button(self.widget_buttons_frame,
+                               text=j,
+                               bd=widget_button_properties_dict['bd'],
+                               background=widget_button_properties_dict['background'],
+                               fg=widget_button_properties_dict['fg'],
+                               relief=widget_button_properties_dict['relief'])
+            widget.config(font=(self.widget_font, self.widget_font_size))
+            widget.place(x=self.widget_button_x,
+                         y=(self.widget_button_y * i) - self.widget_button_height,
+                         height=self.widget_button_height,
+                         width=self.widget_button_width)
+            self.widget_objects_dictionary[j] = widget
