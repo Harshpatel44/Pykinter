@@ -26,7 +26,7 @@ class WidgetsFrame(IFrame):
         self.widget_button_y = (self.widget_buttons_frame_height / 15)
 
         self.widget_font_size = const.widgets_font_size
-        self.widget_font = 'Courier New'
+        self.widget_font = const.widgets_button_font
 
         self.widgets_frame = None
         self.layout()

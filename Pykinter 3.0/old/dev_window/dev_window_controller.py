@@ -8,10 +8,7 @@ from old.dev_window import dev_window_properties
 class DevWindow:
     def __init__(self, main):
         self.main = main
-        self.dev_frame_width = self.main.dev_frame.cget("width")
-        self.dev_frame_height = self.main.dev_frame.cget("height")
-        self.center_frame_height = self.main.h * const.center_frame_height
-        self.center_frame_width = self.main.w * const.center_frame_width
+
 
         self.taskbar_height = const.center_frame_taskbar_height
         self.taskbar_width = self.center_frame_width - const.center_frame_taskbar_width

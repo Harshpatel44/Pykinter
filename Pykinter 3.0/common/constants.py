@@ -20,13 +20,15 @@ widget_button_frame_height = 0.792
 widgets_button_width = 0.1
 widgets_button_height = 0.045
 widgets_font_size = 10 #original
+widgets_button_font = 'Courier New'
 
 
 """GUI Frame"""
-gui_frame_width = 0.29
-gui_frame_height = 0.52
+gui_frame_width = 0.6541
+gui_frame_height = 0.5000
 gui_frame_highlightbg = '#555555'
 gui_frame_taskbar_height = 20 #original
+gui_frame_highlight_thickness = 3
 gui_frame_taskbar_width = 6
 gui_frame_taskbar_bg = "#9099A2"
 
@@ -39,12 +41,12 @@ center_frame_logo_height = 0.50
 center_frame_logo_x = 2
 center_frame_logo_y = 0.15
 
-center_frame_taskbar_button_height = 10
-center_frame_taskbar_button_width = 10
-center_frame_maximize_button_x = 35
-center_frame_close_button_x = 17
-center_frame_buttons_y = 0.125
-center_frame_taskbar_buttons_bg = '#333333'
+gui_frame_taskbar_button_height = 10
+gui_frame_taskbar_button_width = 10
+gui_frame_maximize_button_x = 35
+gui_frame_close_button_x = 17
+gui_frame_taskbar_button_y = 0.125
+gui_frame_taskbar_buttons_bg = '#333333'
 
 center_frame_working_window_height = 26
 center_frame_working_window_width = 6

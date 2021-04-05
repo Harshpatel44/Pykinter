@@ -1,5 +1,6 @@
 import tkinter as tk
 from frames.IFrame import IFrame
+from frames.GUIFrame import GUIFrame
 from singleton import singleton
 from common import constants as const
 import Injector
@@ -15,6 +16,8 @@ class CenterFrame(IFrame):
         self.center_frame_height = creator_frame.creator_frame_height * const.frame_height
         self.center_frame_width = creator_frame.creator_frame_width * const.center_frame_width
         self.layout()
+        GUIFrame(self)
+
 
     def layout(self):
         creator_frame = self.developer_frame.creator_frame

@@ -4,7 +4,6 @@ from singleton import singleton
 @singleton
 class Properties:
     def __init__(self):
-        pass
         self.frames = {}
         self.main = None
 
@@ -16,6 +15,9 @@ class Properties:
 
     def get_frames(self):
         return self.frames
+
+    def get_frame(self, frame):
+        return self.frames[frame]
 
     def set_frames(self, frames):
         self.frames = frames
