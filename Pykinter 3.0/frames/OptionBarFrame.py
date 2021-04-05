@@ -28,7 +28,7 @@ class OptionBarFrame(IFrame):
                                   text='Editor',
                                   relief="flat",
                                   command=lambda: self.parent.controller.show_frame(frames['EditorFrame']))
-        editor_button.config(font=("Arial", const.center_frame_taskbar_title_fontsize))
+        editor_button.config(font=('Arial', const.gui_frame_taskbar_title_fontsize))
         editor_button.place(x=400, y=1)
 
         design_btn = tk.Button(extra_bar,

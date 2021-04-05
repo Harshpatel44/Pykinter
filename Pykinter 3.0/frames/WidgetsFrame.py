@@ -22,8 +22,12 @@ class WidgetsFrame(IFrame):
 
         self.widget_button_width = round(creator_frame.creator_frame_width * const.widgets_button_width)
         self.widget_button_height = round(self.widget_buttons_frame_height * const.widgets_button_height)
+
+        # /2 to keep button at the center horizontally
         self.widget_button_x = (self.widget_buttons_frame_width - self.widget_button_width) / 2
-        self.widget_button_y = (self.widget_buttons_frame_height / 15)
+
+        distance_between_buttons_metric = 15
+        self.widget_button_y = (self.widget_buttons_frame_height / distance_between_buttons_metric)
 
         self.widget_font_size = const.widgets_font_size
         self.widget_font = const.widgets_button_font

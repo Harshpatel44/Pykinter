@@ -1,7 +1,9 @@
 import tkinter as tk
 from frames.IFrame import IFrame
-from singleton import singleton
+import utils.windowBasicFunctions as windowBasicFunc
 from common import constants as const
+from PIL import ImageTk, Image
+from singleton import singleton
 import Injector
 
 
@@ -36,6 +38,17 @@ class GUIFrame(IFrame):
 
         self.gui_frame_taskbar_layout()
 
+        self.gui_frame_app_window = tk.Canvas(
+            self.gui_frame,
+            highlightthickness=0,
+            bd=0,
+            background=const.gui_frame_app_window_bg,
+            height=self.gui_frame_height - self.gui_frame_taskbar_height - (2 * const.gui_frame_highlight_thickness),
+            width=self.gui_frame_width - (2 * const.gui_frame_highlight_thickness)
+        )
+        self.gui_frame_app_window.place(x=0, y=self.gui_frame_taskbar_height)
+
+
     def gui_frame_taskbar_layout(self):
         self.gui_frame_taskbar = tk.Frame(
             self.gui_frame,
@@ -64,4 +77,39 @@ class GUIFrame(IFrame):
         self.close_button.place(
             x=self.gui_frame_taskbar_width - const.gui_frame_close_button_x,
             y=self.gui_frame_taskbar_height * const.gui_frame_taskbar_button_y
+        )
+
+        self.title_label = tk.Label(
+            self.gui_frame_taskbar,
+            text=const.gui_frame_taskbar_title,
+            background=const.gui_frame_taskbar_bg,
+            fg=const.gui_frame_taskbar_title_fg
+        )
+        self.title_label.config(font=('Arial', const.gui_frame_taskbar_title_fontsize))
+        self.title_label.place(x=const.gui_frame_title_x, y=0)
+
+        image = Image.open(const.logo_location)
+        resized_img = image.resize(
+            (
+                round(self.gui_frame_taskbar_width * const.gui_frame_logo_width),
+                round(self.gui_frame_taskbar_height * const.gui_frame_logo_height)
+            ),
+            Image.ANTIALIAS
+        )
+        master_tk_object = self.center_frame_class_obj.developer_frame.creator_frame.tk
+        self.photoimage = ImageTk.PhotoImage(resized_img, master=master_tk_object)
+        gui_frame_taskbar_logo = tk.Label(self.gui_frame_taskbar, borderwidth=0, image=self.photoimage)
+        gui_frame_taskbar_logo.place(
+            x=const.gui_frame_logo_x,
+            y=self.gui_frame_taskbar_height * const.gui_frame_logo_y
+        )
+
+        self.gui_frame_taskbar.bind(
+            '<Button-1>',
+            lambda event, widget=self.gui_frame: windowBasicFunc.start_window_drag(event, widget)
+        )
+        self.gui_frame_taskbar.bind(
+            '<B1-Motion>',
+            lambda event,
+            widget=self.gui_frame: windowBasicFunc.motion_window_drag(event, widget)
         )
