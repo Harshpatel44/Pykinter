@@ -4,7 +4,6 @@ import utils.windowBasicFunctions as windowBasicFunc
 from common import constants as const
 from PIL import ImageTk, Image
 from singleton import singleton
-import Injector
 
 
 @singleton
@@ -25,7 +24,7 @@ class GUIFrame(IFrame):
         self.layout()
 
     def layout(self):
-        center_frame = Injector.get_current_properties().get_frame('CenterFrame')
+        center_frame = self.center_frame_class_obj.center_frame
         self.gui_frame = tk.Frame(
             center_frame,
             height=self.gui_frame_height,
