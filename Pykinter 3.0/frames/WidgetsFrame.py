@@ -7,7 +7,7 @@ from common import constants as const
 @singleton
 class WidgetsFrame(IFrame):
     def __init__(self, developer_frame):
-        IFrame.__init__(self)
+        super().__init__()
         self.developer_frame = developer_frame
         creator_frame = self.developer_frame.creator_frame
 
@@ -23,7 +23,7 @@ class WidgetsFrame(IFrame):
         self.widget_button_width = round(creator_frame.creator_frame_width * const.widgets_button_width)
         self.widget_button_height = round(self.widget_buttons_frame_height * const.widgets_button_height)
         self.widget_button_x = (self.widget_buttons_frame_width - self.widget_button_width) / 2
-        self.widget_button_y = (self.widget_buttons_frame_height / 12)
+        self.widget_button_y = (self.widget_buttons_frame_height / 15)
 
         self.widget_font_size = const.widgets_font_size
         self.widget_font = 'Courier New'
@@ -32,13 +32,12 @@ class WidgetsFrame(IFrame):
         self.layout()
 
     def layout(self):
-        self.widget_frame()  # creates widget frame
+        creator_frame = self.developer_frame.creator_frame
+        self.widget_frame(creator_frame)  # creates widget frame
         self.widget_title_frame()  # creates widget_title frame inside widget frame
         self.widget_buttons()
 
-    def widget_frame(self):
-        creator_frame = self.developer_frame.creator_frame
-
+    def widget_frame(self, creator_frame):
         self.widgets_frame = tk.Frame(creator_frame,
                                       height=self.widgets_frame_height,
                                       width=self.widgets_frame_width,
@@ -61,7 +60,7 @@ class WidgetsFrame(IFrame):
                                              background=const.bg_color,
                                              width=self.widget_buttons_frame_width,
                                              height=self.widget_buttons_frame_height)
-        self.widget_buttons_frame.pack(side="top")
+        self.widget_buttons_frame.pack(side='top')
         # widget_area_canvas.create_window((0,0),window=widget_frame,anchor='nw')
 
         title_label = tk.Label(widgets_tab_title,

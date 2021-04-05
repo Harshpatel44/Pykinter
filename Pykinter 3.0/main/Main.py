@@ -3,6 +3,7 @@ __author__ = 'Harsh'
 import tkinter as tk
 import Injector
 from common import constants as const
+from frames.DeveloperFrame import DeveloperFrame
 from old.program_editor import editor_tab
 import utils.windowBasicFunctions as windowBasicFunc
 
@@ -64,8 +65,7 @@ class CreatorFrame(tk.Frame, Main):
         Injector.get_toolbar_frame(self)
         Injector.get_menubar_frame(self)
         Injector.get_optionbar_frame(self)
-        Injector.get_developer_frame(self)
-        # self.middle_frames_func()
+        DeveloperFrame(self)
         self.bind('<Button-1>', windowBasicFunc.start_window_drag)
         self.bind('<B1-Motion>', windowBasicFunc.motion_window_drag)
 
