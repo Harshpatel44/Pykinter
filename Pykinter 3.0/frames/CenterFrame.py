@@ -16,8 +16,6 @@ class CenterFrame(IFrame):
         self.center_frame_height = creator_frame.creator_frame_height * const.frame_height
         self.center_frame_width = creator_frame.creator_frame_width * const.center_frame_width
         self.layout()
-        GUIFrame(self)
-
 
     def layout(self):
         creator_frame = self.developer_frame.creator_frame
@@ -31,7 +29,7 @@ class CenterFrame(IFrame):
         self.center_frame.pack(side='left')
 
         self.gui_window_geometry_tool()
-
+        GUIFrame(self)
         # update the object
         Injector.get_current_properties().set_frames({
             'CenterFrame': self.center_frame

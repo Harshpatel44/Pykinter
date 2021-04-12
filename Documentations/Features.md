@@ -1,3 +1,24 @@
+#### To complete
+* Properties tab (In progress).
+* Menu bar (GUI)
+* Option bar (GUI)
+* Tool bar (GUI)
+* Make functional button widget (from widgets tab to gui window)
+* integration of button widget to properties tab (gui to properties tab and vice versa).
+* Create custom widgets from canvas
+* Selection dots
+* Functioning of all widgets
+* Context Menu of the widgets
+* Undo Redo
+* GUI frame configurable based on geometry tool
+* working with multiple widgets
+
+
+#### Info
+width = 30 means 215 pixels
+
+
+
 #### Features
 * Create Templates and save for future use.
 * Customizable taskbar, menubar.
@@ -34,3 +55,7 @@ When Undo: remove the widget from dev_window_widgets and create it at a differen
 ## GUIFrame configurations
 gui_frame_config = A json file for GUIFrame configurations
 used in: geometry tool, while resizing the window
+
+## Custom Widget creation using AI
+* First of all, creating custom widgets (using drag and drop or using code).
+* Second, application takes the uploaded widgets (as photo) (clicked and not clicked photo).

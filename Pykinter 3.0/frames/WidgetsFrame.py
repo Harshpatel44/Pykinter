@@ -11,7 +11,7 @@ class WidgetsFrame(IFrame):
         self.developer_frame = developer_frame
         creator_frame = self.developer_frame.creator_frame
 
-        self.widgets_frame_height = creator_frame.creator_frame_height * const.frame_height
+        self.widgets_frame_height = creator_frame.creator_frame_height * const.widget_frame_height
         self.widgets_frame_width = creator_frame.creator_frame_width * const.widget_frame_width
 
         self.widgets_frame_title_height = creator_frame.creator_frame_height * const.widget_frame_title_height

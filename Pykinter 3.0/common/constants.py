@@ -8,14 +8,15 @@ center_frame_color = "#f8f8ff"
 bar_height = 0.03
 menubar_height = 0.05
 center_frame_width = 0.68
-props_frame_width = 0.17
-widget_frame_width = 0.15
-widget_frame_title_height = 10
+
 frame_height = 1 - ((2 * bar_height) + menubar_height)
 logo_location = "../media/logo2.ico"
 
 
-"""Widgets"""
+"""Widgets Tab"""
+widget_frame_width = 0.15
+widget_frame_height = frame_height
+widget_frame_title_height = 10
 widget_button_frame_height = 0.792
 widgets_button_width = 0.1
 widgets_button_height = 0.045
@@ -58,5 +59,7 @@ dev_window_screenx_entry_x = 0.020
 dev_window_screeny_name_x = 0.0555
 dev_window_screeny_entry_x = 0.0750
 
-
-
+"""Properties Tab"""
+props_frame_width = 0.15703
+props_frame_height = frame_height
+props_frame_title_height = widget_frame_title_height

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2bef4e03-9365-481b-87bb-dd2e9ce08e1e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/frames/PropertiesFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documentations/Features.md" beforeDir="false" afterPath="$PROJECT_DIR$/../Documentations/Features.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/windowBasicFunctions.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/windowBasicFunctions.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frames/CenterFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frames/CenterFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frames/DeveloperFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frames/DeveloperFrame.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frames/WidgetsFrame.py" beforeDir="false" afterPath="$PROJECT_DIR$/frames/WidgetsFrame.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,7 +23,7 @@
     <SUITE FILE_PATH="coverage/Pykinter$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1615753468201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/Pykinter$root.coverage" NAME="root Coverage Results" MODIFIED="1615747412409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Pykinter$widgets_tab.coverage" NAME="widgets_tab Coverage Results" MODIFIED="1516985129530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Pykinter$main.coverage" NAME="main Coverage Results" MODIFIED="1617603907100" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
+    <SUITE FILE_PATH="coverage/Pykinter$main.coverage" NAME="main Coverage Results" MODIFIED="1618202106163" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Main" />
     <SUITE FILE_PATH="coverage/Pykinter$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1516724055133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Pykinter$Injector.coverage" NAME="Injector Coverage Results" MODIFIED="1615751121516" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Pykinter$Layout.coverage" NAME="Layout Coverage Results" MODIFIED="1615750809719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/titlebar" />
@@ -44,259 +49,12 @@
     <favorites_list name="Pykinter" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GUIFrame.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frames/GUIFrame.py">
+    <leaf>
+      <file leaf-file-name="Properties.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/common/Properties.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="27" column="81" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="81" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="windowBasicFunctions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/utils/windowBasicFunctions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="functions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/widgets/functions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CenterFrame.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frames/CenterFrame.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="37" column="10" lean-forward="true" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Python/#D:/Project Works/Python Projects/Pykinter/Pykinter 3.0" pinned="false" current-in-tab="false">
-        <entry file="uml://Python/#D:/Project Works/Python Projects/Pykinter/Pykinter 3.0">
-          <provider selected="true" editor-type-id="UmlEditorProvider">
-            <state>
-              <ID>Python</ID>
-              <OriginalElement />
-              <nodes>
-                <node x="674.0000000000001" y="208.0">frames.OptionBarFrame.OptionBarFrame</node>
-                <node x="2655.10625" y="109.0">old.dev_window.dev_window_controller.DevWindow</node>
-                <node x="2985.10625" y="109.0">widgets.WidgetsController.WidgetsController</node>
-                <node x="436.0" y="208.0">frames.TitleBarFrame.TitleBarFrame</node>
-                <node x="1163.4041666666667" y="287.0">tkinter.Widget</node>
-                <node x="2315.85625" y="208.0">tkinter.Tk</node>
-                <node x="2331.10625" y="109.0">tkinter.Wm</node>
-                <node x="1428.0" y="208.0">frames.WidgetsFrame.WidgetsFrame</node>
-                <node x="2164.85625" y="208.0">tkinter.BaseWidget</node>
-                <node x="2442.10625" y="109.0">common.Properties.Properties</node>
-                <node x="2206.85625" y="109.0">tkinter.Misc</node>
-                <node x="114.0" y="109.0">tkinter.Grid</node>
-                <node x="942.0000000000001" y="208.0">frames.MenuBarFrame.MenuBarFrame</node>
-                <node x="2233.35625" y="445.0">main.Main.CreatorFrame</node>
-                <node x="1108.5" y="109.0">frames.IFrame.IFrame</node>
-                <node x="2127.75" y="0.0">object</node>
-                <node x="170.0" y="208.0">frames.DeveloperFrame.DeveloperFrame</node>
-                <node x="0.0" y="109.0">tkinter.Pack</node>
-                <node x="1474.5625" y="109.0">old.WidgetsController.WidgetsController</node>
-                <node x="1110.9041666666667" y="445.0">main.Main.EditorFrames</node>
-                <node x="1198.0" y="208.0">frames.CenterFrame.CenterFrame</node>
-                <node x="1674.0" y="208.0">frames.ToolBarFrame.ToolBarFrame</node>
-                <node x="1914.0" y="208.0">frames.GUIFrame.GUIFrame</node>
-                <node x="2089.85625" y="109.0">tkinter.Place</node>
-                <node x="2296.85625" y="287.0">main.Main.Main</node>
-                <node x="1165.9041666666667" y="366.0">tkinter.Frame</node>
-              </nodes>
-              <notes />
-              <edges>
-                <edge source="widgets.WidgetsController.WidgetsController" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="3120.60625" y="49.0" />
-                  <point x="2189.5" y="49.0" />
-                  <point x="29.25" y="14.5" />
-                </edge>
-                <edge source="tkinter.Misc" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="2253.85625" y="89.0" />
-                  <point x="2163.5" y="89.0" />
-                  <point x="3.25" y="14.5" />
-                </edge>
-                <edge source="frames.ToolBarFrame.ToolBarFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1784.0" y="168.0" />
-                  <point x="1227.125" y="168.0" />
-                  <point x="45.625" y="14.5" />
-                </edge>
-                <edge source="tkinter.Grid" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="159.5" y="59.0" />
-                  <point x="2137.5" y="59.0" />
-                  <point x="-22.75" y="14.5" />
-                </edge>
-                <edge source="common.Properties.Properties" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="2538.60625" y="69.0" />
-                  <point x="2176.5" y="69.0" />
-                  <point x="16.25" y="14.5" />
-                </edge>
-                <edge source="tkinter.Wm" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="2376.60625" y="79.0" />
-                  <point x="2170.0" y="79.0" />
-                  <point x="9.75" y="14.5" />
-                </edge>
-                <edge source="tkinter.Tk" target="tkinter.Wm">
-                  <point x="20.25" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="main.Main.CreatorFrame" target="tkinter.Frame">
-                  <point x="-41.0" y="-14.5" />
-                  <point x="2274.35625" y="420.0" />
-                  <point x="1242.4041666666667" y="420.0" />
-                  <point x="25.5" y="14.5" />
-                </edge>
-                <edge source="frames.GUIFrame.GUIFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="2003.0" y="158.0" />
-                  <point x="1245.375" y="158.0" />
-                  <point x="63.875" y="14.5" />
-                </edge>
-                <edge source="tkinter.Pack" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="47.0" y="49.0" />
-                  <point x="2131.0" y="49.0" />
-                  <point x="-29.25" y="14.5" />
-                </edge>
-                <edge source="tkinter.BaseWidget" target="tkinter.Misc">
-                  <point x="0.0" y="-14.5" />
-                  <point x="-23.5" y="14.5" />
-                </edge>
-                <edge source="frames.IFrame.IFrame" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1181.5" y="69.0" />
-                  <point x="2144.0" y="69.0" />
-                  <point x="-16.25" y="14.5" />
-                </edge>
-                <edge source="main.Main.Main" target="tkinter.Tk">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="tkinter.Widget" target="tkinter.Grid">
-                  <point x="-13.375" y="-14.5" />
-                  <point x="1203.5291666666667" y="257.0" />
-                  <point x="159.5" y="257.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="tkinter.Widget" target="tkinter.BaseWidget">
-                  <point x="40.125" y="-14.5" />
-                  <point x="1257.0291666666667" y="267.0" />
-                  <point x="2230.35625" y="267.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="frames.DeveloperFrame.DeveloperFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="293.0" y="158.0" />
-                  <point x="1117.625" y="158.0" />
-                  <point x="-63.875" y="14.5" />
-                </edge>
-                <edge source="tkinter.Tk" target="tkinter.Misc">
-                  <point x="-20.25" y="-14.5" />
-                  <point x="2336.10625" y="188.0" />
-                  <point x="2277.35625" y="188.0" />
-                  <point x="23.5" y="14.5" />
-                </edge>
-                <edge source="old.dev_window.dev_window_controller.DevWindow" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="2810.10625" y="59.0" />
-                  <point x="2183.0" y="59.0" />
-                  <point x="22.75" y="14.5" />
-                </edge>
-                <edge source="frames.CenterFrame.CenterFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1303.0" y="188.0" />
-                  <point x="1190.625" y="188.0" />
-                  <point x="9.125" y="14.5" />
-                </edge>
-                <edge source="main.Main.CreatorFrame" target="main.Main.Main">
-                  <point x="41.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="old.WidgetsController.WidgetsController" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1598.0625" y="79.0" />
-                  <point x="2150.5" y="79.0" />
-                  <point x="-9.75" y="14.5" />
-                </edge>
-                <edge source="tkinter.Place" target="object">
-                  <point x="0.0" y="-14.5" />
-                  <point x="2138.35625" y="89.0" />
-                  <point x="2157.0" y="89.0" />
-                  <point x="-3.25" y="14.5" />
-                </edge>
-                <edge source="frames.MenuBarFrame.MenuBarFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1060.0" y="188.0" />
-                  <point x="1172.375" y="188.0" />
-                  <point x="-9.125" y="14.5" />
-                </edge>
-                <edge source="frames.TitleBarFrame.TitleBarFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="545.0" y="168.0" />
-                  <point x="1135.875" y="168.0" />
-                  <point x="-45.625" y="14.5" />
-                </edge>
-                <edge source="tkinter.Widget" target="tkinter.Pack">
-                  <point x="-40.125" y="-14.5" />
-                  <point x="1176.7791666666667" y="267.0" />
-                  <point x="47.0" y="267.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="frames.WidgetsFrame.WidgetsFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="1541.0" y="178.0" />
-                  <point x="1208.875" y="178.0" />
-                  <point x="27.375" y="14.5" />
-                </edge>
-                <edge source="tkinter.Frame" target="tkinter.Widget">
-                  <point x="0.0" y="-14.5" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="frames.OptionBarFrame.OptionBarFrame" target="frames.IFrame.IFrame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="798.0000000000001" y="178.0" />
-                  <point x="1154.125" y="178.0" />
-                  <point x="-27.375" y="14.5" />
-                </edge>
-                <edge source="tkinter.Widget" target="tkinter.Place">
-                  <point x="13.375" y="-14.5" />
-                  <point x="1230.2791666666667" y="257.0" />
-                  <point x="2138.35625" y="257.0" />
-                  <point x="0.0" y="14.5" />
-                </edge>
-                <edge source="main.Main.EditorFrames" target="tkinter.Frame">
-                  <point x="0.0" y="-14.5" />
-                  <point x="-25.5" y="14.5" />
-                </edge>
-              </edges>
-              <settings layout="Hierarchic Group" zoom="1.025602685382972" x="2282.008747656878" y="179.00874765687766" />
-              <SelectedNodes>
-                <node>tkinter.Frame</node>
-              </SelectedNodes>
-              <Categories />
+            <state relative-caret-position="440">
+              <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -304,8 +62,8 @@
       <file leaf-file-name="DeveloperFrame.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frames/DeveloperFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="180">
+              <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -313,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dev_window_controller.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/old/dev_window/dev_window_controller.py">
+      <file leaf-file-name="WidgetsFrame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frames/WidgetsFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="1200">
+              <caret line="69" selection-start-line="69" selection-end-line="74" selection-end-column="36" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -325,13 +83,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="first_click.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/widgets/first_click.py">
+      <file leaf-file-name="properties_tab.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/widget_properties/properties_tab.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="637">
+              <caret line="91" column="30" lean-forward="true" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
               <folding>
-                <element signature="e#183#206#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PropertiesFrame.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frames/PropertiesFrame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="90" column="40" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -340,19 +110,31 @@
       <file leaf-file-name="constants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/common/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            <state relative-caret-position="237">
+              <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/Main.py">
+      <file leaf-file-name="CenterFrame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frames/CenterFrame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="43" column="45" lean-forward="true" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
+            <state relative-caret-position="1280">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
-                <element signature="e#22#42#0" expanded="true" />
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GUIFrame.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frames/GUIFrame.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="366">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -374,7 +156,6 @@
       <find>self.parent</find>
       <find>CreatorFrame</find>
       <find>main.h</find>
-      <find>DevWindow</find>
       <find>main</find>
       <find>toolbar_btn_hoverout</find>
       <find>maximize_window</find>
@@ -391,6 +172,10 @@
       <find>moveIn_Frame</find>
       <find>start_frame</find>
       <find>start_window_drag</find>
+      <find>WidgetsController</find>
+      <find>DevWindow</find>
+      <find>props_frame_width</find>
+      <find>props_frame</find>
     </findStrings>
     <replaceStrings>
       <replace>parentObj</replace>
@@ -402,6 +187,7 @@
       <replace>windowBasicFunc</replace>
       <replace>menubar</replace>
       <replace>self.center_frame</replace>
+      <replace>self.props_content_frame</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -443,17 +229,19 @@
         <option value="$PROJECT_DIR$/frames/ToolBarFrame.py" />
         <option value="$PROJECT_DIR$/widgets/WidgetController.py" />
         <option value="$PROJECT_DIR$/widgets/WidgetsController.py" />
-        <option value="$PROJECT_DIR$/main/Main.py" />
         <option value="$PROJECT_DIR$/frames/MenuBarFrame.py" />
-        <option value="$PROJECT_DIR$/frames/DeveloperFrame.py" />
         <option value="$PROJECT_DIR$/common/Properties.py" />
         <option value="$PROJECT_DIR$/old/dev_window/dev_window_controller.py" />
-        <option value="$PROJECT_DIR$/frames/CenterFrame.py" />
-        <option value="$PROJECT_DIR$/frames/WidgetsFrame.py" />
         <option value="$PROJECT_DIR$/frames/OptionBarFrame.py" />
-        <option value="$PROJECT_DIR$/common/constants.py" />
         <option value="$PROJECT_DIR$/utils/windowBasicFunctions.py" />
         <option value="$PROJECT_DIR$/frames/GUIFrame.py" />
+        <option value="$PROJECT_DIR$/main/Main.py" />
+        <option value="$PROJECT_DIR$/frames/CenterFrame.py" />
+        <option value="$PROJECT_DIR$/frames/DeveloperFrame.py" />
+        <option value="$PROJECT_DIR$/frames/WidgetsFrame.py" />
+        <option value="$PROJECT_DIR$/widget_properties/properties_tab.py" />
+        <option value="$PROJECT_DIR$/common/constants.py" />
+        <option value="$PROJECT_DIR$/frames/PropertiesFrame.py" />
       </list>
     </option>
   </component>
@@ -480,6 +268,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -505,34 +294,17 @@
             <path>
               <item name="Pykinter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pykinter 3.0" type="462c0819:PsiDirectoryNode" />
-              <item name="media" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pykinter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pykinter 3.0" type="462c0819:PsiDirectoryNode" />
-              <item name="old" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pykinter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pykinter 3.0" type="462c0819:PsiDirectoryNode" />
-              <item name="old" type="462c0819:PsiDirectoryNode" />
-              <item name="dev_window" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Pykinter" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Pykinter 3.0" type="462c0819:PsiDirectoryNode" />
               <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Pykinter" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pykinter 3.0" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
+              <item name="widget_properties" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="ProjectViewState">
@@ -769,11 +541,11 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32305196" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2775974" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.22077923" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49872124" visible="true" weight="0.19288956" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49872124" visible="true" weight="0.19591528" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -787,27 +559,27 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33279222" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" sideWeight="0.50127876" side_tool="true" weight="0.15658094" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49872124" visible="true" weight="0.18986385" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49872124" visible="true" weight="0.19591528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2775974" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.22077923" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="SciView" order="4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" sideWeight="0.50127876" side_tool="true" weight="0.15658094" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -851,20 +623,10 @@
     <SUITE FILE_PATH="coverage/Pykinter$test.coverage" NAME="test Coverage Results" MODIFIED="1600831960835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/common/Properties.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1360">
           <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-          <folding>
-            <element signature="e#22#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -886,9 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
           <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
-          <folding>
-            <element signature="e#22#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,13 +723,6 @@
         <state relative-caret-position="-2780" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/SelectionDots.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frames/CreatorFrame.py" />
     <entry file="file://$PROJECT_DIR$/old/dev_window/dev_window_properties.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -983,58 +735,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/old/program_editor/editor_tab.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/widget_properties/backend_properties.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/widget_properties/properties_tab.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1520" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/TitleBarFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old/WidgetsController.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="132" column="13" lean-forward="true" selection-start-line="132" selection-start-column="13" selection-end-line="132" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/MenuBarFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/ToolBarFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="88" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="88" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/IFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/widgets/WidgetsController.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1060,26 +760,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frames/WidgetsFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frames/OptionBarFrame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python35-32/Lib/tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
@@ -1096,46 +776,145 @@
     <entry file="file://$PROJECT_DIR$/media/logo2.ico">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/Properties.py">
+    <entry file="file://$PROJECT_DIR$/widgets/first_click.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="9" lean-forward="true" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+        <state relative-caret-position="200">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/Main.py">
+    <entry file="file://$PROJECT_DIR$/widgets/functions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="43" column="45" lean-forward="true" selection-start-line="43" selection-start-column="45" selection-end-line="43" selection-end-column="45" />
-          <folding>
-            <element signature="e#22#42#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="101">
+          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/constants.py">
+    <entry file="file://$PROJECT_DIR$/frames/OptionBarFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/old/dev_window/dev_window_controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="320">
+          <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/widgets/first_click.py">
+    <entry file="file://$PROJECT_DIR$/frames/TitleBarFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frames/ToolBarFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="88" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1111">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/dev_window/dev_window_controller.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://Python/#D:/Project Works/Python Projects/Pykinter/Pykinter 3.0">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Python</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="" y="">frames.OptionBarFrame.OptionBarFrame</node>
+            <node x="" y="">old.dev_window.dev_window_controller.DevWindow</node>
+            <node x="" y="">widgets.WidgetsController.WidgetsController</node>
+            <node x="" y="">frames.TitleBarFrame.TitleBarFrame</node>
+            <node x="" y="">tkinter.Widget</node>
+            <node x="" y="">tkinter.Tk</node>
+            <node x="" y="">tkinter.Wm</node>
+            <node x="" y="">frames.WidgetsFrame.WidgetsFrame</node>
+            <node x="" y="">tkinter.BaseWidget</node>
+            <node x="" y="">common.Properties.Properties</node>
+            <node x="" y="">tkinter.Misc</node>
+            <node x="" y="">tkinter.Grid</node>
+            <node x="" y="">frames.MenuBarFrame.MenuBarFrame</node>
+            <node x="" y="">main.Main.CreatorFrame</node>
+            <node x="" y="">frames.IFrame.IFrame</node>
+            <node x="" y="">object</node>
+            <node x="" y="">frames.DeveloperFrame.DeveloperFrame</node>
+            <node x="" y="">tkinter.Pack</node>
+            <node x="" y="">old.WidgetsController.WidgetsController</node>
+            <node x="" y="">main.Main.EditorFrames</node>
+            <node x="" y="">frames.CenterFrame.CenterFrame</node>
+            <node x="" y="">frames.ToolBarFrame.ToolBarFrame</node>
+            <node x="" y="">frames.GUIFrame.GUIFrame</node>
+            <node x="" y="">tkinter.Place</node>
+            <node x="" y="">main.Main.Main</node>
+            <node x="" y="">tkinter.Frame</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.3256026853829722" x="1629.0" y="237.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category />
+          </Categories>
+          <SCOPE>All</SCOPE>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/old/WidgetsController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/Properties.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frames/MenuBarFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="e#183#206#0" expanded="true" />
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frames/IFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frames/GUIFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1147,249 +926,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/widgets/functions.py">
+    <entry file="file://$PROJECT_DIR$/utils/SelectionDots.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="21" column="10" lean-forward="true" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://Python/#D:/Project Works/Python Projects/Pykinter/Pykinter 3.0">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>Python</ID>
-          <OriginalElement />
-          <nodes>
-            <node x="674.0000000000001" y="208.0">frames.OptionBarFrame.OptionBarFrame</node>
-            <node x="2655.10625" y="109.0">old.dev_window.dev_window_controller.DevWindow</node>
-            <node x="2985.10625" y="109.0">widgets.WidgetsController.WidgetsController</node>
-            <node x="436.0" y="208.0">frames.TitleBarFrame.TitleBarFrame</node>
-            <node x="1163.4041666666667" y="287.0">tkinter.Widget</node>
-            <node x="2315.85625" y="208.0">tkinter.Tk</node>
-            <node x="2331.10625" y="109.0">tkinter.Wm</node>
-            <node x="1428.0" y="208.0">frames.WidgetsFrame.WidgetsFrame</node>
-            <node x="2164.85625" y="208.0">tkinter.BaseWidget</node>
-            <node x="2442.10625" y="109.0">common.Properties.Properties</node>
-            <node x="2206.85625" y="109.0">tkinter.Misc</node>
-            <node x="114.0" y="109.0">tkinter.Grid</node>
-            <node x="942.0000000000001" y="208.0">frames.MenuBarFrame.MenuBarFrame</node>
-            <node x="2233.35625" y="445.0">main.Main.CreatorFrame</node>
-            <node x="1108.5" y="109.0">frames.IFrame.IFrame</node>
-            <node x="2127.75" y="0.0">object</node>
-            <node x="170.0" y="208.0">frames.DeveloperFrame.DeveloperFrame</node>
-            <node x="0.0" y="109.0">tkinter.Pack</node>
-            <node x="1474.5625" y="109.0">old.WidgetsController.WidgetsController</node>
-            <node x="1110.9041666666667" y="445.0">main.Main.EditorFrames</node>
-            <node x="1198.0" y="208.0">frames.CenterFrame.CenterFrame</node>
-            <node x="1674.0" y="208.0">frames.ToolBarFrame.ToolBarFrame</node>
-            <node x="1914.0" y="208.0">frames.GUIFrame.GUIFrame</node>
-            <node x="2089.85625" y="109.0">tkinter.Place</node>
-            <node x="2296.85625" y="287.0">main.Main.Main</node>
-            <node x="1165.9041666666667" y="366.0">tkinter.Frame</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="widgets.WidgetsController.WidgetsController" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="3120.60625" y="49.0" />
-              <point x="2189.5" y="49.0" />
-              <point x="29.25" y="14.5" />
-            </edge>
-            <edge source="tkinter.Misc" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="2253.85625" y="89.0" />
-              <point x="2163.5" y="89.0" />
-              <point x="3.25" y="14.5" />
-            </edge>
-            <edge source="frames.ToolBarFrame.ToolBarFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="1784.0" y="168.0" />
-              <point x="1227.125" y="168.0" />
-              <point x="45.625" y="14.5" />
-            </edge>
-            <edge source="tkinter.Grid" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="159.5" y="59.0" />
-              <point x="2137.5" y="59.0" />
-              <point x="-22.75" y="14.5" />
-            </edge>
-            <edge source="common.Properties.Properties" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="2538.60625" y="69.0" />
-              <point x="2176.5" y="69.0" />
-              <point x="16.25" y="14.5" />
-            </edge>
-            <edge source="tkinter.Wm" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="2376.60625" y="79.0" />
-              <point x="2170.0" y="79.0" />
-              <point x="9.75" y="14.5" />
-            </edge>
-            <edge source="tkinter.Tk" target="tkinter.Wm">
-              <point x="20.25" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="main.Main.CreatorFrame" target="tkinter.Frame">
-              <point x="-41.0" y="-14.5" />
-              <point x="2274.35625" y="420.0" />
-              <point x="1242.4041666666667" y="420.0" />
-              <point x="25.5" y="14.5" />
-            </edge>
-            <edge source="frames.GUIFrame.GUIFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="2003.0" y="158.0" />
-              <point x="1245.375" y="158.0" />
-              <point x="63.875" y="14.5" />
-            </edge>
-            <edge source="tkinter.Pack" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="47.0" y="49.0" />
-              <point x="2131.0" y="49.0" />
-              <point x="-29.25" y="14.5" />
-            </edge>
-            <edge source="tkinter.BaseWidget" target="tkinter.Misc">
-              <point x="0.0" y="-14.5" />
-              <point x="-23.5" y="14.5" />
-            </edge>
-            <edge source="frames.IFrame.IFrame" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="1181.5" y="69.0" />
-              <point x="2144.0" y="69.0" />
-              <point x="-16.25" y="14.5" />
-            </edge>
-            <edge source="main.Main.Main" target="tkinter.Tk">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="tkinter.Widget" target="tkinter.Grid">
-              <point x="-13.375" y="-14.5" />
-              <point x="1203.5291666666667" y="257.0" />
-              <point x="159.5" y="257.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="tkinter.Widget" target="tkinter.BaseWidget">
-              <point x="40.125" y="-14.5" />
-              <point x="1257.0291666666667" y="267.0" />
-              <point x="2230.35625" y="267.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="frames.DeveloperFrame.DeveloperFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="293.0" y="158.0" />
-              <point x="1117.625" y="158.0" />
-              <point x="-63.875" y="14.5" />
-            </edge>
-            <edge source="tkinter.Tk" target="tkinter.Misc">
-              <point x="-20.25" y="-14.5" />
-              <point x="2336.10625" y="188.0" />
-              <point x="2277.35625" y="188.0" />
-              <point x="23.5" y="14.5" />
-            </edge>
-            <edge source="old.dev_window.dev_window_controller.DevWindow" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="2810.10625" y="59.0" />
-              <point x="2183.0" y="59.0" />
-              <point x="22.75" y="14.5" />
-            </edge>
-            <edge source="frames.CenterFrame.CenterFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="1303.0" y="188.0" />
-              <point x="1190.625" y="188.0" />
-              <point x="9.125" y="14.5" />
-            </edge>
-            <edge source="main.Main.CreatorFrame" target="main.Main.Main">
-              <point x="41.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="old.WidgetsController.WidgetsController" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="1598.0625" y="79.0" />
-              <point x="2150.5" y="79.0" />
-              <point x="-9.75" y="14.5" />
-            </edge>
-            <edge source="tkinter.Place" target="object">
-              <point x="0.0" y="-14.5" />
-              <point x="2138.35625" y="89.0" />
-              <point x="2157.0" y="89.0" />
-              <point x="-3.25" y="14.5" />
-            </edge>
-            <edge source="frames.MenuBarFrame.MenuBarFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="1060.0" y="188.0" />
-              <point x="1172.375" y="188.0" />
-              <point x="-9.125" y="14.5" />
-            </edge>
-            <edge source="frames.TitleBarFrame.TitleBarFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="545.0" y="168.0" />
-              <point x="1135.875" y="168.0" />
-              <point x="-45.625" y="14.5" />
-            </edge>
-            <edge source="tkinter.Widget" target="tkinter.Pack">
-              <point x="-40.125" y="-14.5" />
-              <point x="1176.7791666666667" y="267.0" />
-              <point x="47.0" y="267.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="frames.WidgetsFrame.WidgetsFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="1541.0" y="178.0" />
-              <point x="1208.875" y="178.0" />
-              <point x="27.375" y="14.5" />
-            </edge>
-            <edge source="tkinter.Frame" target="tkinter.Widget">
-              <point x="0.0" y="-14.5" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="frames.OptionBarFrame.OptionBarFrame" target="frames.IFrame.IFrame">
-              <point x="0.0" y="-14.5" />
-              <point x="798.0000000000001" y="178.0" />
-              <point x="1154.125" y="178.0" />
-              <point x="-27.375" y="14.5" />
-            </edge>
-            <edge source="tkinter.Widget" target="tkinter.Place">
-              <point x="13.375" y="-14.5" />
-              <point x="1230.2791666666667" y="257.0" />
-              <point x="2138.35625" y="257.0" />
-              <point x="0.0" y="14.5" />
-            </edge>
-            <edge source="main.Main.EditorFrames" target="tkinter.Frame">
-              <point x="0.0" y="-14.5" />
-              <point x="-25.5" y="14.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.025602685382972" x="2282.008747656878" y="179.00874765687766" />
-          <SelectedNodes>
-            <node>tkinter.Frame</node>
-          </SelectedNodes>
-          <Categories />
-        </state>
+    <entry file="file://$PROJECT_DIR$/widget_properties/backend_properties.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3716" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frames/DeveloperFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="180">
+          <caret line="11" column="42" lean-forward="true" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/widget_properties/properties_tab.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="637">
+          <caret line="91" column="30" lean-forward="true" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frames/CenterFrame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="37" column="10" lean-forward="true" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+        <state relative-caret-position="1280">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frames/GUIFrame.py">
+    <entry file="file://$PROJECT_DIR$/common/constants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="27" column="81" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="81" />
+        <state relative-caret-position="237">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frames/WidgetsFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1200">
+          <caret line="69" selection-start-line="69" selection-end-line="74" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frames/PropertiesFrame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="90" column="40" selection-start-line="90" selection-start-column="40" selection-end-line="90" selection-end-column="40" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

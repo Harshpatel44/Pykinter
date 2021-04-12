@@ -1,6 +1,7 @@
 from frames.IFrame import IFrame
 from frames.WidgetsFrame import WidgetsFrame
 from frames.CenterFrame import CenterFrame
+from frames.PropertiesFrame import PropertiesFrame
 from singleton import singleton
 
 
@@ -14,6 +15,7 @@ class DeveloperFrame(IFrame):
     def layout(self):
         WidgetsFrame(self)
         CenterFrame(self)
+        PropertiesFrame(self)
         # self.creator_frame.widget_frame = tk.Frame(self.creator_frame, height=self.creator_frame.h * const.frame_height, width=self.creator_frame.w * const.widget_frame_width,
         #                              relief='ridge', background=const.bg_color,
         #                              bd=0)
