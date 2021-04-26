@@ -2,7 +2,7 @@ import tkinter as tk
 from frames.IFrame import IFrame
 from singleton import singleton
 from common import constants as const
-import Injector
+import injector
 
 @singleton
 class OptionBarFrame(IFrame):
@@ -14,6 +14,7 @@ class OptionBarFrame(IFrame):
         self.layout()
 
     def layout(self):
+        Injector = injector.Injector()
         frames = Injector.get_current_properties().get_frames()
         extra_bar = tk.Frame(self.creator_frame,
                              height=self.optionbar_height,

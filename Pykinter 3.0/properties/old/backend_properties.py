@@ -1,6 +1,6 @@
 
 import tkinter as tk
-from widgets import functions
+from widgets.old import functions
 from old.program_editor import update
 
 global fontsize
@@ -23,7 +23,7 @@ fontsize=10
 
 def check_configure(name_enter,height_enter,fontstyle_enter):
 
-    if(functions.selected.winfo_class()=="Entry"):
+    if(functions.selected.winfo_class()== "Entry"):
 
         name_enter.configure(state=tk.DISABLED)
         height_enter.configure(state=tk.DISABLED)
@@ -33,7 +33,7 @@ def check_configure(name_enter,height_enter,fontstyle_enter):
 
         functions.selected.update()
 
-    elif(functions.selected.winfo_class()=="TProgressbar"):
+    elif(functions.selected.winfo_class() == "TProgressbar"):
 
         name_enter.configure(state=tk.DISABLED)
         height_enter.configure(state=tk.DISABLED)
@@ -65,7 +65,7 @@ def width_enter(event):
     global width
     width=widget.get()
 
-    if(functions.selected.winfo_class()=="TProgressbar"):
+    if(functions.selected.winfo_class()== "TProgressbar"):
         functions.selected.configure(length=widget.get())      #condition to change length(width in tk)
         functions.update_w_progressbar(widget.get())     #diffrent function for Progressbar
 
@@ -87,7 +87,7 @@ def fontstyle_enter(event):
     fontstyle=widget.get()
 
 
-    functions.selected.configure(font=(widget.get(),fontsize))
+    functions.selected.configure(font=(widget.get(), fontsize))
 
 
 
@@ -97,7 +97,7 @@ def fontsize_enter(event):
     global fontsize
     fontsize=widget.get()
 
-    functions.selected.configure(font=(widget.cget("font"),fontsize))
+    functions.selected.configure(font=(widget.cget("font"), fontsize))
 
 def bg_enter(event):
     widget=event.widget
@@ -130,7 +130,7 @@ def onfocus_bgcolor__enter(event,number):   #number 1 for bgcolor and number 2 f
     if(number==1):
         onfocus_textcolor=widget.get()
 
-    functions.widget_focus(onfocus_bdcolor,onfocus_textcolor,number)    #a special function for on focus color change.
+    functions.widget_focus(onfocus_bdcolor, onfocus_textcolor, number)    #a special function for on focus color change.
 
 def cursor_change(value):
     print(value)
@@ -189,11 +189,11 @@ def Font_styling(event,number):
 
     if number==0:
 
-       functions.selected.configure(font=(widget.cget("font"),fontsize,"bold"))
+       functions.selected.configure(font=(widget.cget("font"), fontsize, "bold"))
     if number==1:
-       functions.selected.configure(font=(widget.cget("font"),fontsize,"italic"))
+       functions.selected.configure(font=(widget.cget("font"), fontsize, "italic"))
     if number==2:
-       functions.selected.configure(font=(widget.cget("font"),fontsize,"underline"))
+       functions.selected.configure(font=(widget.cget("font"), fontsize, "underline"))
 
     #functions.font_styling_change(Font_style_bold,Font_style_italic,Font_style_underline,number)
 

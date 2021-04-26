@@ -1,4 +1,4 @@
-from widgets import right_clicks
+from widgets.old import right_clicks
 from old.program_editor import update
 
 count=0
@@ -29,7 +29,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             def hover_out(event):
                 rc.itemconfig(rt1,fill="#f7f7f7")
             def onclick(event,org_org_widget,arg2):
-                right_clicks.id_change(event,org_widget,arg2)       #button_id function invoked
+                right_clicks.id_change(event, org_widget, arg2)       #button_id function invoked
 
             rc.tag_bind(rte1,"<Enter>",hover_in)
             rc.tag_bind(rte1,"<Leave>",hover_out)
@@ -48,7 +48,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(rt2,fill="#f7f7f7")
         def onclick1(event,org_org_widget,arg2):
-           right_clicks.copy(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)              #on click , goes to copy function
+           right_clicks.copy(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)              #on click , goes to copy function
 
         rc.tag_bind(rte2,"<Enter>",hover_in)
         rc.tag_bind(rte2,"<Leave>",hover_out)
@@ -67,7 +67,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r3,fill="#f7f7f7")
         def onclick2(event,org_org_widget,arg2):
-           right_clicks.copy_props(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.copy_props(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rte3,"<Enter>",hover_in)
         rc.tag_bind(rte3,"<Leave>",hover_out)
         rc.tag_bind(r3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
@@ -85,7 +85,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             rc.itemconfig(r4,fill="#f7f7f7")
         def onclick3_b(event,org_org_widget,arg2):
            print('here')
-           right_clicks.delete(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.delete(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
 
         rc.tag_bind(rte4,"<Enter>",hover_in)
         rc.tag_bind(rte4,"<Leave>",hover_out)
@@ -100,7 +100,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r5,fill="#f7f7f7")
         def onclick4(event,org_org_widget,arg2):
-           right_clicks.change_name(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.change_name(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rt5,"<Enter>",hover_in)
         rc.tag_bind(rt5,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick4(event,arg,arg2))
@@ -113,7 +113,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r6,fill="#f7f7f7")
         def onclick5(event,org_org_widget,arg2):
-            right_clicks.command(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+            right_clicks.command(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rte6,"<Enter>",hover_in)
         rc.tag_bind(rte6,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick5(event,arg,arg2))
@@ -126,7 +126,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r7,fill="#f7f7f7")
         def onclick6(event,org_org_widget,arg2):
-            right_clicks.select_all_specific(event,root,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+            right_clicks.select_all_specific(event, root, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rte7,"<Enter>",hover_in)
         rc.tag_bind(rte7,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick6(event,arg,arg2))
@@ -140,7 +140,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r8,fill="#f7f7f7")
         def onclick7(event,org_org_widget,arg2):
-            right_clicks.select_all(event,root,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+            right_clicks.select_all(event, root, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rte8,"<Enter>",hover_in)
         rc.tag_bind(rte8,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick7(event,arg,arg2))
@@ -187,7 +187,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             def hover_out(event):
                 rc.itemconfig(rt1,fill="#f7f7f7")
             def onclick(event,org_org_widget,arg2):
-                right_clicks.id_change(event,org_widget,arg2)       #button_id function invoked
+                right_clicks.id_change(event, org_widget, arg2)       #button_id function invoked
 
             rc.tag_bind(rte1,"<Enter>",hover_in)
             rc.tag_bind(rte1,"<Leave>",hover_out)
@@ -208,7 +208,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(rt2,fill="#f7f7f7")
         def onclick1(event,org_org_widget,arg2):
-           right_clicks.copy(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)              #on click , goes to copy function
+           right_clicks.copy(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)              #on click , goes to copy function
 
         rc.tag_bind(rte2,"<Enter>",hover_in)
         rc.tag_bind(rte2,"<Leave>",hover_out)
@@ -227,7 +227,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r3,fill="#f7f7f7")
         def onclick2(event,org_org_widget,arg2):
-           right_clicks.copy_props(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.copy_props(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rt3,"<Enter>",hover_in)
         rc.tag_bind(rt3,"<Leave>",hover_out)
         rc.tag_bind(r3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
@@ -244,7 +244,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r4,fill="#f7f7f7")
         def onclick3_e(event,org_org_widget,arg2):
-           right_clicks.delete(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.delete(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rt4,"<Enter>",hover_in)
         rc.tag_bind(rt4,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick3_e(event,arg,arg2))
@@ -278,7 +278,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r7,fill="#f7f7f7")
         def onclick4_e(event,org_org_widget,arg2):
-           right_clicks.select_all_specific(event,root,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.select_all_specific(event, root, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rte7,"<Enter>",hover_in)
         rc.tag_bind(rte7,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick4_e(event,arg,arg2))
@@ -328,7 +328,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
             def hover_out(event):
                 rc.itemconfig(rt1,fill="#f7f7f7")
             def onclick(event,org_org_widget,arg2):
-                right_clicks.id_change(event,org_widget,arg2)       #button_id function invoked
+                right_clicks.id_change(event, org_widget, arg2)       #button_id function invoked
 
             rc.tag_bind(rte1,"<Enter>",hover_in)
             rc.tag_bind(rte1,"<Leave>",hover_out)
@@ -348,7 +348,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(rt2,fill="#f7f7f7")
         def onclick1(event,org_org_widget,arg2):
-           right_clicks.copy(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)              #on click , goes to copy function
+           right_clicks.copy(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)              #on click , goes to copy function
 
         rc.tag_bind(rte2,"<Enter>",hover_in)
         rc.tag_bind(rte2,"<Leave>",hover_out)
@@ -367,7 +367,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r3,fill="#f7f7f7")
         def onclick2(event,org_org_widget,arg2):
-           right_clicks.copy_props(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.copy_props(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rt3,"<Enter>",hover_in)
         rc.tag_bind(rt3,"<Leave>",hover_out)
         rc.tag_bind(r3,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick2(event,arg,arg2))
@@ -384,7 +384,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r4,fill="#f7f7f7")
         def onclick3_l(event,org_org_widget,arg2):
-           right_clicks.delete(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.delete(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
 
         rc.tag_bind(rt4,"<Enter>",hover_in)
         rc.tag_bind(rt4,"<Leave>",hover_out)
@@ -399,7 +399,7 @@ def menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l
         def hover_out(event):
             rc.itemconfig(r5,fill="#f7f7f7")
         def onclick4(event,org_org_widget,arg2):
-           right_clicks.change_name(event,org_widget,arg2,start_btn,motion,stop_btn,l1,l2,right1,right2,u,d,l,r)
+           right_clicks.change_name(event, org_widget, arg2, start_btn, motion, stop_btn, l1, l2, right1, right2, u, d, l, r)
         rc.tag_bind(rt5,"<Enter>",hover_in)
         rc.tag_bind(rt5,"<Leave>",hover_out)
         rc.tag_bind(r4,"<Button-1>",lambda event,arg=org_widget,arg2=rc:onclick4(event,arg,arg2))

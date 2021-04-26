@@ -3,7 +3,7 @@ from frames.IFrame import IFrame
 from frames.GUIFrame import GUIFrame
 from singleton import singleton
 from common import constants as const
-import Injector
+import injector
 
 
 @singleton
@@ -31,7 +31,8 @@ class CenterFrame(IFrame):
         self.gui_window_geometry_tool()
         GUIFrame(self)
         # update the object
-        Injector.get_current_properties().set_frames({
+        Injector = injector.Injector()
+        Injector.get_current_properties().add_frames({
             'CenterFrame': self.center_frame
         })
 

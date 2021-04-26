@@ -1,5 +1,6 @@
 import tkinter as tk
 from frames.IFrame import IFrame
+import injector
 import utils.windowBasicFunctions as windowBasicFunc
 from common import constants as const
 from PIL import ImageTk, Image
@@ -47,6 +48,11 @@ class GUIFrame(IFrame):
         )
         self.gui_frame_app_window.place(x=0, y=self.gui_frame_taskbar_height)
 
+        Injector = injector.Injector()
+        Injector.get_current_properties().add_frames({
+            'guiFrame': self.gui_frame,
+            'guiFrameAppWindow': self.gui_frame_app_window
+        })
 
     def gui_frame_taskbar_layout(self):
         self.gui_frame_taskbar = tk.Frame(

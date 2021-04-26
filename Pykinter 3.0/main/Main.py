@@ -7,7 +7,7 @@ from frames.MenuBarFrame import MenuBarFrame
 from frames.OptionBarFrame import OptionBarFrame
 import utils.windowBasicFunctions as windowBasicFunc
 from common import constants as const
-import Injector
+import injector
 from old.program_editor import editor_tab
 
 
@@ -31,12 +31,12 @@ class Main(tk.Tk):
         container.grid_rowconfigure(0, weight=1)
         container.grid_columnconfigure(0, weight=1)
         # self.overrideredirect('false')
-        # Injector.get_titlebar_layout(self)
+        # injector.Injector.get_titlebar_layout(self)
         # self.bind("<Map>",self.display_window)
 
         self.frames = {}
-        get_current_properties = Injector.get_current_properties()
-        Injector.get_current_properties().set_frames({
+        Injector = injector.Injector()
+        Injector.get_current_properties().add_frames({
             'CreatorFrame': CreatorFrame,
             'EditorFrame': EditorFrames
         })
@@ -45,7 +45,7 @@ class Main(tk.Tk):
             self.frames[f] = frame
             frame.grid(row=0, column=0, sticky='nsew')
         self.show_frame(CreatorFrame)
-        get_current_properties.set_main(self)
+        Injector.get_current_properties().set_main(self)
 
     def show_frame(self, con):
         frame = self.frames[con]
@@ -70,8 +70,8 @@ class CreatorFrame(tk.Frame, Main):
         MenuBarFrame(self)
         OptionBarFrame(self)
         DeveloperFrame(self)
-        self.bind('<Button-1>', windowBasicFunc.start_window_drag)
-        self.bind('<B1-Motion>', windowBasicFunc.motion_window_drag)
+        self.bind('<Button-1>', windowBasicFunc.start_widget_drag)
+        self.bind('<B1-Motion>', windowBasicFunc.motion_widget_drag)
 
 
 class EditorFrames(tk.Frame):

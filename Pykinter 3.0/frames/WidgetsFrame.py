@@ -2,6 +2,7 @@ import tkinter as tk
 from frames.IFrame import IFrame
 from singleton import singleton
 from common import constants as const
+import injector
 
 
 @singleton
@@ -97,7 +98,9 @@ class WidgetsFrame(IFrame):
             'fg': '#FFFFFF',
             'relief': tk.SUNKEN
         }
-        self.widget_objects_dictionary = {}
+        # self.widget_objects_dictionary = {}
+        Injector = injector.Injector()
+        widget_controller = Injector.get_widgets_factory().get_widget_controller()
 
         for i, j in zip(range(1, len(widgets_text_list) + 1), widgets_text_list):
             widget = tk.Button(self.widget_buttons_frame,
@@ -106,9 +109,10 @@ class WidgetsFrame(IFrame):
                                background=widget_button_properties_dict['background'],
                                fg=widget_button_properties_dict['fg'],
                                relief=widget_button_properties_dict['relief'])
+            widget.bind('<Button-1>', lambda event: widget_controller.create_button(event))
             widget.config(font=(self.widget_font, self.widget_font_size))
             widget.place(x=self.widget_button_x,
                          y=(self.widget_button_y * i) - self.widget_button_height,
                          height=self.widget_button_height,
                          width=self.widget_button_width)
-            self.widget_objects_dictionary[j] = widget
+            # self.widget_objects_dictionary[j] = widget

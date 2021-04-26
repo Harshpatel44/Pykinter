@@ -42,6 +42,10 @@ gui_frame_widgets_props = {
   }
 }
 
+## All the widget objects can be treated as dictionary and we can pass custom keys to it.
+button = tk.Button()
+button['customKey] = 'customValue'
+
 used all the time.
 
 ## Undo Redo (Stack data structure)

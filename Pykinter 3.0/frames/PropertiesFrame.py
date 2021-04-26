@@ -28,7 +28,6 @@ class PropertiesFrame(IFrame):
                                       background=const.bg_color,
                                       bd=0)
         self.props_outer_frame.pack(side='left')
-        print(self.props_frame_width)
         self.props_title_frame()
 
         props_canvas_yscrollbar = tk.Scrollbar(self.props_outer_frame)
@@ -56,6 +55,7 @@ class PropertiesFrame(IFrame):
         props_main_canvas.create_window((0, 0), window=self.props_content_frame, anchor='nw')
 
         self.props_frame_properties()
+
     def props_title_frame(self):
         props_tab_title = tk.Frame(self.props_outer_frame,
                                      height=self.props_frame_title_height,

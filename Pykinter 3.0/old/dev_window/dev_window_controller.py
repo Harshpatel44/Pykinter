@@ -1,6 +1,6 @@
 import tkinter as tk
 from PIL import ImageTk, Image
-from widgets import first_click
+from widgets.old import first_click
 from common import constants as const
 from old.dev_window import dev_window_properties
 

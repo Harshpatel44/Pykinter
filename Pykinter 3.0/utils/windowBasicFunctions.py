@@ -1,10 +1,10 @@
-def start_window_drag(event, widget=None):
+def start_widget_drag(event, widget=None):
     widget = widget if widget else event.widget
     widget.drag_start_x = event.x
     widget.drag_start_y = event.y
 
 
-def motion_window_drag(event, widget=None):
+def motion_widget_drag(event, widget=None):
     widget = widget if widget else event.widget
     x = widget.winfo_x() - widget.drag_start_x + event.x
     y = widget.winfo_y() - widget.drag_start_y + event.y

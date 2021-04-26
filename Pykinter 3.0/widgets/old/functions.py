@@ -5,8 +5,8 @@ selected=0
 g_root=0
 import time
 import tkinter as tk
-from widget_properties import properties_tab
-from widgets import right_click
+from properties.old import properties_tab
+from widgets.old import right_click
 from old.program_editor import update
 
 global gl1,gl2,gr1,gr2,gu,gd,gl,gr
@@ -124,9 +124,9 @@ def start_btn(event,root,rc):    #rc is right click canvas
     print('selected list in function', update.selected_widget)
      #these functions are for right click context menu
     def right_click_fn(event):
-         right_click.menu_start(event,root,rc,start_btn,motion,stop_btn,l1,l2,r1,r2,u,d,l,r)
+         right_click.menu_start(event, root, rc, start_btn, motion, stop_btn, l1, l2, r1, r2, u, d, l, r)
     #def right_click_close(event):
-    right_click.menu_close(event,root,rc)
+    right_click.menu_close(event, root, rc)
 
     #giving all the bindings for right click context menu
     selected.bind('<Button-3>',right_click_fn)
