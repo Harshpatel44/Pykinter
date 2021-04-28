@@ -29,31 +29,6 @@ class Properties:
     def add_frames(self, frames_with_names):
         self.frames.update(frames_with_names)
 
-    def get_active_widgets(self):
-        return self.active_widgets
-
-    def set_active_widgets(self, widgets):
-        self.active_widgets.extend(widgets)
-
-    def get_selected_widgets(self):
-        return self.selected_widgets
-
-    def set_selected_widgets(self, selected_widgets):
-        self.selected_widgets.extend(selected_widgets)
-
-    def get_deleted_widgets(self):
-        return self.deleted_widgets
-
-    def set_deleted_widgets(self, deleted_widgets):
-        self.deleted_widgets.extend(deleted_widgets)
-
-    def get_properties(self):
-        return self.properties
-
-    def set_properties(self, properties):
-        self.properties.update(properties)
-
-
 # frames = {}
 # properties = {}
 # selected_widgets = {}

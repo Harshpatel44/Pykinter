@@ -5,7 +5,7 @@ selected=0
 g_root=0
 import time
 import tkinter as tk
-from properties.old import properties_tab
+from widget_properties.old import properties_tab
 from widgets.old import right_click
 from old.program_editor import update
 

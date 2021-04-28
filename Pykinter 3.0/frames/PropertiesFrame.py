@@ -2,6 +2,7 @@ import tkinter as tk
 from frames.IFrame import IFrame
 from singleton import singleton
 from common import constants as const
+import injector
 
 @singleton
 class PropertiesFrame(IFrame):
@@ -74,18 +75,44 @@ class PropertiesFrame(IFrame):
         title_label.pack(side='top')
         
     def props_frame_properties(self):
-        X_taskbar = tk.Label(self.props_content_frame, text='X', width=10, bd=1, background='#6D7993', fg='#fef1e8')
-        X_taskbar.place(x=20, y=15)
-        X_taskbar_enter = tk.Entry(self.props_content_frame, width=17)
+        Injector = injector.Injector()
+        properties_model = Injector.get_properties_factory().get_properties_model()
+
+        X_geometry_variable = tk.StringVar()
+        X_geometry = tk.Label(self.props_content_frame,
+                              text='X',
+                              width=10,
+                              bd=1,
+                              background='#6D7993',
+                              fg='#fef1e8')
+        X_geometry.place(x=20, y=15)
+        X_geometry_enter = tk.Entry(self.props_content_frame,
+                                    width=17,
+                                    textvariable = X_geometry_variable)
         # X_taskbar_enter.bind("<Return>", backend_properties.enter_X)
         # X_taskbar_enter.bind('<FocusOut>', backend_properties.enter_X)
         # X_taskbar_enter.bind("<Return>", backend_properties.enter_X)
-        X_taskbar_enter.place(x=90, y=15)
+        X_geometry_enter.variable = X_geometry_variable
+        X_geometry_enter.place(x=90, y=15)
 
-        Y_taskbar = tk.Label(self.props_content_frame, text='Y', width=10, bd=1, background='#6D7993', fg='#fef1e8')
-        Y_taskbar.place(x=20, y=45)
-        Y_taskbar_enter = tk.Entry(self.props_content_frame, width=17)
+        Y_geometry_variable = tk.StringVar()
+        Y_geometry = tk.Label(self.props_content_frame,
+                              text='Y',
+                              width=10,
+                              bd=1,
+                              background='#6D7993',
+                              fg='#fef1e8')
+        Y_geometry.place(x=20, y=45)
+        Y_geometry_enter = tk.Entry(self.props_content_frame,
+                                    width=17,
+                                    textvariable = Y_geometry_variable)
         # Y_taskbar_enter.bind("<Return>", backend_properties.enter_Y)
         # Y_taskbar_enter.bind('<FocusOut>', backend_properties.enter_Y)
         # Y_taskbar_enter.bind("<Return>", backend_properties.enter_Y)
-        Y_taskbar_enter.place(x=90, y=45)
+        Y_geometry_enter.variable = Y_geometry_variable
+        Y_geometry_enter.place(x=90, y=45)
+
+        properties_model.add_properties({
+            'X_geometry': X_geometry_enter,
+            'Y_geometry': Y_geometry_enter
+        })

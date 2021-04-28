@@ -5,8 +5,8 @@ from frames.OptionBarFrame import OptionBarFrame
 import frames.DeveloperFrame
 import frames.WidgetsFrame
 from widgets.widgets_factory import WidgetsFactory
-from properties.properties_factory import PropertiesFactory
-import common.Properties
+from widget_properties.widget_properties_factory import PropertiesFactory
+import common.properties
 
 
 class Injector:
@@ -32,7 +32,7 @@ class Injector:
         return frames.WidgetsFrame.WidgetsFrame(self)
 
     def get_current_properties(self):
-        return common.Properties.Properties()
+        return common.properties.Properties()
 
     def get_widgets_factory(self):
         return WidgetsFactory()
