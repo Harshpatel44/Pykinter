@@ -35,5 +35,21 @@ class Widgets(IWidgets):
 
     def widget_bind_button1(self, event):
         windowBasicFunctions.start_widget_drag(event)
+        self.update_properties_for_widget(event.widget)
+        self.set_selected_widgets([event.widget])
+
+    def update_properties_for_widget(self, widget):
+        self.update_x_geometry(widget)
+        self.update_y_geometry(widget)
+
+    def update_x_geometry(self, widget):
+        widget_x = widget.place_info()['x']
         properties_model = self.Injector.get_properties_factory().get_properties_model()
-        properties_model.update_properties_for_widget(event.widget)
+        x_geometry_widget = properties_model.get_properties()['X_geometry']
+        x_geometry_widget.variable.set(widget_x)
+
+    def update_y_geometry(self, widget):
+        widget_y = widget.place_info()['y']
+        properties_model = self.Injector.get_properties_factory().get_properties_model()
+        y_geometry_widget = properties_model.get_properties()['Y_geometry']
+        y_geometry_widget.variable.set(widget_y)

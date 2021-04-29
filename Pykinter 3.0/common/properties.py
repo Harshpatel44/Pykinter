@@ -5,9 +5,6 @@ from singleton import singleton
 class Properties:
     def __init__(self):
         self.frames = {}
-        self.active_widgets = []
-        self.selected_widgets = []
-        self.deleted_widgets = []
         self.properties = {}
         self.main = None
 

@@ -77,6 +77,7 @@ class PropertiesFrame(IFrame):
     def props_frame_properties(self):
         Injector = injector.Injector()
         properties_model = Injector.get_properties_factory().get_properties_model()
+        properties_controller = Injector.get_properties_factory().get_properties_controller()
 
         X_geometry_variable = tk.StringVar()
         X_geometry = tk.Label(self.props_content_frame,
@@ -89,10 +90,9 @@ class PropertiesFrame(IFrame):
         X_geometry_enter = tk.Entry(self.props_content_frame,
                                     width=17,
                                     textvariable = X_geometry_variable)
-        # X_taskbar_enter.bind("<Return>", backend_properties.enter_X)
-        # X_taskbar_enter.bind('<FocusOut>', backend_properties.enter_X)
-        # X_taskbar_enter.bind("<Return>", backend_properties.enter_X)
         X_geometry_enter.variable = X_geometry_variable
+        X_geometry_enter.bind('<Return>', properties_controller.set_x_geometry_property)
+        X_geometry_enter.bind('<Tab>', properties_controller.set_x_geometry_property)
         X_geometry_enter.place(x=90, y=15)
 
         Y_geometry_variable = tk.StringVar()
@@ -106,10 +106,9 @@ class PropertiesFrame(IFrame):
         Y_geometry_enter = tk.Entry(self.props_content_frame,
                                     width=17,
                                     textvariable = Y_geometry_variable)
-        # Y_taskbar_enter.bind("<Return>", backend_properties.enter_Y)
-        # Y_taskbar_enter.bind('<FocusOut>', backend_properties.enter_Y)
-        # Y_taskbar_enter.bind("<Return>", backend_properties.enter_Y)
         Y_geometry_enter.variable = Y_geometry_variable
+        Y_geometry_enter.bind('<Return>', properties_controller.set_y_geometry_property)
+        Y_geometry_enter.bind('<Tab>', properties_controller.set_y_geometry_property)
         Y_geometry_enter.place(x=90, y=45)
 
         properties_model.add_properties({

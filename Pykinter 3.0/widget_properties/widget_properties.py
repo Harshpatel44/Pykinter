@@ -22,21 +22,21 @@ class Properties(IProperties):
     def add_properties(self, property):
         self.properties.update(property)
 
-    def update_properties_for_widget(self, widget):
-        properties = self.Injector.get_properties_factory().get_properties_model()
-        self.update_x_geometry(widget, properties)
-        self.update_y_geometry(widget, properties)
+    def update_x_geometry(self, property_widget):
+        x_value = property_widget.get()
+        widgets_model = self.Injector.get_widgets_factory().get_widgets_model()
+        selected_widgets = widgets_model.get_selected_widgets()
+        for widget in selected_widgets:
+            y_value = widget.place_info()['y']
+            widget.place(x=x_value, y=y_value)
 
-    def update_x_geometry(self, widget, properties = None):
-        widget_x = widget.place_info()['x']
-        x_geometry_widget = properties.get_properties()['X_geometry']
-        x_geometry_widget.variable.set(widget_x)
-
-    def update_y_geometry(self, widget, properties = None):
-        widget_y = widget.place_info()['y']
-        y_geometry_widget = properties.get_properties()['Y_geometry']
-        y_geometry_widget.variable.set(widget_y)
-
+    def update_y_geometry(self, property_widget):
+        y_value = property_widget.get()
+        widgets_model = self.Injector.get_widgets_factory().get_widgets_model()
+        selected_widgets = widgets_model.get_selected_widgets()
+        for widget in selected_widgets:
+            x_value = widget.place_info()['x']
+            widget.place(x=x_value, y=y_value)
 
 
 
