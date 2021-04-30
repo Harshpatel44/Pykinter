@@ -9,8 +9,13 @@ from singleton import singleton
 
 @singleton
 class GUIFrame(IFrame):
-    def __init__(self, center_frame):
+    def __init__(self, center_frame, custom_injector=None):
         super().__init__()
+        if custom_injector:
+            self.Injector = custom_injector
+        else:
+            self.Injector = injector.Injector()
+
         self.center_frame_class_obj = center_frame
         center_frame_width = self.center_frame_class_obj.center_frame_width
         center_frame_height = self.center_frame_class_obj.center_frame_height
@@ -46,6 +51,8 @@ class GUIFrame(IFrame):
             height=self.gui_frame_height - self.gui_frame_taskbar_height - (2 * const.gui_frame_highlight_thickness),
             width=self.gui_frame_width - (2 * const.gui_frame_highlight_thickness)
         )
+        widgets_model = self.Injector.get_widgets_factory().get_widgets_model()
+        self.gui_frame_app_window.bind('<Button-1>', widgets_model.unselect_widgets)
         self.gui_frame_app_window.place(x=0, y=self.gui_frame_taskbar_height)
 
         Injector = injector.Injector()
@@ -111,10 +118,10 @@ class GUIFrame(IFrame):
 
         self.gui_frame_taskbar.bind(
             '<Button-1>',
-            lambda event, widget=self.gui_frame: windowBasicFunc.start_window_drag(event, widget)
+            lambda event, widget=self.gui_frame: windowBasicFunc.start_widget_drag(event, widget)
         )
         self.gui_frame_taskbar.bind(
             '<B1-Motion>',
             lambda event,
-            widget=self.gui_frame: windowBasicFunc.motion_window_drag(event, widget)
+            widget=self.gui_frame: windowBasicFunc.motion_widget_drag(event, widget)
         )
