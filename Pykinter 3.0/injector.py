@@ -6,6 +6,7 @@ import frames.DeveloperFrame
 import frames.WidgetsFrame
 from widgets.widgets_factory import WidgetsFactory
 from widget_properties.widget_properties_factory import PropertiesFactory
+from utils import selection_dots
 import common.properties
 
 
@@ -39,3 +40,6 @@ class Injector:
 
     def get_properties_factory(self):
         return PropertiesFactory()
+
+    def get_selection_dots_utils(self):
+        return selection_dots.SelectionDots()

@@ -1,7 +1,7 @@
 import tkinter as tk
 from frames.IFrame import IFrame
 import injector
-import utils.windowBasicFunctions as windowBasicFunc
+import utils.window_basic_functions as window_basic_func
 from common import constants as const
 from PIL import ImageTk, Image
 from singleton import singleton
@@ -118,10 +118,10 @@ class GUIFrame(IFrame):
 
         self.gui_frame_taskbar.bind(
             '<Button-1>',
-            lambda event, widget=self.gui_frame: windowBasicFunc.start_widget_drag(event, widget)
+            lambda event, widget=self.gui_frame: window_basic_func.start_widget_drag(event, widget)
         )
         self.gui_frame_taskbar.bind(
             '<B1-Motion>',
             lambda event,
-            widget=self.gui_frame: windowBasicFunc.motion_widget_drag(event, widget)
+            widget=self.gui_frame: window_basic_func.motion_widget_drag(event, widget)
         )

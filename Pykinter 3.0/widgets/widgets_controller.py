@@ -1,6 +1,6 @@
 import tkinter as tk
 import injector
-from utils import windowBasicFunctions
+from utils import window_basic_functions
 
 
 class WidgetsController:
@@ -15,19 +15,17 @@ class WidgetsController:
         button = tk.Button(
             center_frame,
             text='Button',
-            height=1,
             bd=0,
             highlightthickness=5,
             highlightbackground='black',
-            width=10,
             relief=tk.RAISED)
 
         widgets_model = self.Injector.get_widgets_factory().get_widgets_model()
         button.bind('<Button-1>', lambda event: widgets_model.widget_bind_button1(event))
-        button.bind('<B1-Motion>', lambda event: windowBasicFunctions.motion_widget_drag(event))
+        button.bind('<B1-Motion>', lambda event: window_basic_functions.motion_widget_drag(event))
         button.bind('<ButtonRelease-1>', lambda event: widgets_model.widget_bind_button1_release(event))
         button.bind('<Control-1>', lambda event: widgets_model.widget_bind_command_click(event))
-        button.place(x=10, y=10)
+        button.place(x=10, y=10, height=100, width=100)
 
         widgets_model = self.Injector.get_widgets_factory().get_widgets_model()
         widgets_model.set_active_widgets([button])

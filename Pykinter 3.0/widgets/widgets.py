@@ -1,5 +1,5 @@
 from widgets.iwidgets import IWidgets
-from utils import windowBasicFunctions
+from utils import window_basic_functions, selection_dots
 from singleton import singleton
 import injector
 
@@ -32,7 +32,8 @@ class Widgets(IWidgets):
         self.selected_widgets = []
 
     def unselect_widgets(self, *args):
-        self.unhighlight_widgets(self.selected_widgets)
+        # self.unhighlight_widgets(self.selected_widgets)
+        self.Injector.get_selection_dots_utils().hide_selection_for_widget()
         self.unset_selected_widgets()
 
     def get_deleted_widgets(self):
@@ -42,12 +43,13 @@ class Widgets(IWidgets):
         self.deleted_widgets.extend(deleted_widgets)
 
     def widget_bind_button1(self, event):
-        windowBasicFunctions.start_widget_drag(event)
+        window_basic_functions.start_widget_drag(event)
         self.update_properties_for_widget(event.widget)
 
         self.unselect_widgets()
         self.set_selected_widgets([event.widget])
-        self.highlight_widgets([event.widget])
+        self.Injector.get_selection_dots_utils().create_selection_for_widget(event.widget)
+        # self.highlight_widgets([event.widget])
 
     def widget_bind_button1_release(self, event):
         self.update_properties_for_widget(event.widget)
@@ -69,7 +71,7 @@ class Widgets(IWidgets):
         for widget in widgets:
             widget.config(bd=0)
             widget.update()
-            
+
     def update_properties_for_widget(self, widget):
         self.update_x_geometry(widget)
         self.update_y_geometry(widget)
@@ -88,7 +90,7 @@ class Widgets(IWidgets):
             x_geometry_widget.variable.set(widget_x)
 
     def update_y_geometry(self, widget):
-        is_multi_selection = self.check_if_multi_selection()
+        is_multi_selection = self.__check_if_multi_selection()
         properties_model = self.Injector.get_properties_factory().get_properties_model()
         y_geometry_widget = properties_model.get_properties()['Y_geometry']
         if is_multi_selection:

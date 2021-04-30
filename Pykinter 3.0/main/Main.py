@@ -5,7 +5,7 @@ from frames.DeveloperFrame import DeveloperFrame
 from frames.ToolBarFrame import ToolBarFrame
 from frames.MenuBarFrame import MenuBarFrame
 from frames.OptionBarFrame import OptionBarFrame
-import utils.windowBasicFunctions as windowBasicFunc
+import utils.window_basic_functions as window_basic_func
 from common import constants as const
 import injector
 from old.program_editor import editor_tab
@@ -70,8 +70,8 @@ class CreatorFrame(tk.Frame, Main):
         MenuBarFrame(self)
         OptionBarFrame(self)
         DeveloperFrame(self)
-        self.bind('<Button-1>', windowBasicFunc.start_widget_drag)
-        self.bind('<B1-Motion>', windowBasicFunc.motion_widget_drag)
+        self.bind('<Button-1>', window_basic_func.start_widget_drag)
+        self.bind('<B1-Motion>', window_basic_func.motion_widget_drag)
 
 
 class EditorFrames(tk.Frame):

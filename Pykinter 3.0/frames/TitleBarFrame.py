@@ -2,7 +2,7 @@ import tkinter as tk
 from frames.IFrame import IFrame
 from singleton import singleton
 from common import constants as const
-import utils.windowBasicFunctions as windowBasicFunc
+import utils.window_basic_functions as window_basic_func
 
 
 @singleton
@@ -27,20 +27,20 @@ class TitleBarFrame(IFrame):
 
         minimize = tk.Canvas(title_bar_btns_frame, height=12, width=12, background="#333333", relief='flat')
         minimize.pack(side="left", padx=16)
-        minimize.bind('<Enter>', windowBasicFunc.toolbar_btn_hoverin)
-        minimize.bind('<Leave>', windowBasicFunc.toolbar_btn_hoverout)
-        minimize.bind("<Button-1>", lambda event, window_obj=self.parent: windowBasicFunc.minimize_window(window_obj))
+        minimize.bind('<Enter>', window_basic_func.toolbar_btn_hoverin)
+        minimize.bind('<Leave>', window_basic_func.toolbar_btn_hoverout)
+        minimize.bind("<Button-1>", lambda event, window_obj=self.parent: window_basic_func.minimize_window(window_obj))
 
         maximize = tk.Canvas(title_bar_btns_frame, height=12, width=12, background="#333333", relief='flat')
         maximize.pack(side="left", padx=16)
-        maximize.bind('<Enter>', windowBasicFunc.toolbar_btn_hoverin)
-        maximize.bind('<Leave>', windowBasicFunc.toolbar_btn_hoverout)
+        maximize.bind('<Enter>', window_basic_func.toolbar_btn_hoverin)
+        maximize.bind('<Leave>', window_basic_func.toolbar_btn_hoverout)
         maximize.bind("<Button-1>",
                       lambda event, window_obj=self.parent, w=self.parent.w,
-                             h=self.parent.h: windowBasicFunc.maximize_window(window_obj, w, h))
+                             h=self.parent.h: window_basic_func.maximize_window(window_obj, w, h))
 
         close_button = tk.Canvas(title_bar_btns_frame, height=12, width=12, background="#333333", relief='flat')
         close_button.pack(side="left", padx=16)
-        close_button.bind('<Enter>', windowBasicFunc.toolbar_btn_hoverin)
-        close_button.bind("<Button-1>", lambda event, window_obj=self.parent: windowBasicFunc.close_window(window_obj))
-        close_button.bind('<Leave>', windowBasicFunc.toolbar_btn_hoverout)
+        close_button.bind('<Enter>', window_basic_func.toolbar_btn_hoverin)
+        close_button.bind("<Button-1>", lambda event, window_obj=self.parent: window_basic_func.close_window(window_obj))
+        close_button.bind('<Leave>', window_basic_func.toolbar_btn_hoverout)
