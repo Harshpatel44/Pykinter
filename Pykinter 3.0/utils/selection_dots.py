@@ -11,6 +11,21 @@ class SelectionDots:
     def create_selection_for_widget(self, widget):
         x, y, height, width = [int(widget.place_info()[i]) for i in ('x', 'y', 'height', 'width')]
         gui_frame_app_window = injector.Injector().get_current_properties().get_frame('guiFrameAppWindow')
+        if widget in self.selection_rectangle.keys():
+            gui_frame_app_window.coords(
+                self.selection_rectangle[widget],
+                x - 2,
+                y - 2,
+                x + width,
+                y + height,
+            )
+
+            gui_frame_app_window.itemconfig(
+                self.selection_rectangle[widget],
+                outline='red'
+            )
+            return self.selection_rectangle[widget]
+
         self.selection_rectangle[widget] = gui_frame_app_window.create_rectangle(
             x - 2,
             y - 2,
@@ -24,7 +39,7 @@ class SelectionDots:
         for selection_rect in self.selection_rectangle.values():
             gui_frame_app_window.itemconfig(
                 selection_rect,
-                outline='black'
+                outline='white'
             )
 
     def move_selection_for_widget(self, widget):

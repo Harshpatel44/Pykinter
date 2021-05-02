@@ -25,7 +25,7 @@ class WidgetsController:
         button.bind('<B1-Motion>', lambda event: window_basic_functions.motion_widget_drag(event))
         button.bind('<ButtonRelease-1>', lambda event: widgets_model.widget_bind_button1_release(event))
         button.bind('<Control-1>', lambda event: widgets_model.widget_bind_command_click(event))
-        button.place(x=10, y=10, height=100, width=100)
+        button.place(x=10, y=10, height=30, width=100)
 
         widgets_model = self.Injector.get_widgets_factory().get_widgets_model()
         widgets_model.set_active_widgets([button])

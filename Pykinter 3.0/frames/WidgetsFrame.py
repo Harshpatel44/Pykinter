@@ -37,19 +37,19 @@ class WidgetsFrame(IFrame):
         self.layout()
 
     def layout(self):
-        creator_frame = self.developer_frame.creator_frame
-        self.widget_frame(creator_frame)  # creates widget frame
+        developer_frame = self.developer_frame.developer_frame
+        self.widget_frame(developer_frame)  # creates widget frame
         self.widget_title_frame()  # creates widget_title frame inside widget frame
         self.widget_buttons()
 
-    def widget_frame(self, creator_frame):
-        self.widgets_frame = tk.Frame(creator_frame,
+    def widget_frame(self, parent_frame):
+        self.widgets_frame = tk.Frame(parent_frame,
                                       height=self.widgets_frame_height,
                                       width=self.widgets_frame_width,
                                       relief='ridge',
                                       background=const.bg_color,
                                       bd=0)
-        self.widgets_frame.pack(side='left')
+        self.widgets_frame.pack(side='left', fill='y')
 
     def widget_title_frame(self):
         widgets_tab_title = tk.Frame(self.widgets_frame,
@@ -59,7 +59,7 @@ class WidgetsFrame(IFrame):
                                      relief='raised',
                                      background=const.bg_color,
                                      highlightbackground=const.main_border)
-        widgets_tab_title.pack(side='top', fill='both', expand=1)
+        widgets_tab_title.pack(side='top', fill='x')
 
         self.widget_buttons_frame = tk.Frame(self.widgets_frame,
                                              background=const.bg_color,

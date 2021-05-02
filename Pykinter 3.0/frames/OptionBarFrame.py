@@ -23,7 +23,7 @@ class OptionBarFrame(IFrame):
                              relief='raised',
                              background=const.bg_color,
                              highlightbackground=const.main_border)
-        extra_bar.pack(side='top')
+        extra_bar.pack(side='top', fill='x')
 
         editor_button = tk.Button(extra_bar,
                                   text='Editor',

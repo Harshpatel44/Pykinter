@@ -24,5 +24,4 @@ class ToolBarFrame(IFrame):
 
         toolbar_text = tk.Label(toolbar, text='Tool bar')
         toolbar_text.place(x=0, y=0)
-
-        toolbar.pack(side='top')
+        toolbar.pack(side='top', fill='x')

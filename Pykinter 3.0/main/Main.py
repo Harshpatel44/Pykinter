@@ -24,6 +24,7 @@ class Main(tk.Tk):
         self.w = self.winfo_screenwidth()
         self.geometry("%dx%d+0+0" % (self.w, self.h))
         self.state("zoomed")
+        self.resizable(height=0, width=0)
         print("Window width: {0} and height: {1}".format(self.w, self.h))
 
         container = tk.Frame(self)

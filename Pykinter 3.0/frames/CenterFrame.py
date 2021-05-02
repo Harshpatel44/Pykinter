@@ -18,15 +18,15 @@ class CenterFrame(IFrame):
         self.layout()
 
     def layout(self):
-        creator_frame = self.developer_frame.creator_frame
+        developer_frame = self.developer_frame.developer_frame
 
-        self.center_frame = tk.Frame(creator_frame,
+        self.center_frame = tk.Frame(developer_frame,
                                       height=self.center_frame_height,
                                       width=self.center_frame_width,
                                       relief='ridge',
                                       background=const.center_frame_color,
                                       bd=0)
-        self.center_frame.pack(side='left')
+        self.center_frame.pack(side='left', fill='both', expand='true')
 
         self.gui_window_geometry_tool()
         GUIFrame(self)

@@ -25,4 +25,4 @@ class MenuBarFrame(IFrame):
         menubar_text = tk.Label(menubar, text='Menubar text')
         menubar_text.place(x=0, y=0)
 
-        menubar.pack(side='top')
+        menubar.pack(side='top', fill='x')

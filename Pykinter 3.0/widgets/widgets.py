@@ -53,24 +53,24 @@ class Widgets(IWidgets):
 
     def widget_bind_button1_release(self, event):
         self.update_properties_for_widget(event.widget)
+        self.Injector.get_selection_dots_utils().create_selection_for_widget(event.widget)
 
     def widget_bind_command_click(self, event):
         widget = event.widget
-        self.update_properties_for_widget(event.widget)
+        # self.update_properties_for_widget(event.widget)
 
         self.set_selected_widgets([widget])
-        self.highlight_widgets([widget])
 
-    def highlight_widgets(self, widgets):
-        for widget in widgets:
-            widget.config(bd=2)
-
-    def unhighlight_widgets(self, widgets=None):
-        if not widgets:
-            widgets = self.selected_widgets
-        for widget in widgets:
-            widget.config(bd=0)
-            widget.update()
+    # def highlight_widgets(self, widgets):
+    #     for widget in widgets:
+    #         widget.config(bd=2)
+    #
+    # def unhighlight_widgets(self, widgets=None):
+    #     if not widgets:
+    #         widgets = self.selected_widgets
+    #     for widget in widgets:
+    #         widget.config(bd=0)
+    #         widget.update()
 
     def update_properties_for_widget(self, widget):
         self.update_x_geometry(widget)

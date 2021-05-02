@@ -32,6 +32,7 @@ width = 30 means 215 pixels
 * Frames packages contains UI for the application.
 * All other packages have controller and service layer logic of the feature.
 * On clicking a widget, a popup window will ask about widget name and basic properties (everything is optional and default values would be inserted), on clicking okay on the popup, a widget will be created at the center of the GUIWindow.
+* When deleting a widget, also delete all the list/dict values containing items releted to that widget.
 
 
 

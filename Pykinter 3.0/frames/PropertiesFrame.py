@@ -20,15 +20,15 @@ class PropertiesFrame(IFrame):
         self.layout()
 
     def layout(self):
-        creator_frame = self.developer_frame.creator_frame
+        developer_frame = self.developer_frame.developer_frame
 
-        self.props_outer_frame = tk.Frame(creator_frame,
+        self.props_outer_frame = tk.Frame(developer_frame,
                                       height=self.props_frame_height,
                                       width=self.props_frame_width,
                                       relief='ridge',
                                       background=const.bg_color,
                                       bd=0)
-        self.props_outer_frame.pack(side='left')
+        self.props_outer_frame.pack(side='right', fill='y')
         self.props_title_frame()
 
         props_canvas_yscrollbar = tk.Scrollbar(self.props_outer_frame)
@@ -65,7 +65,7 @@ class PropertiesFrame(IFrame):
                                      relief='raised',
                                      background=const.bg_color,
                                      highlightbackground=const.main_border)
-        props_tab_title.pack(side='top', fill='both', expand=1)
+        props_tab_title.pack(side='top', fill='x')
 
         title_label = tk.Label(props_tab_title,
                                text='Properties',
